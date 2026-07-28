@@ -1,8 +1,6 @@
 <?php
 namespace App\Module\Notification\Entity;
 
-use App\Module\Operations\Entity\Shipment;
-
 use App\Misc\Traits\EntityDateTimeAbleTrait;
 use App\Module\Notification\Repository\NotificationQueueRepository;
 use Doctrine\DBAL\Types\Types;
@@ -21,10 +19,6 @@ class NotificationQueue
 
     #[ORM\Column(length: 64, nullable: true)]
     private ?string $ruleKey = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
-    private ?Shipment $shipment = null;
 
     #[ORM\Column(length: 32)]
     private string $recipientType = 'USER';
@@ -68,8 +62,6 @@ class NotificationQueue
     public function getId(): ?int { return $this->id; }
     public function getRuleKey(): ?string { return $this->ruleKey; }
     public function setRuleKey(?string $v): static { $this->ruleKey = $v; return $this; }
-    public function getShipment(): ?Shipment { return $this->shipment; }
-    public function setShipment(?Shipment $v): static { $this->shipment = $v; return $this; }
     public function getRecipientType(): string { return $this->recipientType; }
     public function setRecipientType(string $v): static { $this->recipientType = $v; return $this; }
     public function getRecipientId(): ?int { return $this->recipientId; }

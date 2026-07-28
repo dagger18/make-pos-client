@@ -2,7 +2,6 @@
 namespace App\Module\Notification\Service;
 
 use App\Module\Notification\Entity\InAppNotification;
-use App\Module\Operations\Entity\Shipment;
 use App\Module\Core\Entity\User;
 use App\Module\Notification\Repository\InAppNotificationRepository;
 
@@ -17,7 +16,6 @@ class InAppNotificationService
         string  $title,
         string  $body,
         string  $priority = 'NORMAL',
-        ?Shipment $shipment = null,
         ?string $ruleKey = null,
         ?string $actionUrl = null,
     ): InAppNotification {
@@ -26,7 +24,6 @@ class InAppNotificationService
         $n->setTitle($title);
         $n->setBody($body);
         $n->setPriority($priority);
-        $n->setShipment($shipment);
         $n->setRuleKey($ruleKey);
         $n->setActionUrl($actionUrl);
         return $this->repository->save($n);

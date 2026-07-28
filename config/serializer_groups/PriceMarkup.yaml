@@ -1,6 +1,0 @@
-App\Module\Quote\Entity\PriceMarkup:
-
-    list:
-        - id
-        - name
-        - rules

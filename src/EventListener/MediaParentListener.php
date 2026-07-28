@@ -3,10 +3,7 @@
 namespace App\EventListener;
 
 use App\Module\Crm\Entity\Client;
-use App\Module\Finance\Entity\EbitNote;
 use App\Module\Core\Entity\Media;
-use App\Module\Carrier\Entity\Provider;
-use App\Module\Operations\Entity\Shipment;
 use App\Module\Core\Entity\User;
 use App\Misc\Attribute\MediaProperty;
 use App\Module\Core\Enum\EntityType;
@@ -30,9 +27,6 @@ class MediaParentListener
     private static array $entityTypeMap = [
         User::class => EntityType::User,
         Client::class => EntityType::Client,
-        Provider::class => EntityType::Provider,
-        Shipment::class => EntityType::Shipment,
-        EbitNote::class => EntityType::EbitNote,
     ];
 
     public function onFlush(OnFlushEventArgs $args): void

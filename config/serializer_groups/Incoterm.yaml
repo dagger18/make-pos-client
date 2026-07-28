@@ -1,7 +1,0 @@
-App\Module\Quote\Entity\Incoterm:
-
-    list:
-        - id
-        - name
-        - createdBy
-        - description

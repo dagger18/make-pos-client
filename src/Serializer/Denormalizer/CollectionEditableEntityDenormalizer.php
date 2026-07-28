@@ -1,7 +1,6 @@
 <?php
 namespace App\Serializer\Denormalizer;
 
-use App\Module\Quote\Entity\QuotePrice;
 use Psr\Log\LoggerInterface;
 use App\Entity\CollectionEditableEntity;
 use Symfony\Component\Serializer\SerializerInterface;

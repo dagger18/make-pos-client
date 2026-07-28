@@ -1,9 +1,0 @@
-App\Module\Operations\Entity\Instruction:
-
-    list:
-        - id
-        - chargeableWeight
-        - containers
-        - grossWeight
-        - packageCount
-        - volume

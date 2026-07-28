@@ -9,19 +9,6 @@ class Magnum {
     public const PRICE_MARKUP_10PERCENT_ID = 1;
     public const MIN_DAYS_ALERT = 14;
     public static function ENTITY_COLLECTION_UPDATABLE_MAP () {
-        return [
-            'App\Entity\Quote' => [
-                'prices' => [
-                    'childName' => 'QuotePrice',
-                    'singular' => 'Price'
-                ]
-            ],
-            'App\Entity\EbitNote' => [
-                'chargeItems' => [
-                    'childName' => 'ChargeItem',
-                    'singular' => 'ChargeItem'
-                ]
-            ]
-        ];
-    } 
+        return [];
+    }
 }

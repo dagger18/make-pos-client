@@ -2,7 +2,6 @@
 namespace App\Module\Notification\Entity;
 
 use App\Module\Core\Entity\User;
-use App\Module\Operations\Entity\Shipment;
 
 use App\Misc\Traits\EntityDateTimeAbleTrait;
 use App\Module\Notification\Repository\InAppNotificationRepository;
@@ -23,10 +22,6 @@ class InAppNotification
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
     private ?User $user = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
-    private ?Shipment $shipment = null;
 
     #[ORM\Column(length: 64, nullable: true)]
     private ?string $ruleKey = null;
@@ -52,8 +47,6 @@ class InAppNotification
     public function getId(): ?int { return $this->id; }
     public function getUser(): ?User { return $this->user; }
     public function setUser(?User $v): static { $this->user = $v; return $this; }
-    public function getShipment(): ?Shipment { return $this->shipment; }
-    public function setShipment(?Shipment $v): static { $this->shipment = $v; return $this; }
     public function getRuleKey(): ?string { return $this->ruleKey; }
     public function setRuleKey(?string $v): static { $this->ruleKey = $v; return $this; }
     public function getTitle(): string { return $this->title; }
