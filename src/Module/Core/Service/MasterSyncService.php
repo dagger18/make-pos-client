@@ -42,33 +42,6 @@ class MasterSyncService
         }
     }
 
-    public function searchPorts(string $q, int $limit, int $offset = 0, array $excludeIds = [], ?string $portTypes = null): array
-    {
-        $params = ['q' => $q, 'limit' => $limit, 'offset' => $offset];
-        if (!empty($excludeIds)) {
-            $params['excludeIds'] = implode(',', $excludeIds);
-        }
-        if ($portTypes !== null) {
-            $params['portTypes'] = $portTypes;
-        }
-
-        try {
-            $response = $this->httpClient->request(
-                'GET',
-                rtrim($this->params->get('master_api_url'), '/') . '/public/port/search',
-                [
-                    'headers' => ['X-Service-Token' => $this->interServiceTokenService->generate()],
-                    'query' => $params,
-                    'timeout' => 5,
-                ]
-            );
-            $data = $response->toArray();
-            return $data['list'] ?? [];
-        } catch (\Throwable) {
-            return [];
-        }
-    }
-
     public function syncCurrentUsers(): void
     {
         $orgConfig = $this->configService->getConfigValue('organization', isJson: true);
