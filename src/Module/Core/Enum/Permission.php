@@ -47,7 +47,6 @@ enum Permission: string {
     case Charge_MANAGE_Local = '801';
     case Charge_MANAGE_Service = '802';
     case Charge_MANAGE_Freight = '803';
-    case PackageType_MANAGE = '804';
     case Incoterm_MANAGE = '805';
     case TaxGroup_MANAGE = '806';
     case PaymentMethod_MANAGE = '807';
@@ -61,7 +60,6 @@ enum Permission: string {
     case Rate_MANAGE_Local = '851';
     case Rate_MANAGE_Service = '852';
     case Rate_MANAGE_Freight = '853';
-    case Rate_MANAGE_Import = '854';
 
     case User_POST = '900';
     case User_PUT = '901';
