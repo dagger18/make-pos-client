@@ -39,10 +39,10 @@ class CreditLimitHistory
     private ?CreditStatus $newStatus = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 15, scale: 4, nullable: true)]
-    private ?float $oldLimitAmount = null;
+    private ?string $oldLimitAmount = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 15, scale: 4, nullable: true)]
-    private ?float $newLimitAmount = null;
+    private ?string $newLimitAmount = null;
 
     #[ORM\Column(length: 8, nullable: true)]
     private ?string $currency = null;
@@ -67,11 +67,11 @@ class CreditLimitHistory
     public function getNewStatus(): ?CreditStatus { return $this->newStatus; }
     public function setNewStatus(?CreditStatus $newStatus): static { $this->newStatus = $newStatus; return $this; }
 
-    public function getOldLimitAmount(): ?float { return $this->oldLimitAmount; }
-    public function setOldLimitAmount(?float $oldLimitAmount): static { $this->oldLimitAmount = $oldLimitAmount; return $this; }
+    public function getOldLimitAmount(): ?float { return $this->oldLimitAmount !== null ? (float) $this->oldLimitAmount : null; }
+    public function setOldLimitAmount(?float $oldLimitAmount): static { $this->oldLimitAmount = $oldLimitAmount !== null ? (string) $oldLimitAmount : null; return $this; }
 
-    public function getNewLimitAmount(): ?float { return $this->newLimitAmount; }
-    public function setNewLimitAmount(?float $newLimitAmount): static { $this->newLimitAmount = $newLimitAmount; return $this; }
+    public function getNewLimitAmount(): ?float { return $this->newLimitAmount !== null ? (float) $this->newLimitAmount : null; }
+    public function setNewLimitAmount(?float $newLimitAmount): static { $this->newLimitAmount = $newLimitAmount !== null ? (string) $newLimitAmount : null; return $this; }
 
     public function getCurrency(): ?string { return $this->currency; }
     public function setCurrency(?string $currency): static { $this->currency = $currency; return $this; }

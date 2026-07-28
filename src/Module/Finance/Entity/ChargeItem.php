@@ -89,7 +89,7 @@ class ChargeItem
     private ?string $taxCode = null;
 
     #[ORM\Column(name: 'tax_pct', type: 'decimal', precision: 6, scale: 4, options: ['default' => '0.0000'])]
-    private float $taxRate = 0.0;
+    private string $taxRate = '0.0000';
 
     #[ORM\Column(options: ['default' => false])]
     private bool $isZeroRated = false;
@@ -326,7 +326,7 @@ class ChargeItem
     public function getTaxCode(): ?string { return $this->taxCode; }
     public function setTaxCode(?string $v): static { $this->taxCode = $v; return $this; }
     public function getTaxRate(): float { return (float) $this->taxRate; }
-    public function setTaxRate(float $v): static { $this->taxRate = $v; return $this; }
+    public function setTaxRate(float $v): static { $this->taxRate = (string) $v; return $this; }
     public function isZeroRated(): bool { return $this->isZeroRated; }
     public function setIsZeroRated(bool $v): static { $this->isZeroRated = $v; return $this; }
     public function isExempt(): bool { return $this->isExempt; }

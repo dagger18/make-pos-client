@@ -30,7 +30,7 @@ class SalesTarget
     // REVENUE / PROFIT / NEW_CUSTOMERS / QUOTES_SENT
 
     #[ORM\Column(type: Types::DECIMAL, precision: 20, scale: 6)]
-    private float $targetValue;
+    private string $targetValue;
 
     #[ORM\Column(length: 3, nullable: true)]
     private ?string $currency = null;
@@ -52,7 +52,7 @@ class SalesTarget
     public function getTargetType(): string { return $this->targetType; }
     public function setTargetType(string $v): static { $this->targetType = $v; return $this; }
     public function getTargetValue(): float { return (float) $this->targetValue; }
-    public function setTargetValue(float $v): static { $this->targetValue = $v; return $this; }
+    public function setTargetValue(float $v): static { $this->targetValue = (string) $v; return $this; }
     public function getCurrency(): ?string { return $this->currency; }
     public function setCurrency(?string $v): static { $this->currency = $v; return $this; }
     public function getBranch(): ?Branch { return $this->branch; }

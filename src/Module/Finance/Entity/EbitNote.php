@@ -129,7 +129,7 @@ class EbitNote implements SubEntity
     private ?string $codeReference = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 15, scale: 4, nullable: true)]
-    private ?float $fxGainLoss = null;
+    private ?string $fxGainLoss = null;
 
     #[ORM\Column(length: 16, nullable: true, enumType: VarianceStatus::class)]
     private ?VarianceStatus $varianceStatus = null;
@@ -151,10 +151,10 @@ class EbitNote implements SubEntity
     private ?\DateTimeInterface $approvedAt = null;
 
     #[ORM\Column(type: 'decimal', precision: 6, scale: 4, nullable: true)]
-    private ?float $withholdingTaxRate = null;
+    private ?string $withholdingTaxRate = null;
 
     #[ORM\Column(type: 'decimal', precision: 20, scale: 6, nullable: true)]
-    private ?float $withholdingTaxAmount = null;
+    private ?string $withholdingTaxAmount = null;
 
     #[ORM\Column(length: 64, nullable: true)]
     private ?string $withholdingTaxRef = null;
@@ -539,8 +539,8 @@ class EbitNote implements SubEntity
         return $this;
     }
 
-    public function getFxGainLoss(): ?float { return $this->fxGainLoss; }
-    public function setFxGainLoss(?float $v): static { $this->fxGainLoss = $v; return $this; }
+    public function getFxGainLoss(): ?float { return $this->fxGainLoss !== null ? (float) $this->fxGainLoss : null; }
+    public function setFxGainLoss(?float $v): static { $this->fxGainLoss = $v !== null ? (string) $v : null; return $this; }
 
     public function getVarianceStatus(): ?VarianceStatus { return $this->varianceStatus; }
     public function setVarianceStatus(?VarianceStatus $v): static { $this->varianceStatus = $v; return $this; }
@@ -560,9 +560,9 @@ class EbitNote implements SubEntity
     public function getApprovedAt(): ?\DateTimeInterface { return $this->approvedAt; }
     public function setApprovedAt(?\DateTimeInterface $d): static { $this->approvedAt = $d; return $this; }
     public function getWithholdingTaxRate(): ?float { return $this->withholdingTaxRate !== null ? (float) $this->withholdingTaxRate : null; }
-    public function setWithholdingTaxRate(?float $v): static { $this->withholdingTaxRate = $v; return $this; }
+    public function setWithholdingTaxRate(?float $v): static { $this->withholdingTaxRate = $v !== null ? (string) $v : null; return $this; }
     public function getWithholdingTaxAmount(): ?float { return $this->withholdingTaxAmount !== null ? (float) $this->withholdingTaxAmount : null; }
-    public function setWithholdingTaxAmount(?float $v): static { $this->withholdingTaxAmount = $v; return $this; }
+    public function setWithholdingTaxAmount(?float $v): static { $this->withholdingTaxAmount = $v !== null ? (string) $v : null; return $this; }
     public function getWithholdingTaxRef(): ?string { return $this->withholdingTaxRef; }
     public function setWithholdingTaxRef(?string $v): static { $this->withholdingTaxRef = $v; return $this; }
 }

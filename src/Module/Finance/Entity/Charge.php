@@ -40,10 +40,10 @@ class Charge
     private ?string $description = null;
 
     #[ORM\Column(type: "decimal", precision: 5, scale: 2, nullable: true)]
-    private ?float $debitTax = null;
+    private ?string $debitTax = null;
 
     #[ORM\Column(type: "decimal", precision: 5, scale: 2, nullable: true)]
-    private ?float $creditTax = null;
+    private ?string $creditTax = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
@@ -128,24 +128,24 @@ class Charge
 
     public function getDebitTax(): ?float
     {
-        return $this->debitTax;
+        return $this->debitTax !== null ? (float) $this->debitTax : null;
     }
 
     public function setDebitTax(?float $debitTax): static
     {
-        $this->debitTax = $debitTax;
+        $this->debitTax = $debitTax !== null ? (string) $debitTax : null;
 
         return $this;
     }
 
     public function getCreditTax(): ?float
     {
-        return $this->creditTax;
+        return $this->creditTax !== null ? (float) $this->creditTax : null;
     }
 
     public function setCreditTax(?float $creditTax): static
     {
-        $this->creditTax = $creditTax;
+        $this->creditTax = $creditTax !== null ? (string) $creditTax : null;
 
         return $this;
     }

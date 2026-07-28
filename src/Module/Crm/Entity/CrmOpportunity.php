@@ -38,13 +38,13 @@ class CrmOpportunity
     private ?string $podName = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
-    private ?float $estimatedVolume = null;
+    private ?string $estimatedVolume = null;
 
     #[ORM\Column(length: 8, nullable: true)]
     private ?string $volumeUom = null; // TEU / TON / CBM / SHIPMENTS
 
     #[ORM\Column(type: Types::DECIMAL, precision: 20, scale: 6, nullable: true)]
-    private ?float $estimatedRevenue = null;
+    private ?string $estimatedRevenue = null;
 
     #[ORM\Column(length: 3, nullable: true)]
     private ?string $currency = null;
@@ -104,11 +104,11 @@ class CrmOpportunity
     public function getPodName(): ?string { return $this->podName; }
     public function setPodName(?string $v): static { $this->podName = $v; return $this; }
     public function getEstimatedVolume(): ?float { return $this->estimatedVolume !== null ? (float) $this->estimatedVolume : null; }
-    public function setEstimatedVolume(?float $v): static { $this->estimatedVolume = $v; return $this; }
+    public function setEstimatedVolume(?float $v): static { $this->estimatedVolume = $v !== null ? (string) $v : null; return $this; }
     public function getVolumeUom(): ?string { return $this->volumeUom; }
     public function setVolumeUom(?string $v): static { $this->volumeUom = $v; return $this; }
     public function getEstimatedRevenue(): ?float { return $this->estimatedRevenue !== null ? (float) $this->estimatedRevenue : null; }
-    public function setEstimatedRevenue(?float $v): static { $this->estimatedRevenue = $v; return $this; }
+    public function setEstimatedRevenue(?float $v): static { $this->estimatedRevenue = $v !== null ? (string) $v : null; return $this; }
     public function getCurrency(): ?string { return $this->currency; }
     public function setCurrency(?string $v): static { $this->currency = $v; return $this; }
     public function getStage(): string { return $this->stage; }

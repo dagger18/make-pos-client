@@ -36,7 +36,7 @@ class TaxRule
     private string $taxCode;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 6, scale: 4)]
-    private float $taxRate = 0.0;
+    private string $taxRate = '0.0000';
 
     #[ORM\Column]
     private bool $isReverseCharge = false;
@@ -70,7 +70,7 @@ class TaxRule
     public function getTaxCode(): string { return $this->taxCode; }
     public function setTaxCode(string $v): static { $this->taxCode = $v; return $this; }
     public function getTaxRate(): float { return (float) $this->taxRate; }
-    public function setTaxRate(float $v): static { $this->taxRate = $v; return $this; }
+    public function setTaxRate(float $v): static { $this->taxRate = (string) $v; return $this; }
     public function isReverseCharge(): bool { return $this->isReverseCharge; }
     public function setIsReverseCharge(bool $v): static { $this->isReverseCharge = $v; return $this; }
     public function isZeroRated(): bool { return $this->isZeroRated; }
