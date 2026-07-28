@@ -3,14 +3,13 @@
 namespace App\Module\Core\Service;
 
 use App\Module\Core\Service\BaseService;
+use App\Module\Core\Repository\LocationRepository;
 
-use App\Module\Core\Repository\BranchRepository;
-
-class BranchService extends BaseService
+class LocationService extends BaseService
 {
     public function __construct(
         protected BaseService $baseService,
-        public BranchRepository $repository,
+        public LocationRepository $repository,
     ) {
         $this->reflectFromParent($baseService);
     }
