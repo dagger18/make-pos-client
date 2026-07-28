@@ -1,7 +1,6 @@
 <?php
 namespace App\Module\Tax\Entity;
 
-use App\Module\Operations\Entity\Shipment;
 use App\Module\Tax\Repository\CustomsEntryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -17,9 +16,8 @@ class CustomsEntry
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: Shipment::class)]
-    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
-    private ?Shipment $shipment = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $shipmentId = null;
 
     #[ORM\Column(length: 16)]
     private string $entryType = '';
@@ -98,8 +96,8 @@ class CustomsEntry
 
     public function getId(): ?int { return $this->id; }
 
-    public function getShipment(): ?Shipment { return $this->shipment; }
-    public function setShipment(?Shipment $shipment): static { $this->shipment = $shipment; return $this; }
+    public function getShipmentId(): ?int { return $this->shipmentId; }
+    public function setShipmentId(?int $shipmentId): static { $this->shipmentId = $shipmentId; return $this; }
 
     public function getEntryType(): string { return $this->entryType; }
     public function setEntryType(string $entryType): static { $this->entryType = $entryType; return $this; }

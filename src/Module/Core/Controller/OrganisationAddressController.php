@@ -5,7 +5,6 @@ use App\Module\Core\Entity\OrganisationAddress;
 use App\Module\Core\Enum\AddressType;
 use App\Module\Crm\Repository\ClientRepository;
 use App\Module\Core\Repository\OrganisationAddressRepository;
-use App\Module\Carrier\Repository\ProviderRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +22,6 @@ class OrganisationAddressController extends AbstractController
     public function __construct(
         private OrganisationAddressRepository $repository,
         private ClientRepository $clientRepository,
-        private ProviderRepository $providerRepository,
         private SerializerInterface $serializer,
     ) {}
 
@@ -31,10 +29,9 @@ class OrganisationAddressController extends AbstractController
     public function LIST(Request $request): JsonResponse
     {
         $clientId = $request->query->getInt('clientId', 0);
-        $providerId = $request->query->getInt('providerId', 0);
         $addresses = $clientId
             ? $this->repository->findByClient($clientId)
-            : $this->repository->findByProvider($providerId);
+            : [];
         return $this->json($this->serializer->normalize($addresses, null, ['groups' => ['list']]));
     }
 
@@ -77,9 +74,6 @@ class OrganisationAddressController extends AbstractController
     {
         if (!empty($data['clientId'])) {
             $address->setClient($this->clientRepository->find((int)$data['clientId']));
-        }
-        if (!empty($data['providerId'])) {
-            $address->setProvider($this->providerRepository->find((int)$data['providerId']));
         }
         if (isset($data['addressType'])) $address->setAddressType(AddressType::from($data['addressType']));
         if (isset($data['label'])) $address->setLabel($data['label'] ?: null);

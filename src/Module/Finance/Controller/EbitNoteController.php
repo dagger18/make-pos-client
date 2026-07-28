@@ -24,7 +24,6 @@ use App\Module\Core\Service\BaseService;
 use App\Module\Finance\Service\EbitNoteService;
 use App\Module\Finance\Service\FxGainLossService;
 use App\Module\Finance\Service\JournalPostingService;
-use App\Module\Operations\Service\ShipmentService;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,7 +47,6 @@ class EbitNoteController extends CrudController
         protected EbitNoteService $ebitNoteService,
         protected FxGainLossService $fxGainLossService,
         protected JournalPostingService $journalPostingService,
-        protected ShipmentService $shipmentService,
         protected ClientRepository $clientRepository,
         protected MediaRepository $mediaRepository,
     ) {}
@@ -82,13 +80,6 @@ class EbitNoteController extends CrudController
         }
         $result = $this->repository->save($entity, $request);
         $this->ebitNoteService->checkRecord($entity);
-        if (
-            $entity->getType() === EbitNoteType::POBO
-            || $entity->getType() === EbitNoteType::COBO
-        ) {
-            $this->shipmentService->calculateProfitLoss($entity->getShipment());
-            $this->shipmentService->repository->save($entity->getShipment());
-        }
         $this->postJournalIfNeeded($entity);
         return $this->json($result, Response::HTTP_CREATED);
     }
@@ -151,17 +142,11 @@ class EbitNoteController extends CrudController
             EbitNoteType::COBO,
         ]);
         $parentEntity = $entity->getParentNote();
-        $shouldCheckShipment = in_array($entity->getType(), [EbitNoteType::POBO, EbitNoteType::COBO]);
-        $shipment = $entity->getShipment();
 
         $this->repository->delete($entity);
 
         if ($shouldCheckParent && $parentEntity) {
             $this->ebitNoteService->checkParentRecord($parentEntity);
-        }
-        if ($shouldCheckShipment) {
-            $this->shipmentService->calculateProfitLoss($shipment);
-            $this->shipmentService->repository->save($shipment);
         }
         return $this->json([]);
     }
@@ -195,8 +180,6 @@ class EbitNoteController extends CrudController
             $ebitNote = $this->ebitNoteService->repository->find($id);
             $this->ebitNoteService->updateExchangeRate($ebitNote, $data['exchangeRates']);
             $this->ebitNoteService->updateExchangeRate($ebitNote->getParentNote(), $data['exchangeRates']);
-            $this->shipmentService->calculateProfitLoss($ebitNote->getShipment());
-            $this->shipmentService->repository->save($ebitNote->getShipment());
         }
         return $this->json(['result' => 'success'], Response::HTTP_CREATED);
     }

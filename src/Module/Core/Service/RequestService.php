@@ -8,8 +8,6 @@ use App\Module\Core\Entity\Log;
 use App\Module\Core\Repository\LogRepository;
 use App\Module\Core\Repository\UserAgentRepository;
 use App\Module\Core\Service\BaseService;
-use App\Module\Operations\Entity\Archive;
-use App\Module\Operations\Service\ArchiveService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -36,7 +34,6 @@ class RequestService extends BaseService
     
     public function __construct(
         protected BaseService $baseService,
-        protected ArchiveService $archiveService,
         protected RequestStack $requestStack,
         private readonly SerializerInterface&DenormalizerInterface $denormalizer,
         protected LogRepository $logRepo,
@@ -153,19 +150,9 @@ class RequestService extends BaseService
         return $allInputs;
     }
 
-    public function archiveDeletedEntities() {
-        if(count($this->deletedEntities) === 0) return;
-        $batchSize = 100;
-        for ($i = 0; $i < count($this->deletedEntities); $i++) {
-            $entity = $this->denormalizer->denormalize($this->deletedEntities[$i], Archive::class);
-            $this->archiveService->repository->save($entity);
-            if (($i % $batchSize) === 0) {
-                $this->getEntityManager()->flush();
-                //$this->getEntityManager()->clear();
-            }
-        }
-        $this->getEntityManager()->flush();
-        //$this->getEntityManager()->clear();
+    public function archiveDeletedEntities(): void
+    {
+        // Archive functionality removed (freight-specific).
     }
 
     public function getRealm() {

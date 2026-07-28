@@ -5,7 +5,6 @@ namespace App\Serializer\Denormalizer;
 use App\Module\Reporting\Entity\DatasetFilter;
 
 use App\Module\Core\Entity\ComponentSerie;
-use App\Module\Operations\Entity\InstructionContainer;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;

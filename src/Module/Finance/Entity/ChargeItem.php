@@ -3,9 +3,6 @@
 namespace App\Module\Finance\Entity;
 
 use App\Module\Core\Entity\Department;
-use App\Module\Quote\Entity\QuotePrice;
-use App\Module\Carrier\Entity\Provider;
-
 use App\Module\Core\Entity\Money;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -35,9 +32,6 @@ class ChargeItem
 
     #[ORM\Column(length: 255)]
     private ?string $chargeTypeName = null;
-
-    #[ORM\ManyToOne]
-    private ?Provider $provider = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $calculationType = null;
@@ -73,9 +67,6 @@ class ChargeItem
     #[ORM\ManyToOne(inversedBy: 'chargeItems', cascade: ['persist'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?EbitNote $ebitNote = null;
-
-    #[ORM\ManyToOne]
-    private ?QuotePrice $quotePrice = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $position = null;
@@ -158,18 +149,6 @@ class ChargeItem
     public function setChargeTypeName(string $chargeTypeName): static
     {
         $this->chargeTypeName = $chargeTypeName;
-
-        return $this;
-    }
-
-    public function getProvider(): ?Provider
-    {
-        return $this->provider;
-    }
-
-    public function setProvider(?Provider $provider): static
-    {
-        $this->provider = $provider;
 
         return $this;
     }
@@ -290,18 +269,6 @@ class ChargeItem
     public function setEbitNote(?EbitNote $ebitNote): static
     {
         $this->ebitNote = $ebitNote;
-
-        return $this;
-    }
-
-    public function getQuotePrice(): ?QuotePrice
-    {
-        return $this->quotePrice;
-    }
-
-    public function setQuotePrice(?QuotePrice $quotePrice): static
-    {
-        $this->quotePrice = $quotePrice;
 
         return $this;
     }

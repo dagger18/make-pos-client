@@ -5,7 +5,6 @@ namespace App\Module\Core\Service;
 use App\Module\Core\Entity\User;
 use App\Module\Core\Service\CommonService;
 use App\Module\Finance\Entity\EbitNote;
-use App\Module\Quote\Entity\Quote;
 use App\Module\Reporting\Enum\DatasetRowType;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;

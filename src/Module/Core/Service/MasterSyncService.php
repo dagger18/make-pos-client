@@ -187,7 +187,7 @@ class MasterSyncService
                         'entry_mode'     => $entry->getEntryMode(),
                         'system_code'    => $entry->getSystemCode(),
                         'country_code'   => $entry->getCountryCode(),
-                        'shipment_id'    => $entry->getShipment()->getId(),
+                        'shipment_id'    => $entry->getShipmentId(),
                         'cif_value'      => $entry->getCifValue(),
                         'value_currency' => $entry->getValueCurrency(),
                         'customs_office' => $entry->getCustomsOffice(),

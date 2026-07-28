@@ -6,7 +6,6 @@ use App\Module\Finance\Enum\CreditNoteReason;
 use App\Module\Finance\Enum\VarianceStatus;
 
 use App\Module\Core\Entity\User;
-use App\Module\Operations\Entity\Shipment;
 use App\Module\Crm\Entity\Partner;
 
 use App\Module\Core\Entity\Media;
@@ -111,9 +110,8 @@ class EbitNote implements SubEntity
     #[ORM\Column(length: 255, enumType: EbitNoteStatus::class)]
     private ?EbitNoteStatus $status;
 
-    #[ORM\ManyToOne(inversedBy: 'ebitNotes')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Shipment $shipment = null;
+    #[ORM\Column(nullable: true)]
+    private ?int $shipmentId = null;
 
     #[ORM\ManyToOne(targetEntity: self::class)]
     private ?self $parentNote = null;
@@ -478,17 +476,8 @@ class EbitNote implements SubEntity
         return $this;
     }
 
-    public function getShipment(): ?Shipment
-    {
-        return $this->shipment;
-    }
-
-    public function setShipment(?Shipment $shipment): static
-    {
-        $this->shipment = $shipment;
-
-        return $this;
-    }
+    public function getShipmentId(): ?int { return $this->shipmentId; }
+    public function setShipmentId(?int $shipmentId): static { $this->shipmentId = $shipmentId; return $this; }
 
     public function getParentNote(): ?self
     {

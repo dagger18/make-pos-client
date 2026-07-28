@@ -1,7 +1,6 @@
 <?php
 namespace App\Module\Reporting\Enum;
 
-use App\Module\Carrier\Entity\Provider;
 use App\Module\Crm\Entity\Client;
 enum DatasetGroupColumn: string {
     case CompletedDate = 'completedDate';

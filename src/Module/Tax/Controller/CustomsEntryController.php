@@ -6,7 +6,6 @@ namespace App\Module\Tax\Controller;
 
 use App\Misc\Attribute\AppModule;
 use App\Module\Core\Service\MasterSyncService;
-use App\Module\Operations\Repository\ShipmentRepository;
 use App\Module\Tax\Entity\CustomsEntry;
 use App\Module\Tax\Entity\CustomsEntryLine;
 use App\Module\Tax\Repository\CustomsEntryLineRepository;
@@ -26,7 +25,6 @@ class CustomsEntryController extends AbstractController
     public function __construct(
         private readonly CustomsEntryRepository     $entryRepository,
         private readonly CustomsEntryLineRepository $lineRepository,
-        private readonly ShipmentRepository         $shipmentRepository,
         private readonly MasterSyncService          $masterSyncService,
     ) {}
 
@@ -41,11 +39,6 @@ class CustomsEntryController extends AbstractController
     #[Route('', methods: ['POST'])]
     public function create(int $shipmentId, Request $request): JsonResponse
     {
-        $shipment = $this->shipmentRepository->find($shipmentId);
-        if (!$shipment) {
-            throw $this->createNotFoundException();
-        }
-
         $body = json_decode($request->getContent(), true) ?? [];
 
         if (empty($body['entryType'])) {
@@ -53,7 +46,6 @@ class CustomsEntryController extends AbstractController
         }
 
         $entry = new CustomsEntry();
-        $entry->setShipment($shipment);
         $this->hydrateEntry($entry, $body);
 
         $this->entryRepository->save($entry, true);

@@ -2,8 +2,6 @@
 
 namespace App\Module\Crm\Entity;
 
-use App\Module\Quote\Entity\PriceMarkup;
-
 use App\Module\Core\Entity\Media;
 use App\Module\Core\Entity\User;
 use App\Module\Finance\Entity\BankAccount;
@@ -138,10 +136,6 @@ class Client extends Partner
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?PriceMarkup $priceMarkup = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
     private ?User $createdBy = null;
 
     #[ORM\ManyToOne]
@@ -154,9 +148,6 @@ class Client extends Partner
 
     #[ORM\ManyToMany(targetEntity: User::class)]
     private Collection $assignedUsers;
-
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?PriceMarkup $customPriceMarkup = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $code = null;
@@ -538,18 +529,6 @@ class Client extends Partner
     public function setCustomInfo(?InvoiceInfo $customInfo): static
     {
         $this->customInfo = $customInfo;
-
-        return $this;
-    }
-
-    public function getPriceMarkup(): ?PriceMarkup
-    {
-        return $this->priceMarkup;
-    }
-
-    public function setPriceMarkup(?PriceMarkup $priceMarkup): static
-    {
-        $this->priceMarkup = $priceMarkup;
 
         return $this;
     }

@@ -9,4 +9,3 @@ api:
   type: attribute
   exclude:
     - '../src/Module/Core/Controller/CrudController.php'
-    - '../src/Module/Integration/Controller/'

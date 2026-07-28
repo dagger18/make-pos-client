@@ -10,7 +10,7 @@ class CustomsEntryRepository extends BaseRepository
         return $this->createQueryBuilder('ce')
             ->leftJoin('ce.lines', 'l')
             ->addSelect('l')
-            ->where('ce.shipment = :sid')
+            ->where('ce.shipmentId = :sid')
             ->setParameter('sid', $shipmentId)
             ->orderBy('ce.id', 'DESC')
             ->getQuery()

@@ -3,9 +3,6 @@
 namespace App\Module\Finance\Entity;
 
 use App\Module\Core\Entity\User;
-use App\Module\Quote\Entity\CalculationType;
-use App\Module\Quote\Entity\CustomChargeType;
-
 use App\Module\Finance\Enum\ChargeType;
 use Doctrine\DBAL\Types\Types;
 use App\Module\Core\Enum\TransportType;
@@ -51,12 +48,6 @@ class Charge
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $createdBy = null;
-
-    #[ORM\ManyToOne]
-    private ?CustomChargeType $customChargeType = null;
-
-    #[ORM\ManyToOne]
-    private ?CalculationType $calculationType = null;
 
     public function getId(): ?int
     {
@@ -171,27 +162,4 @@ class Charge
         return $this;
     }
 
-    public function getCustomChargeType(): ?CustomChargeType
-    {
-        return $this->customChargeType;
-    }
-
-    public function setCustomChargeType(?CustomChargeType $customChargeType): static
-    {
-        $this->customChargeType = $customChargeType;
-
-        return $this;
-    }
-
-    public function getCalculationType(): ?CalculationType
-    {
-        return $this->calculationType;
-    }
-
-    public function setCalculationType(?CalculationType $calculationType): static
-    {
-        $this->calculationType = $calculationType;
-
-        return $this;
-    }
 }

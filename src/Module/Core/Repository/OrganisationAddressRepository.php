@@ -25,13 +25,7 @@ class OrganisationAddressRepository extends ServiceEntityRepository
 
     public function findByProvider(int $providerId): array
     {
-        return $this->createQueryBuilder('a')
-            ->where('a.provider = :providerId')
-            ->setParameter('providerId', $providerId)
-            ->orderBy('a.addressType', 'ASC')
-            ->addOrderBy('a.isDefault', 'DESC')
-            ->getQuery()
-            ->getResult();
+        return [];
     }
 
     public function save(OrganisationAddress $entity): OrganisationAddress

@@ -2,8 +2,6 @@
 
 namespace App\Module\Core\Repository;
 
-use App\Module\Operations\Entity\ShipmentActivity;
-
 use App\Module\Core\Entity\SubEntity;
 use App\Module\Core\Enum\DateRange;
 use Psr\Log\LoggerInterface;

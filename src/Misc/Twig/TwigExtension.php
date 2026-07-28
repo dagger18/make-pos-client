@@ -2,7 +2,6 @@
 
 namespace App\Misc\Twig;
 
-use App\Module\Operations\Entity\InstructionContainer;
 use App\Module\Core\Entity\Port;
 use App\Module\Finance\Repository\CurrencyRepository;
 use App\Module\Finance\Repository\ExchangeRateGroupRepository;
@@ -85,20 +84,7 @@ class TwigExtension extends AbstractExtension
     }
 
     public function summarizeContainers($containers) {
-      $packages = 0;
-      $weight = 0;
-      $volume = 0;
-      /** @var InstructionContainer $container */
-      forEach($containers as $container) {
-        $packages += (float) $container->getPackageCount();
-        $weight += (float) $container->getGrossWeight();
-        $volume += (float) $container->getCbm();
-      }
-      return [
-        'packages' => $packages,
-        'weight' => $weight,
-        'volume' => $volume,
-      ];
+      return ['packages' => 0, 'weight' => 0, 'volume' => 0];
     }
     public function removeContentInsideRoundBrackets($string): string
     {
@@ -146,8 +132,6 @@ class TwigExtension extends AbstractExtension
         'VolumeType'           => 'App\Module\Core\Enum\VolumeType',
         'WeekDay'              => 'App\Module\Core\Enum\WeekDay',
         'Magnum'               => 'App\Module\Core\Enum\Magnum',
-        'FreightTerm'          => 'App\Module\Quote\Enum\FreightTerm',
-        'QuoteStatus'          => 'App\Module\Quote\Enum\QuoteStatus',
         'ChargeType'           => 'App\Module\Finance\Enum\ChargeType',
         'CreditNoteReason'     => 'App\Module\Finance\Enum\CreditNoteReason',
         'CreditStatus'         => 'App\Module\Finance\Enum\CreditStatus',
@@ -157,20 +141,6 @@ class TwigExtension extends AbstractExtension
         'PayableAt'            => 'App\Module\Finance\Enum\PayableAt',
         'PaymentMethodType'    => 'App\Module\Finance\Enum\PaymentMethodType',
         'VarianceStatus'       => 'App\Module\Finance\Enum\VarianceStatus',
-        'ConsolidationStatus'  => 'App\Module\Operations\Enum\ConsolidationStatus',
-        'ContainerType'        => 'App\Module\Operations\Enum\ContainerType',
-        'DocType'              => 'App\Module\Operations\Enum\DocType',
-        'NoteType'             => 'App\Module\Operations\Enum\NoteType',
-        'NoteVisibility'       => 'App\Module\Operations\Enum\NoteVisibility',
-        'PartyRole'            => 'App\Module\Operations\Enum\PartyRole',
-        'ShipmentActivityType' => 'App\Module\Operations\Enum\ShipmentActivityType',
-        'ShipmentStatus'       => 'App\Module\Operations\Enum\ShipmentStatus',
-        'ShipmentType'         => 'App\Module\Operations\Enum\ShipmentType',
-        'SubStatus'            => 'App\Module\Operations\Enum\SubStatus',
-        'TaskType'             => 'App\Module\Operations\Enum\TaskType',
-        'CarrierType'          => 'App\Module\Carrier\Enum\CarrierType',
-        'MilestoneCode'        => 'App\Module\Carrier\Enum\MilestoneCode',
-        'ProviderType'         => 'App\Module\Carrier\Enum\ProviderType',
         'ClientCustomInfoMode' => 'App\Module\Crm\Enum\ClientCustomInfoMode',
         'ClientResidenceType'  => 'App\Module\Crm\Enum\ClientResidenceType',
         'ClientTier'           => 'App\Module\Crm\Enum\ClientTier',

@@ -1,8 +1,7 @@
 <?php
 namespace App\Security;
 
-use App\Module\Core\Entity\Port;
-
+use App\Module\Integration\Entity\PortalUser;
 use App\Module\Integration\Repository\PortalUserRepository;
 use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;

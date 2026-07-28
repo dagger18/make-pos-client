@@ -1,7 +1,6 @@
 <?php
 namespace App\Module\Core\Entity;
 
-use App\Module\Carrier\Entity\Provider;
 use App\Module\Crm\Entity\Client;
 
 use App\Module\Core\Enum\AddressType;
@@ -21,10 +20,6 @@ class OrganisationAddress
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
     private ?Client $client = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: true, onDelete: 'CASCADE')]
-    private ?Provider $provider = null;
 
     #[ORM\Column(length: 32, enumType: AddressType::class)]
     private AddressType $addressType = AddressType::Registered;
@@ -69,9 +64,6 @@ class OrganisationAddress
 
     public function getClient(): ?Client { return $this->client; }
     public function setClient(?Client $client): static { $this->client = $client; return $this; }
-
-    public function getProvider(): ?Provider { return $this->provider; }
-    public function setProvider(?Provider $provider): static { $this->provider = $provider; return $this; }
 
     public function getAddressType(): AddressType { return $this->addressType; }
     public function setAddressType(AddressType $addressType): static { $this->addressType = $addressType; return $this; }

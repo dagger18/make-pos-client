@@ -2,7 +2,6 @@
 
 namespace App\Module\Core\Entity;
 
-use App\Module\Operations\Enum\ShipmentType;
 use Doctrine\ORM\Mapping as ORM;
 use App\Module\Core\Repository\DepartmentRepository;
 use App\Misc\Traits\EntityDateTimeAbleTrait;
@@ -25,8 +24,8 @@ class Department
     #[ORM\JoinColumn(nullable: true)]
     private ?Branch $branch = null;
 
-    #[ORM\Column(type: "string", length: 5, enumType: ShipmentType::class, nullable: true)]
-    private ?ShipmentType $direction = null;
+    #[ORM\Column(length: 5, nullable: true)]
+    private ?string $direction = null;
 
     #[ORM\Column]
     private bool $isActive = true;
@@ -58,12 +57,12 @@ class Department
         return $this;
     }
 
-    public function getDirection(): ?ShipmentType
+    public function getDirection(): ?string
     {
         return $this->direction;
     }
 
-    public function setDirection(?ShipmentType $direction): static
+    public function setDirection(?string $direction): static
     {
         $this->direction = $direction;
         return $this;

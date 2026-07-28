@@ -3,16 +3,13 @@ namespace App\Module\Core\Service;
 
 use App\Module\Core\Service\BaseService;
 
-use App\Module\Carrier\Entity\Provider;
 use App\Module\Core\Entity\User;
 use App\Module\Finance\Enum\ChargeType;
 use App\Module\Core\Enum\Magnum;
 use App\Module\Core\Enum\PageType;
 use App\Module\Core\Enum\Permission;
 use App\Module\Core\Enum\RequestMethod;
-use App\Module\Operations\Enum\ShipmentStatus;
 use App\Module\Core\Enum\UserStatus;
-use App\Module\Carrier\Repository\ProviderRepository;
 use App\Module\Core\Repository\UserRepository;
 use App\Module\Crm\Service\ClientService;
 use App\Module\Core\Service\MailService;
@@ -32,7 +29,6 @@ class UserService extends BaseService
         protected BaseService $baseService,
         public UserRepository $repository,
         protected UserPasswordHasherInterface $passwordHasher,
-        protected ProviderRepository $providerRepository,
         protected MailService $mailService,
     ) {
         $this->reflectFromParent($baseService);
@@ -57,9 +53,9 @@ class UserService extends BaseService
         $hashPassword = $this->passwordHasher->hashPassword($user, $rawPassword);
         $user->setPassword($hashPassword);
         $this->mailService->send(
-            $user->getEmail(), 
-            'You have been invited to ' . $this->providerRepository->find(Magnum::COMPANY_PROVIDER_ID)->getName() . ' team', 
-            'email/inviteUser.html.twig', 
+            $user->getEmail(),
+            'You have been invited to join the team',
+            'email/inviteUser.html.twig',
             ['token' => hash('sha256', $hashPassword)]
         );
         return $this->repository->save($user);

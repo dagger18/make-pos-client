@@ -7,8 +7,6 @@ use App\Module\Core\Controller\CrudController;
 use App\Misc\Attribute\AppModule;
 use App\Module\Core\Service\BaseService;
 use App\Module\Core\Service\ConfigService;
-use App\Module\Quote\Service\QuoteCodeGeneratorService;
-use App\Module\Operations\Service\ShipmentIdGeneratorService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -40,39 +38,5 @@ class ConfigController extends CrudController
         return $this->json(['name' => $name, 'value' => $config->getValue()]);
     }
 
-    #[Route('/shipment-id-format/tokens', methods: ['GET'])]
-    public function shipmentIdTokens(): JsonResponse
-    {
-        return $this->json([
-            'tokens' => [
-                ['token' => '$GlobalCounter',  'description' => 'Global counter (8 digits, zero-padded)'],
-                ['token' => '$MonthlyCounter', 'description' => 'Monthly counter (5 digits, zero-padded, resets each month)'],
-                ['token' => '$Branch',         'description' => 'Branch code (3 chars)'],
-                ['token' => '$ShipType',       'description' => 'Shipment direction: EXP / IMP / XTD / DOM / TSH'],
-                ['token' => '$TransType',      'description' => 'Transport mode: OCN / AIR / RD / RAL / COU / MMD'],
-                ['token' => '$ServiceType',    'description' => 'Service type short code: FCL / LCL / DRT / CSL / FTL / LTL …'],
-                ['token' => '$YearMonth',      'description' => 'Year and month, e.g. 202604'],
-                ['token' => '$OrgCode',        'description' => 'Origin port/location code'],
-                ['token' => '$DestCode',       'description' => 'Destination port/location code'],
-            ],
-            'default' => ShipmentIdGeneratorService::DEFAULT_FORMAT,
-        ]);
-    }
 
-    #[Route('/quote-code-format/tokens', methods: ['GET'])]
-    public function quoteCodeTokens(): JsonResponse
-    {
-        return $this->json([
-            'tokens' => [
-                ['token' => '$GlobalCounter',  'description' => 'Global counter (8 digits, zero-padded)'],
-                ['token' => '$MonthlyCounter', 'description' => 'Monthly counter (5 digits, zero-padded, resets each month)'],
-                ['token' => '$Branch',         'description' => 'Branch code (3 chars)'],
-                ['token' => '$TransType',      'description' => 'Transport mode: OCN / AIR / RD / RAL / COU / MMD'],
-                ['token' => '$YearMonth',      'description' => 'Year and month, e.g. 202604'],
-                ['token' => '$OrgCode',        'description' => 'Origin port/location code'],
-                ['token' => '$DestCode',       'description' => 'Destination port/location code'],
-            ],
-            'default' => QuoteCodeGeneratorService::DEFAULT_FORMAT,
-        ]);
-    }
 }
