@@ -1,0 +1,7 @@
+{% extends 'email/layout.html.twig' %}
+
+{% block subject %}{{ email.subject|split(']')[1] }}{% endblock %}
+
+{% block content %}
+{{ content | raw }}
+{% endblock %}

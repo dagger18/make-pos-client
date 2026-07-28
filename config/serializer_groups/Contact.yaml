@@ -1,0 +1,19 @@
+App\Module\Crm\Entity\Contact:
+
+    list:
+        - id
+        - salutation
+        - firstName
+        - lastName
+        - fullName
+        - title
+        - department
+        - email
+        - phone
+        - mobile
+        - whatsapp
+        - language
+        - isActive
+        - receivesInvoice
+        - receivesTracking
+        - receivesArrival

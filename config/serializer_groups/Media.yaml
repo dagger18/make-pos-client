@@ -1,0 +1,17 @@
+App\Module\Core\Entity\Media:
+
+    list:
+        - id
+        - path
+        - name
+        - size
+        - mime
+        - category
+        - note
+        - createdBy
+        - createdDate
+        - hasThumb
+        - hasWebp
+
+    subList:
+        - path

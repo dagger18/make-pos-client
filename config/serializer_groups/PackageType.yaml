@@ -1,0 +1,12 @@
+App\Module\Core\Entity\PackageType:
+
+    list:
+        - id
+        - name
+        - weight
+        - height
+        - length
+        - width
+        - createdBy
+        - createdDate
+        - description

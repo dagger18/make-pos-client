@@ -1,0 +1,16 @@
+{% extends 'email/layout.html.twig' %}
+
+{% block subject %}{{ email.subject }}{% endblock %}
+
+{% block content %}
+<div style="text-align: left;">
+  <div style="color: #1abb9c;">
+      <strong>Hello {{ email.to[0].address }}, you have been invited to our office</strong>
+  </div>
+  <div style="margin-bottom: 20px;">Please click the button below and confirm your registration</div>
+  <div style="color: #1abb9c;">
+      <a href="{{ bo_client_url }}/register/{{ token }}">Register</a>
+  </div>
+</div>
+
+{% endblock %}

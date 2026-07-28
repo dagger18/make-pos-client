@@ -1,0 +1,7 @@
+App\Module\Core\Entity\Page:
+
+    list:
+        - id
+        - name
+        - orderNumber
+        - type

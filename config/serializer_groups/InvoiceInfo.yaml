@@ -1,0 +1,10 @@
+App\Module\Finance\Entity\InvoiceInfo:
+
+    list:
+        - id
+        - company
+        - contactName
+        - taxNumber
+        - address
+        - phone
+        - bankAccount

@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style>
+body { font-size: 0.85em; }
+th { background: #f0f0f0; }
+.dg-row td { vertical-align: top; }
+</style>
+</head>
+<body>
+<table class="table is-fullwidth no-border-td">
+<tr>
+  <td width="100px" style="vertical-align: middle;">
+    <img width="80" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+  </td>
+  <td style="vertical-align: middle;">
+    <div style="font-size: 1.3em; font-weight: bold;">{% trans %}DANGEROUS GOODS DECLARATION{% endtrans %}</div>
+    <div style="font-size: 0.8em; color: #c00; font-weight: bold;">
+      {% trans %}WARNING: This shipment contains dangerous goods{% endtrans %}
+    </div>
+  </td>
+  <td width="200px" style="text-align: right; font-size: 0.85em;">
+    <div><b>{% trans %}Shipment{% endtrans %}:</b> {{ shipment.code }}</div>
+    <div><b>{% trans %}HBL{% endtrans %}:</b> {{ shipment.houseBill ?? '—' }}</div>
+    <div><b>{% trans %}MBL{% endtrans %}:</b> {{ shipment.masterBill ?? '—' }}</div>
+  </td>
+</tr>
+</table>
+
+<table class="table is-fullwidth center-border-td" style="margin-top: 10px;">
+  <tr>
+    <td width="50%">
+      <b>{% trans %}Port of Loading{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.portLoading ? booking.portLoading.name : '—' }}</span>
+    </td>
+    <td width="50%">
+      <b>{% trans %}Port of Discharge{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.portDischarge ? booking.portDischarge.name : '—' }}</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>{% trans %}Vessel / Voyage{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.vesselNo ?? '—' }}</span>
+    </td>
+    <td>
+      <b>{% trans %}ETD{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.etd ? booking.etd | date('d/m/Y') : '—' }}</span>
+    </td>
+  </tr>
+</table>
+
+<table class="table is-fullwidth center-border-td" style="margin-top: 16px;">
+  <thead>
+    <tr>
+      <th>{% trans %}IMO Class{% endtrans %}</th>
+      <th>{% trans %}UN No.{% endtrans %}</th>
+      <th>{% trans %}Packing Group{% endtrans %}</th>
+      <th>{% trans %}Proper Shipping Name{% endtrans %}</th>
+      <th>{% trans %}Technical Name{% endtrans %}</th>
+      <th>{% trans %}Net Qty{% endtrans %}</th>
+      <th>{% trans %}Gross Qty{% endtrans %}</th>
+      <th>{% trans %}UOM{% endtrans %}</th>
+      <th>{% trans %}Flash Point{% endtrans %}</th>
+      <th>{% trans %}Flags{% endtrans %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for dg in dgList %}
+    <tr class="dg-row">
+      <td class="font-courier has-text-centered">{{ dg.imoClass }}</td>
+      <td class="font-courier has-text-centered">{{ dg.unNumber }}</td>
+      <td class="font-courier has-text-centered">{{ dg.packingGroup ?? '—' }}</td>
+      <td class="font-courier">{{ dg.properName }}</td>
+      <td class="font-courier">{{ dg.technicalName ?? '—' }}</td>
+      <td class="font-courier has-text-right">{{ dg.netQuantity ?? '—' }}</td>
+      <td class="font-courier has-text-right">{{ dg.grossQuantity ?? '—' }}</td>
+      <td class="font-courier has-text-centered">{{ dg.uom ?? '—' }}</td>
+      <td class="font-courier has-text-centered">{{ dg.flashPoint ? dg.flashPoint ~ '°C' : '—' }}</td>
+      <td class="font-courier" style="font-size: 0.8em;">
+        {% if dg.isMarinePollutant %}MP {% endif %}
+        {% if dg.isLimitedQty %}LQ {% endif %}
+        {% if dg.isExceptedQty %}EQ {% endif %}
+      </td>
+    </tr>
+    {% if dg.subsidiaryRisk or dg.emergencyContact %}
+    <tr>
+      <td colspan="10" style="font-size: 0.85em; padding-top: 2px; padding-bottom: 6px;">
+        {% if dg.subsidiaryRisk %}<span><b>{% trans %}Subsidiary Risk{% endtrans %}:</b> {{ dg.subsidiaryRisk }}</span>&nbsp;&nbsp;{% endif %}
+        {% if dg.emergencyContact %}<span><b>{% trans %}Emergency{% endtrans %}:</b> {{ dg.emergencyContact }}</span>{% endif %}
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<table class="table is-fullwidth no-border-td" style="margin-top: 30px;">
+  <tr>
+    <td width="50%">
+      <div style="font-size: 0.85em; margin-bottom: 40px;">
+        {% trans %}I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations.{% endtrans %}
+      </div>
+      <div style="border-top: 1px solid #000; padding-top: 4px;">
+        {% trans %}Shipper's Signature{% endtrans %}
+      </div>
+    </td>
+    <td width="10px"></td>
+    <td width="50%">
+      <div style="margin-bottom: 40px;">&nbsp;</div>
+      <div style="border-top: 1px solid #000; padding-top: 4px;">
+        {% trans %}Date{% endtrans %}
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style>
+body {
+  padding-top: 0cm;
+  font-size: 0.9em;
+}
+.dense-table [style="text-decoration: underline;"] {
+  padding-top: 1px;
+  display: block;
+}
+</style>
+</head>
+<body>
+<table class="table is-fullwidth has-text-weight-bold no-border-td">
+<tr>
+  <td width="80px" rowspan="2" style="vertical-align: middle; font-size: 16px">
+    <div class="logo has-text-centered">
+      <img width="40" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+    </div>
+  </td>
+  <td width="320px" rowspan="2" class=" py-1" style="vertical-align: middle; font-size: 16px">Pyramid Logistics Bill of Lading</td>
+  <td width="320px" class="has-text-right" style="font-size: 10px">
+    NOT NEGOTIABLE UNLESS CONSIGNED TO ORDER
+  </td>
+</tr>
+<tr>
+  <td width="80px">
+  </td>
+  <td width="320px"></td>
+  <td width="320px">&nbsp;
+  </td>
+</tr>
+</table>
+<table class="table is-fullwidth center-border-td">
+  <tr>
+    <td colspan="2" rowspan="2" width="430px">
+      SHIPPER / EXPORTER (2) / COMPLETE NAME AND ADDRESS <br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.shipperName }}</b> <br>
+        <div style="white-space: pre-wrap;">{{ instruction.shipperAddress }}</div>
+      </div>
+    </td>
+    <td>
+      DOCUMENT NO (5) <br>
+      <div class="pl-2 pt-1 font-courier">
+      <b>{{ documentNo}}</b>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      EXPORT REFERENCES (6)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="2">
+      CONSIGNEE (3) / COMPLETE NAME AND ADDRESS <br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.consigneeName }}</b> <br>
+        <div style="white-space: pre-wrap;">{{ instruction.consigneeAddress }}</div>
+      </div>
+    </td>
+    <td>
+      FORWARDING AGENT REFERENCES (7)
+      <div class="pl-2 pt-1 font-courier">
+        <b>PYRAMID LOGISTICS VIETNAM COMPANY LIMITED</b> <br>
+        <div style="white-space: pre-wrap;">Tax code: 0315085913<br>DH5 Sky Center, No. 5B Pho Quang,<br>Tan Son Hoa Ward, Ho Chi Minh City, Vietnam
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      POINT AND COUNTRY OF ORIGIN (8)
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ booking.placeReceipt | split(',') | last | trim | removeContentInsideRoundBrackets }}</b>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      NOTIFY PARTY (4) / COMPLETE NAME AND ADDRESS <br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.notifyName }}</b> <br>
+        <div style="white-space: pre-wrap;">{{ instruction.notifyAddress }}</div>
+      </div>
+    </td>
+    <td rowspan="2">
+      DOCUMENT PRESENTATION (9)
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.agentName }}</b> <br>
+        <div style="white-space: pre-wrap;">{{ instruction.agentAddress }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-left: 0px !important;">
+      PLACE OF RECEIPT (12)
+      <div class="pl-2 pt-1 font-courier">
+        {{ booking.placeReceipt | removeContentInsideRoundBrackets }}
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      VESSEL (13)
+      <div class="pl-2 pt-1 font-courier">
+        {{ booking.vesselNo }}
+      </div>
+    </td>
+    <td>
+      PORT OF LOADING (14)
+      <div class="pl-2 pt-1 font-courier">
+        {{ printPort(booking.portLoading) | removeContentInsideRoundBrackets }}
+      </div>
+    </td>
+    <td rowspan="2" style="vertical-align: center;">
+      INTERNAL REFERENCE (10)<br>
+      <div class="pl-2 pt-1">
+        <div class="font-courier">
+          {{ documentNo }}
+        </div><br>
+        {% if booking.billLadingType == 'origin' %}
+        <table class="table is-fullwidth no-border-td">
+          <tr><td class="py-0"><b>ORIGINAL</b></td><td class="has-text-right pr-6 py-0"><b>3(THREE)</b></td></tr>
+        </table>
+        {% else %}
+        <div><b>SURRENDERED</b></div>
+        {% endif %}
+        BILL OF LADING
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      PORT OF DISCHARGE (15)
+      <div class="pl-2 pt-1 font-courier">
+        {{ printPort(booking.portDischarge) | removeContentInsideRoundBrackets }}
+      </div>
+    </td>
+    <td>
+      PLACE OF DELIVERY (16)
+      <div class="pl-2 pt-1 font-courier">
+        {{ booking.placeDelivery | removeContentInsideRoundBrackets }}
+      </div>
+    </td>
+  </tr>
+</table>
+<div class="has-text-weight-bold has-text-centered py-2 is-size-7">PARTICULARS FURNISHED BY SHIPPER</div>
+<table class="table is-fullwidth center-border-td">
+  <tr>
+    <td style="width: 190px;" align="center" class="has-text-weight-bold is-size-7">MARKS & NOS / CONTAINER(S) NOS.</td>
+    <td style="width: 80px;" align="center" class="has-text-weight-bold is-size-7">NO OF PKGS.</td>
+    <td align="center" class="has-text-weight-bold is-size-7">(19) DESCRIPTION OF PACKAGES AND GOODS</td>
+    <td style="width: 85px;" align="center" class="has-text-weight-bold is-size-7">GROSS WEIGHT</td>
+    <td align="center" class="has-text-weight-bold is-size-7">MEASUREMENT</td>
+  </tr>
+  <tr class="no-border-bottom">
+    <td align="center" class="has-text-weight-bold is-size-7">(17)</td>
+    <td align="center" class="has-text-weight-bold is-size-7">(18)</td>
+    <td></td>
+    <td align="center" class="has-text-weight-bold is-size-7">(20)</td>
+    <td align="center" class="has-text-weight-bold is-size-7">(21)</td>
+  </tr>
+  <tr class="no-border-bottom is-size-7">
+    <td class="font-courier">SHIPPING MARK:
+      <div style="white-space: pre-wrap;" class="pr-2">{{ instruction.shippingMarks }}</div></td>
+    <td class="font-courier">{{ summarizeContainers(instruction.containers).packages | default('') }} {{ instruction.packageType }}</td>
+    <td class="font-courier"><div style="white-space: pre-wrap;">{{ instruction.natureQuantityGoods }}</div></td>
+    <td class="font-courier">{{ summarizeContainers(instruction.containers).weight | default('') }} KG</td>
+    <td class="font-courier">{{ summarizeContainers(instruction.containers).volume | default('') }} M3</td>
+  </tr>
+  <tr class="no-border-bottom">
+    <td>
+      <table class="table is-fullwidth no-border-td">
+        <tr>
+          <td class="is-size-7"><b>Container</b></td>
+          <td class="is-size-7"><b>Seals</b></td>
+        </tr>
+        {% for container in instruction.containers %}
+        <tr>
+          <td class="is-size-7 font-courier pt-0">{{ container.containerNumber }}</td>
+          <td class="is-size-7 font-courier pt-0">{{ container.sealNumber }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </td>
+    <td></td>
+    <td>
+      <table class="table is-fullwidth no-border-td">
+        <tr>
+          <td class="is-size-7"><b>Type</b></td>
+          <td class="is-size-7"><b>Packages</b></td>
+        </tr>
+        {% for container in instruction.containers %}
+        <tr>
+          <td class="is-size-7 font-courier pt-0">{{ container.type }}</td>
+          <td class="is-size-7 font-courier pt-0">{{ container.packageCount }} {{ instruction.packageType }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </td>
+    <td>
+      <table class="table is-fullwidth no-border-td">
+        <tr>
+          <td class="is-size-7"><b>Weight</b></td>
+        </tr>
+        {% for container in instruction.containers %}
+        <tr>
+          <td class="is-size-7 font-courier pt-0">{{ container.grossWeight }} KG</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </td>
+    <td>
+      <table class="table is-fullwidth no-border-td">
+        <tr>
+          <td class="is-size-7"><b>Volume</b></td>
+        </tr>
+        {% for container in instruction.containers %}
+        <tr>
+          <td class="is-size-7 font-courier pt-0">{{ container.cbm }} M3</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br>
+    </td>
+  </tr>
+  <tr >
+    <td colspan="2">
+      <b class="is-size-7">TOTAL NUMBER OF PKGS.</b>&nbsp;&nbsp;
+      <span class="font-courier">{{ summarizeContainers(instruction.containers).packages | default('') }} {{ instruction.packageType }}</span>
+    </td>
+    <td colspan="3" class="py-0">
+      <table class="table is-fullwidth no-border-td">
+        <tr>
+          <td>FREIGHT {{booking.freightTerms.toTitle() | default('')}}</td>
+          <td> PMT:
+          <div class="font-courier">SHIPPED ON BOARD {{ booking.etd | date('d-M-y') }}</div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table class="table is-fullwidth center-border-td is-size-7" style="height: 200px;">
+  <tr>
+    <td style="height: 15px; width: 150px; border-right: none;border-top:none;">DECLARED VALUE ($)</td>
+    <td colspan="3" style="border-right: none; border-left: none; height: 15px;border-top:none;" class="font-courier has-text-centered pt-2">
+      (SUBJECT TO THE APPLICABLE CARRIAGE TERMS AND/OR GENERAL TERMS)
+    </td>
+    <td rowspan="9" style="border-left: none; width: 300px; height: 15px; border-bottom-width: 0;border-top:none;">
+      <p class="font-courier pb-3">
+        RECEIVED FOR SHIPMENT from the SHIPPER/EXPORTER, CONSIGNEE, HOLDER OF THIS BILL OF LADING AND OWNER OF THE GOODS (SOMETIMES REFERRED TO HEREIN AS THE 'MERCHANT'), in apparent good order and condition unless otherwise stated herein, the GOODS mentioned above to be transported as provided herein, by any mode of transport for all or any part of the Carriage. SUBJECT TO ALL THE TERMS AND CONDITIONS appearing on the face and back hereof and in the CARRIER'S applicable Tariff. (REFERRED TO HEREIN AS THE 'CARRIAGE TERMS'), OR (1) IF NO CARRIAGE TERMS ARE INCLUDED ON THE BACK HEREOF, OR (2) IF THE SHIPMENT DOES NOT INCLUDE OCEAN TRANSPORATION SERVICES, SUBJECT TO THE TERMS AND CONDITIONS OF SERVICE AVAILABLE AT www.omnilogistics.com/business-terms, AS MAY BE UPDATED FROM TIME TO TIME (REFERRED TO HERIN AS THE 'GENERAL TERMS'), TO WHICH THE MERCHANT AGREES BY ACCEPTING THIS BILL OF LADING. THE CARRIAGE TERMS SHALL GOVERN AND CONTROL TO THE EXTENT OF ANY CONFLICT WITH THE GENERAL TERMS.
+      </p>
+      <p class="font-courier">
+        Where applicable law requires and not otherwise, one original BILL OF LADING must be surrendered, duty endorsed, in exchange for the GOODS or CONTAINER(S) or other PACKAGE(S), the others to stand void. If a 'Non-Negotiable' BILL OF LADING is issued, neither an original nor a copy need be surrendered in exchange for delivery unless applicable law so requires.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4" style="height: 15px; border-right-width: 1px !important;" class="pl-0">CHARGES, INCLUDING FREIGHT</td>
+  </tr>
+  <tr>
+    <td style="height: 15px; border-bottom-width: 0;" rowspan="7">As Agreed</td>
+    <td style="height: 15px;vertical-align: middle;" class="has-text-centered "><b>RATE</b></td>
+    <td style="height: 15px;vertical-align: middle;" class="has-text-centered "><b>PREPAID</b></td>
+    <td style="height: 15px;vertical-align: middle; border-right-width: 1px !important;" class="has-text-centered "><b>COLLECT</b></td>
+  </tr>
+  {% for i in range(1,6) %}
+  <tr>
+    <td style="height: 15px; border-top-width: 0; border-bottom-width: 0;"></td>
+    <td style="border-top-width: 0; border-bottom-width: 0;"></td>
+    <td style="border-top-width: 0; border-bottom-width: 0; border-right-width: 1px !important;" ></td>
+  </tr>
+  {% endfor %}
+</table>
+<table style="font-size: 6px;" class="dense-table pt-3">
+<tr>
+  <td class="pr-3">
+    <p style="text-align: justify;font-size: 7px;"><b>Standard Conditions (1992) governing the FIATA MULTIMODAL TRANSPORT BILL OF LADING</b></p>
+    <p style="text-align: justify;"><span style="text-decoration: underline;"><strong><span lang="EN-US">Definitions</span></strong></span></p>
+    <p style="text-align: justify;">– «Freight Forwarder» means the Multimodal Transport Operator who issues this FBL and is named on the face of it and assumes liability for the performance of the multimodal transport contract as a carrier.</p>
+    <p style="text-align: justify;">– «Merchant» means and includes the Shipper, the Consignor, the Consignee, the Holder of this FBL, the Receiver and the Owner of the Goods.</p>
+    <p style="text-align: justify;">– «Consignor» means the person who concludes the multimodal transport contract with the Freight Forwarder.</p>
+    <p style="text-align: justify;">– «Consignee» means the person entitled to receive the goods from the Freight Forwarder.</p>
+    <p style="text-align: justify;">– «Taken in charge» means that the goods have been handed over to and accepted for carriage by the Freight Forwarder at the place of receipt evidenced in this FBL.</p>
+    <p style="text-align: justify;">– «Goods» means any property including live animals as well as containers, pallets or similar articles of transport or packaging not supplied by the Freight Forwarder, irrespective of whether such property is to be or is carried on or under deck.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">1. Applicability</span></strong></p>
+    <p style="text-align: justify;">Notwithstanding the heading «FIATA Multimodal Transport Bill of Lading (FBL)» these conditions shall also apply if only one mode of transport is used.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">2. Issuance of this FBL</span></strong></p>
+    <p style="text-align: justify;">2.1. By issuance of this FBL the Freight Forwarder</p>
+    <p style="text-align: justify;">a) undertakes to perform and/or in his own name to procure the performance of the entire transport, from the place at which the goods are taken in charge (place of receipt evidenced in this FBL) to the place of delivery designated in this FBL;</p>
+    <p style="text-align: justify;">b) assumes liability as set out in these conditions.</p>
+    <p style="text-align: justify;">2.2. Subject to the conditions of this FBL the Freight Forwarder shall be responsible for the acts and omission of his servants or agents acting within the scope of their employment, or any other person of whose services he makes use for the performance of the contract evidenced by this FBL, as if such acts and omissions were his own.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">3. Negotiability and title to the goods</span></strong></p>
+    <p style="text-align: justify;">3.1. This FBL is issued in a negotiable form unless it is marked «non negotiable». It shall constitute title to the goods and the holder, by endorsement of this FBL, shall be entitled to received or to transfer the goods herein mentioned.</p>
+    <p style="text-align: justify;">3.2. The information in this FBL shall be prima facie evidence of taking in charge by the Freight Forwarder of the goods as described by such information unless a contrary indication, such as «shipper’s weight, load and count», «shipper-packed container» or similar expressions, has been made in the printed text or superimposed on this FBL. However, proof to the contrary shall not be admissible when the FBL has been transferred to the consignee for valuable consideration who in good faith has relied and acted thereon.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">4. Dangerous Good and Indemnity</span></strong></p>
+    <p style="text-align: justify;">4.1. The Merchant shall comply with rules which are mandatory according to the national law or by reason of International Convention, relating to the carriage of goods of a dangerous nature, and shall in any case inform the Freight Forwarder in writing of the exact nature of the danger, before goods of a dangerous nature are taken in charge by the Freight Forwarder and indicate to him, if need be, the precautions to be taken.</p>
+    <p style="text-align: justify;">4.2. If the Merchant fails to provide such information and the Freight Forwarder is unaware of the dangerous nature of the goods and the necessary precautions to be taken and if, at any time, they are deemed to be a hazard to life or property, they may at any place be unloaded, destroyed or rendered harmless, as circumstances may require, without compensation. The Merchant shall indemnify the Freight Forwarder against all loss, damage, liability, or expense arising out of their being taken in charge, or their carriage, or of any service incidental thereto.</p>
+    <p style="text-align: justify;">The burden of proving that the Freight Forwarder knew the exact nature of the danger constituted by the carriage of the said goods shall rest on the Merchant.</p>
+    <p style="text-align: justify;">4.3. If any goods shall become a danger to life or property, they may in like manner be unloaded or landed at any place or destroyed or rendered harmless. If such danger was not caused by the fault and neglect of the Freight Forwarder he shall have no liability and the Merchant shall indemnify him against all loss, damage, liability and expense arising therefrom.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">5. Description of Goods and Merchant’s Packing and Inspection</span></strong></p>
+    <p style="text-align: justify;">5.1. The Consignor shall be deemed to have guaranteed to the Freight Forwarder the accuracy, at the time the goods were taken in charge by the Freight Forwarder, of all particulars relating to the general nature of the goods, their marks, number, weight, volume and quantity and, if applicable, to the dangerous character of the goods, as furnished by him or on his behalf for insertion on the FBL. The Consignor shall indemnify the Freight Forwarder against all loss, damage and expense resulting from any inaccuracy or inadequacy of such particulars.&nbsp;</p>
+    <p style="text-align: justify;">The Consignor shall remain liable even if the FBL has been transferred by him. The right of the Freight Forwarder to such an indemnity shall in no way limit his liability under this FBL to any person other than the Consignor.</p>
+    <p style="text-align: justify;">5.2. The Freight Forwarder shall not be liable for any loss, damage or expense caused by defective or insufficient packing of goods or by inadequate loading or packing within containers or other transport units when such loading or packing has been performed by the Merchant or on his behalf by a person other than the Freight Forwarder, or by the defect or unsuitability of the containers or other transport units supplied by the Merchant, or if supplied by the Freight Forwarder if a defect or unsuitability of the container or other transport unit would have been apparent upon reasonable inspection by the Merchant. The Merchant shall indemnify the Freight Forwarder against all loss, damage, liability and expense so caused.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">6. Freight Forwarder’s Liability</span></strong></p>
+    <p style="text-align: justify;">6.1. The responsibility of the Freight Forwarder for the goods under these conditions covers the period from the time the Freight Forwarder has taken the goods in his charge to the time of their delivery.</p>
+    <p style="text-align: justify;">6.2. The Freight Forwarder shall be liable for loss of or damage to the goods as well as for delay in delivery if the occurrence which caused the loss, damage or delay in delivery took place while the goods were in his charge as defined in Clause 2.1.a, unless the Freight Forwarder proves that no fault or neglect of his own, his servants or agents or any other person referred to in Clause 2.2. has caused or contributed to such loss, damage or delay. However, the Freight Forwarder shall only be liable for loss following from delay in delivery if the Consignor has made a declaration of interest in timely delivery which has been accepted by the Freight Forwarder and stated in this FBL.</p>
+    <p style="text-align: justify;">6.3. Arrival times are not guaranteed by the Freight Forwarder. However, delay in delivery occurs when the goods habe not been delivered within the time expressly agreed upon or, in the absence of such agreement, within the time which would be reasonable to require of a diligent Freight Forwarder, having regard to the circumstances of the case.</p>
+    <p style="text-align: justify;">6.4. If the goods have not been delivered within ninety consecutive days following such date of delivery as determined in Clause 6.3., the claimant may, in the absence of evidence to the contrary, treat the goods as lost.</p>
+  </td>
+  <td class="pr-3">
+    <p style="text-align: justify;">6.5. When the Freight Forwarder establishes that, in the circumstances of the case, the loss or damage could be attributed to one or more causes or events, specified in a – e of the present clause, it shall be presumed that it was so caused, always provided, however, that the claimant shall be entitled to prove that the loss or damage was not, in fact, caused wholly or partly by one or more of such causes or events:</p>
+    <p style="text-align: justify;">a) an act or omission of the Merchant, or person other than the Freight Forwarder acting on behalf of the Merchant or from whom the Freight Forwarder took the goods in charge;</p>
+    <p style="text-align: justify;">b) insufficiency or defective condition of the packaging or marks and/or numbers;</p>
+    <p style="text-align: justify;">c) handling, loading, stowage or unloading of the goods by the Merchant or any person acting on behalf of the Merchant;</p>
+    <p style="text-align: justify;">d) inherent vice of the goods;</p>
+    <p style="text-align: justify;">e) strike, lockout, stoppage or restraint of labour.</p>
+    <p style="text-align: justify;">6.6. Defences for carriage by sea or inland waterways Notwithstanding Clauses 6.2, 6.3. and 6.4. the Freight Forwarder shall not be liable for loss, damage or delay in delivery with respect to goods carried by sea or inland waterways when such loss, damage or delay during such carriage has been caused by:</p>
+    <p style="text-align: justify;">a) act, neglect or default of the master, mariner, pilot or the servants of the carrier in the navigation or in the management of the ship,</p>
+    <p style="text-align: justify;">b) fire, unless caused by the actual fault or privity of the carrier, however, always provided that whenever loss or damage has resulted from unseaworthiness of the ship, the Freight Forwarder can prove that due diligence has been exercised to make the ship seaworthy at the commencement of the voyage.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">7. Paramount Clauses</span></strong></p>
+    <p style="text-align: justify;">7.1. These conditions shall only take effect to the extent that they are not contrary to the mandatory provisions of International Conventions or national law applicable to the contract evidenced by this FBL.</p>
+    <p style="text-align: justify;">7.2. The Hague Rules contained in the International Convention for the unification of certain rules relating to Bills of Lading, dated Brussels 25th August 1924, or in those countries where there are already in force the Hague-Visby Rules contained in the Protocol of Brussels, dated 23rd February 1968, as enacted in the Country of Shipment, shall apply to all carriage of goods by sea and also to the carriage of goods by inland waterways, and such provisions shall apply to all goods whether carried on deck or under deck.</p>
+    <p style="text-align: justify;">7.3. The Carriage of Goods by Sea Act of the United States of America (COGSA) shall apply to the carriage of goods by sea, whether on deck or under deck, if compulsorily applicable to this FBL or would be applicable but for the goods being carried on deck in accordance with a statement on this FBL.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">8. Limitation of Freight Forwarder’s Liability</span></strong></p>
+    <p style="text-align: justify;">8.1. Assessment of compensation for loss of or damage to the goods shall be made by reference to the value of such goods at the place and time they are delivered to the consignee or at the place and time when, in accordance with this FBL, they should been so delivered.</p>
+    <p style="text-align: justify;">8.2. The value of the goods shall be determined according to the current commodity exchange price or, if there is no such price, according to the current market price or, if there are no such prices, by reference to the normal value of goods of the same name and quality.</p>
+    <p style="text-align: justify;">8.3. Subject to the provisions of subclauses 8.4. to 8.9. inclusive, the Freight Forwarder shall in no event be or become liable for any loss of or damage to the goods in an amount exceeding the equivalent of 666.67 SDR per package or unit or 2 SDR per kilogramme of gross weight of the goods lost or damaged, whichever is the higher, unless the nature and value of the goods shall have been declared by the Consignor and accepted by the Freight Forwarder before the goods have been taken in his charge, or the ad valorem freight rate paid, and such value is stated in the FBL by him, then such declared value shall be the limit.</p>
+    <p style="text-align: justify;">8.4. Where a container, pallet or similar article of transport is loaded with more than one package or unit, the packages or other shipping units enumerated in the FBL as packed in such article of transport are deemed packages or shipping units. Except as aforesaid, such article of transport shall be considered the package or unit.</p>
+    <p style="text-align: justify;">8.5. Notwithstanding the above mentioned provisions, if the multimodal transport does not, according to the contract, include carriage of goods by sea or by inland waterways, the liability of the Freight Forwarder shall be limited to an amount not exceeding 8.33 SDR per kilogramme of gross weight of the goods lost or damaged.</p>
+    <p style="text-align: justify;">8.6. a) When the loss of or damage to the goods occurred during one particular stage of the multimodal transport, in respect of which an applicable international convention or mandatory national law would have provided another limit of liability if a separate contract of carriage had been made for that particular stage of transport, then the limit of the Freight Forwarder’s liability for such loss or damage shall be determined by reference to the provisions of such convention or mandatory national law.</p>
+    <p style="text-align: justify;">8.6. b) Unless the nature and value of the goods shall have been declared by the Merchant and inserted in this FBL, and the ad valorem freight rate paid, the liability of the Freight Forwarder under COGSA, where applicable, shall not exceed US$ 500 per package or, in the case of goods not shipped in packages, per customary freight unit.</p>
+    <p style="text-align: justify;">8.7. If the Freight Forwarder is liable in respect of loss following from delay in delivery, or consequential loss or damage other than loss of or damage to the goods, the liability of the Freight Forwarder shall be limited to an amount not exceeding the equivalent of twice the freight under the multimodal contract for the multimodal transport under this FBL.</p>
+    <p style="text-align: justify;">8.8. The aggregate liability of Freight Forwarder shall not exceed the limits of liability for total loss of the goods.</p>
+    <p style="text-align: justify;">8.9. The Freight Forwarder is not entitled to the benefit of the limitation of liability if it is proved that the loss, damage or delay in delivery resulted from a personal act or omission of the Freight Forwarder done with the intent to cause such loss, damage or delay, or recklessly and with knowledge that such loss, damage or delay would probably result.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">9. Applicability to Actions in Tort</span></strong></p>
+    <p style="text-align: justify;">These conditions apply to all claims against the Freight Forwarder relating to the performance of the contract evidenced by this FBL, whether the claim be founded in contract or in tort.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">10. Liability of Servants and other Persons</span></strong></p>
+    <p style="text-align: justify;">10.1. These conditions apply whenever claims relating to the performance of the contract evidenced by this FBL are made against any servant, agent or other person (including any independent contractor) whose services have been used in order to perform the contract, whether such claims are founded in contract or in tort, and the aggregate liability of the Freight Forwarder and of such servants, agents or other persons shall not exceed the limits in clause 8.</p>
+    <p style="text-align: justify;">10.2. In entering into this contract as evidenced by this FBL, the Freight Forwarder, to the extent of these provisions, does not only act on his own behalf, but also as agent or trustee for such persons, and such persons shall to this extent be or be deemed to be parties to this contract.</p>
+  
+  </td>
+  <td class="pr-1">
+    <p style="text-align: justify;">10.3. However, if it is proved that loss of or such loss or damage to the goods resulted from a personal act or omission of such a person referred to in Clause 10.1., done with intent to cause damage, or recklessly and with knowledge that damage would probably result, such person shall not be entitled to benefit of limitation of liability provided for in Clause 8.</p>
+    <p style="text-align: justify;">10.4. The aggregate of the amounts recoverable from the Freight Forwarder and the persons referred to in Clauses 2.2. and 10.1 shall not exceed the limits provided for in these conditions.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">11. Method and Route of Transportation</span></strong></p>
+    <p style="text-align: justify;">Without notice to the Merchant, the Freigt Forwarder has the liberty to carry the goods on or under deck and to choose or substitute the means, route and procedure to be followed in the handling, stowage, storage and transportation of the goods.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">12. Delivery</span></strong></p>
+    <p style="text-align: justify;">12.1. Goods shall be deemed to be delivered when they have been handed over or placed at the disposal of the Consignee or his agent in accordance with this FBL, or when the goods have been handed over to any authority or other party to whom, pursuant to the law or regulation applicable at the place of delivery, the goods must be handed over, or such other place at which the Freight Forwarder is entitled to call upon the Merchant to take delivery.</p>
+    <p style="text-align: justify;">12.2. The Freight Forwarder shall also be entitled to store the goods at the sole risk of the Merchant, and the Freight Forwarder’s liability shall cease, and the cost of such storage shall be paid, upon demand, by the Merchant to the Freight Forwarder.</p>
+    <p style="text-align: justify;">12.3. If at any time the carriage unter this FBL is or is likely to be affected by any hindrance or risk of any kind (including the condition of the goods) not arising from any fault or neglect of the Freight Forwarder or a person referred to in Clause 2.2. and which cannot be avoided by the exercise of reasonable endeavours the Freight Forwarder may:</p>
+    <p style="text-align: justify;">abandon the carriage of the goods under this FBL and, where reasonably possible, place the goods or any part of them at the Merchant’s disposal at any place which the Freight Forwarder may deem safe and convenient, whereupon delivery shall be deemed to have been made, and the responsibility of the Freight Forwarder in respect of such goods shall cease.</p>
+    <p style="text-align: justify;">In any event, the Freight Forwarder shall be entitled to full freight under this FBL and the Merchant shall pay any additional costs resulting from the above mentioned circumstances.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">13. Freight and Charges</span></strong></p>
+    <p style="text-align: justify;">13.1. Freight shall be paid in cash, without any reduction or deferment on account of any claim, counterclaim or set-off, whether prepaid or payable at destination. Freight shall be considered as earned by the Freight Forwarder at the moment when the goods have been taken in his charge, and not to be returned in any event.</p>
+    <p style="text-align: justify;">13.2. Freight and all other amounts mentioned in this FBL are to be paid in the currency named in this FBL or, at the Freight Forwarder’s option, in the currency of the country of dispatch or destination at the highest rate of exchange for bankers sight bills current for prepaid freight on the day of dispatch and for freight payable at destination on the day when the Merchant is notified on arrival of the goods there or on the date of withdrawal of the delivery order, whichever rate is the higher, or at the option of the Freight Forwarder on the date of this FBL.</p>
+    <p style="text-align: justify;">13.3. All dues, taxes and charges or other expenses in connection with the goods shall be paid by the Merchant.Where equipment is supplied by the Freight Forwarder, the Merchant shall pay all demurrage and charges which are not due to a fault or neglect of the Freight Forwarder</p>
+    <p style="text-align: justify;">13.4. The Merchant shall reimburse the Freight Forwarder in proportion to the amount of freight for any costs for deviation or delay or any other increase of costs of whatever nature caused by war, warlike operations, epidemics, strikes, government directions or force majeure.</p>
+    <p style="text-align: justify;">13.5. The Merchant warrants the correctness of the declaration of contents, insurance, weight, measurements or value of the goods but the Freight Forwarder has the liberty to have the contents inspected and the weight, measurements or value verified. If on such inspection it is found that the declaration is not correct it is agreed that a sum equal either to five times the difference between the correct figure and the freight charged, or to double the correct freight less the freight charged, whichever sum is the smaller, shall be payable as liquidated damages to the Freight Forwarder for his inspection costs and losses of freight on other goods notwithstanding any other sum having been stated on this FBL as freight payable.</p>
+    <p style="text-align: justify;">13.6. Despite the acceptance by the Freight Forwarder of instructions to collect freight, charges or other expenses from any other person in respect of the transport under this FBL, the Merchant shall remain responsible for such monies on receipt of evidence of demand and the absence of payment for whatever reason.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">14. Lien</span></strong></p>
+    <p style="text-align: justify;">The Freight Forwarder shall have a lien on the goods and any documents relating thereto for any amount due at any time to the Freight Forwarder from the Merchant including storage fees and the cost of recovering same, and may enforce such lien in any reasonable manner which he may think fit.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">15. General Average</span></strong></p>
+    <p style="text-align: justify;">The Merchant shall indemnify the Freight Forwarder in respect of any claims of a General Average nature which may be made on him and shall provide such security as may be required by the Freight Forwarder in this connection.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">16. Notice</span></strong></p>
+    <p style="text-align: justify;">16.1. Unless notice of loss of or damage to the goods, specifying the general nature of such loss or damage, is given in writing by the consignee to the Freight Forwarder when the goods are delivered to the consignee in accordance with clause 12, such handing over is prima facie evidence of the delivery by the Freight Forwarder of the goods as described in this FBL.</p>
+    <p style="text-align: justify;">16.2. Where the loss or damage is not apparent, the same prima facie effect shall apply if notice in writing is not given within 6 consecutive days after the day when the goods were delivered to the consignee in accordance with clause 12.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">17. Time bar</span></strong></p>
+    <p style="text-align: justify;">The Freight Forwarder shall, unless otherwise expressly agreed, be discharged of all liability under these conditions unless suit is brought within 9 months after the delivery of the goods, or the date when the goods should have been delivered, or the date when in accordance with clause 6.4. failure to deliver the goods would give the consignee the right to treat the goods as lost.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">18. Partial Invalidity</span></strong></p>
+    <p style="text-align: justify;">If any clause or a part thereof is held to be invalid, the validity of this FBL and the remaining clauses or a part thereof shall not be affected.</p>
+    <p style="text-align: justify;"><strong><span style="text-decoration: underline;">19. Jurisdiction and applicable law</span></strong></p>
+    <p style="text-align: justify;">Actions against the Freight Forwarder may be instituted only in the place where the Freight Forwarder has his place of business as stated on the reverse of this FBL and shall be decided according to the law of the country in which that place of business is situated.</p>
+    <p style="text-align: justify;">&nbsp;</p>
+    <p style="text-align: justify;">The ICC logo denotes that this document has been deemed by the ICC to be in conformity with the UNCTAD/ICC Rules for Multimodal Transport Documents. The ICC logo does not imply ICC endorsement of the document nor does it in any way make the ICC party to any possible legal action resulting from the use of this document.</p>
+  </td>
+  <tr>
+</table>
+</body>
+</html>

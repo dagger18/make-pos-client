@@ -1,0 +1,21 @@
+App\Module\Quote\Entity\QuotePrice:
+
+    list:
+        - id
+        - charge
+        - calculationType
+        - description
+        - provider
+        - quantity
+        - buying
+        - selling
+        - amountBuying
+        - amountSelling
+        - chargeTypeName
+        - chargeName
+        - providerName
+        - chargeType
+        - position
+        - department
+        - payableAt
+        - visibleTo

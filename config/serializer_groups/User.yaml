@@ -1,0 +1,28 @@
+App\Module\Core\Entity\User:
+
+    _ignore:
+        - password
+
+    list:
+        - id
+        - firstName
+        - lastName
+        - title
+        - email
+        - userGroup
+        - status
+        - logo
+        - lastPing
+        - phone
+        - fullName
+        - branch
+        - department
+        - branches
+        - departments
+
+    subList:
+        - id
+        - firstName
+        - lastName
+        - fullName
+        - logo

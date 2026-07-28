@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+
+msgid "An authentication exception occurred."
+msgstr "Có lỗi trong quá trình xác thực."
+
+msgid "Authentication credentials could not be found."
+msgstr "Thông tin dùng để xác thực không tìm thấy."
+
+msgid "Authentication request could not be processed due to a system problem."
+msgstr "Yêu cầu xác thực không thể thực hiện do lỗi của hệ thống."
+
+msgid "Invalid credentials."
+msgstr "Thông tin dùng để xác thực không hợp lệ."
+
+msgid "Cookie has already been used by someone else."
+msgstr "Cookie đã được dùng bởi người dùng khác."
+
+msgid "Not privileged to request the resource."
+msgstr "Không được phép yêu cầu tài nguyên."
+
+msgid "Invalid CSRF token."
+msgstr "Mã CSRF không hợp lệ."
+
+msgid "No authentication provider found to support the authentication token."
+msgstr "Không tìm thấy nhà cung cấp dịch vụ xác thực nào cho mã xác thực mà bạn sử dụng."
+
+msgid "No session available, it either timed out or cookies are not enabled."
+msgstr "Không tìm thấy phiên làm việc. Phiên làm việc hoặc cookie có thể bị tắt."
+
+msgid "No token could be found."
+msgstr "Không tìm thấy mã token."
+
+msgid "Username could not be found."
+msgstr "Không tìm thấy tên người dùng."
+
+msgid "Account has expired."
+msgstr "Tài khoản đã hết hạn."
+
+msgid "Credentials have expired."
+msgstr "Thông tin xác thực đã hết hạn."
+
+msgid "Account is disabled."
+msgstr "Tài khoản bị tạm ngừng."
+
+msgid "Account is locked."
+msgstr "Tài khoản bị khóa."
+
+msgid "Too many failed login attempts, please try again later."
+msgstr "Đăng nhập sai quá nhiều lần, vui lòng thử lại lần nữa."
+
+msgid "Invalid or expired login link."
+msgstr "Liên kết đăng nhập không hợp lệ hoặc quá hạn."
+
+msgid "Too many failed login attempts, please try again in %minutes% minute."
+msgstr "Quá nhiều lần thử đăng nhập không thành công, vui lòng thử lại sau %minutes% phút."
+
+msgid "Too many failed login attempts, please try again in %minutes% minutes."
+msgstr "Quá nhiều lần đăng nhập không thành công, vui lòng thử lại sau %minutes% phút.|Quá nhiều lần đăng nhập không thành công, vui lòng thử lại sau %minutes% phút."

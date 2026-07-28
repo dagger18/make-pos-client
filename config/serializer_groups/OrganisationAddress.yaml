@@ -1,0 +1,14 @@
+App\Module\Core\Entity\OrganisationAddress:
+    list:
+        - id
+        - addressType
+        - label
+        - addressLine1
+        - addressLine2
+        - city
+        - state
+        - postalCode
+        - country
+        - isDefault
+        - notes
+        - createdAt

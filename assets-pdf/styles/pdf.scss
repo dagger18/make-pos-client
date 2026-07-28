@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$primary: #EB6728;
+$info: #10518e;
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$text: black;
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+$table-cell-padding: 0;
+$table-cell-border: 1px solid #aaa;
+// Import only what you need from Bulma
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/helpers/_all.sass";
+@import "../../node_modules/bulma/sass/elements/table.sass";
+@import "../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../node_modules/bulma/sass/layout/section.sass";
+
+html {
+  background: white;
+  font-size: 12px;
+  overflow: auto;
+}
+body {
+  background: white;
+  width: 19.5cm;
+  height: 29.7cm;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  padding: 0.75cm;
+  font-family: DejaVu Sans;
+  line-height: 1.2;
+}
+.table {
+  &.spacious {
+    tr {
+      td, th {
+        padding: 8px;
+      }
+    }
+  }
+  &.no-border-td {
+    td {
+      border: none;
+    }
+  }
+  .no-border-bottom {
+    td {
+      border-bottom-width: 0 !important;
+      border-top-width: 0 !important;
+    }
+  }
+  &.center-border-td {
+    td {
+      border-width: 1px;
+      padding: 3px 0 4px 4px;
+      &:first-child {
+        border-left-width: 0;
+        padding-left: 0;
+      }
+      &:last-child {
+        border-right-width: 0;
+        padding-left: 4px;
+        
+      }
+    }
+    tbody tr:last-child td {
+      border-bottom-width: 1px;
+    }
+  }
+  &.is-centered-all {
+    td, th {
+      text-align: center;
+    }
+  }
+}
+.font-courier {
+  font-family: "Courier";
+  font-weight: bold;
+}

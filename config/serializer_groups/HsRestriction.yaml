@@ -1,0 +1,23 @@
+App\Module\Tax\Entity\HsRestriction:
+
+    list:
+        - id
+        - hsCode
+        - countryCode
+        - restrictionType
+        - authority
+        - licenceType
+        - effectiveFrom
+        - effectiveTo
+
+    detail:
+        - id
+        - hsCode
+        - countryCode
+        - restrictionType
+        - authority
+        - licenceType
+        - effectiveFrom
+        - effectiveTo
+        - createdAt
+        - updatedAt

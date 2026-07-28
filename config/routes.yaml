@@ -1,0 +1,12 @@
+http:
+  resource: '../src/Module/'
+  type: attribute
+
+api:
+  prefix: /
+  name_prefix: ''
+  resource: '../src/Module/'
+  type: attribute
+  exclude:
+    - '../src/Module/Core/Controller/CrudController.php'
+    - '../src/Module/Integration/Controller/'

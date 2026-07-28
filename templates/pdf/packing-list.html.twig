@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style>
+body { font-size: 0.9em; }
+</style>
+</head>
+<body>
+<table class="table is-fullwidth no-border-td">
+<tr>
+  <td width="100px" style="vertical-align: middle;">
+    <img width="80" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+  </td>
+  <td style="vertical-align: middle;">
+    <div style="font-size: 1.4em; font-weight: bold;">{% trans %}PACKING LIST{% endtrans %}</div>
+    <div>{{ company.name }}</div>
+  </td>
+  <td width="220px" style="text-align: right; font-size: 0.85em;">
+    <div><b>{% trans %}Ref No.{% endtrans %}:</b> {{ documentNo }}</div>
+    <div><b>{% trans %}Shipment{% endtrans %}:</b> {{ shipment.code }}</div>
+  </td>
+</tr>
+</table>
+
+<table class="table is-fullwidth center-border-td" style="margin-top: 10px;">
+  <tr>
+    <td width="50%">
+      <b>{% trans %}Shipper{% endtrans %}</b><br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.shipperName }}</b><br>
+        <div style="white-space: pre-wrap;">{{ instruction.shipperAddress }}</div>
+      </div>
+    </td>
+    <td width="50%">
+      <b>{% trans %}Consignee{% endtrans %}</b><br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.consigneeName }}</b><br>
+        <div style="white-space: pre-wrap;">{{ instruction.consigneeAddress }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>{% trans %}Port of Loading{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.portLoading ? booking.portLoading.name : '—' }}</span>
+    </td>
+    <td>
+      <b>{% trans %}Port of Discharge{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.portDischarge ? booking.portDischarge.name : '—' }}</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>{% trans %}Vessel / Voyage{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.vesselNo ?? '—' }}</span>
+    </td>
+    <td>
+      <b>{% trans %}ETD{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.etd ? booking.etd | date('d/m/Y') : '—' }}</span>
+    </td>
+  </tr>
+</table>
+
+{% if instruction.containers and instruction.containers|length > 0 %}
+<table class="table is-fullwidth center-border-td" style="margin-top: 10px;">
+  <thead>
+    <tr>
+      <th>{% trans %}Container No.{% endtrans %}</th>
+      <th>{% trans %}Seal No.{% endtrans %}</th>
+      <th>{% trans %}Type{% endtrans %}</th>
+      <th>{% trans %}Packages{% endtrans %}</th>
+      <th>{% trans %}Gross Weight{% endtrans %}</th>
+      <th>{% trans %}Volume (CBM){% endtrans %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for container in instruction.containers %}
+    <tr>
+      <td class="font-courier">{{ container.containerNo }}</td>
+      <td class="font-courier">{{ container.sealNo }}</td>
+      <td class="font-courier">{{ container.type }}</td>
+      <td class="font-courier">{{ container.packageCount }}</td>
+      <td class="font-courier">{{ container.grossWeight }}</td>
+      <td class="font-courier">{{ container.volume }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<table class="table is-fullwidth center-border-td" style="margin-top: 10px;">
+  <thead>
+    <tr>
+      <th>{% trans %}Packages{% endtrans %}</th>
+      <th>{% trans %}Package Type{% endtrans %}</th>
+      <th>{% trans %}Gross Weight{% endtrans %}</th>
+      <th>{% trans %}Description of Goods{% endtrans %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="font-courier">{{ instruction.packageCount }}</td>
+      <td class="font-courier">{{ instruction.packageType }}</td>
+      <td class="font-courier">{{ instruction.grossWeight }} {{ instruction.grossWeightUnit }}</td>
+      <td class="font-courier" style="white-space: pre-wrap;">{{ instruction.natureQuantityGoods }}</td>
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
+{% if instruction.shippingMarks %}
+<div style="margin-top: 10px;"><b>{% trans %}Shipping Marks{% endtrans %}:</b></div>
+<div style="white-space: pre-wrap; padding: 6px; border: 1px solid #ccc; margin-top: 4px;">{{ instruction.shippingMarks }}</div>
+{% endif %}
+</body>
+</html>

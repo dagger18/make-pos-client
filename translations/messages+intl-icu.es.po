@@ -1,0 +1,665 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+
+msgid "Feature %feature% is not enabled on this plan."
+msgstr "La función %feature% no está habilitada en este plan."
+
+msgid "Provider not found"
+msgstr "Proveedor no encontrado"
+
+msgid "Shipment not found"
+msgstr "Envío no encontrado"
+
+msgid "Not found"
+msgstr "No encontrado"
+
+msgid "trackingType and trackingRef are required."
+msgstr "trackingType y trackingRef son obligatorios."
+
+msgid "Not found."
+msgstr "No encontrado."
+
+msgid "Invalid secret."
+msgstr "Secreto no válido."
+
+msgid "email is required"
+msgstr "El correo electrónico es obligatorio"
+
+msgid "Wrong credentials"
+msgstr "Credenciales incorrectas"
+
+msgid "invalid token"
+msgstr "Token no válido"
+
+msgid "Invalid service token."
+msgstr "Token de servicio no válido."
+
+msgid "maximumUsers must be a non-negative integer."
+msgstr "maximumUsers debe ser un entero no negativo."
+
+msgid "Could not generate upgrade link."
+msgstr "No se pudo generar el enlace de actualización."
+
+msgid "id is required."
+msgstr "El ID es obligatorio."
+
+msgid "transportMode is required"
+msgstr "El modo de transporte es obligatorio"
+
+msgid "Already closed"
+msgstr "Ya cerrado"
+
+msgid "Already locked."
+msgstr "Ya bloqueado."
+
+msgid "Pending"
+msgstr "Pendiente"
+
+msgid "Active"
+msgstr "Activo"
+
+msgid "Sent"
+msgstr "Enviado"
+
+msgid "Done"
+msgstr "Hecho"
+
+msgid "Policy not found"
+msgstr "Política no encontrada"
+
+msgid "connectorType, partnerName and protocol are required."
+msgstr "connectorType, partnerName y protocol son obligatorios."
+
+msgid "Email and password are required."
+msgstr "El correo electrónico y la contraseña son obligatorios."
+
+msgid "Invalid credentials."
+msgstr "Credenciales no válidas."
+
+msgid "Invalid or expired link."
+msgstr "Enlace no válido o caducado."
+
+msgid "LC not found"
+msgstr "Carta de crédito no encontrada"
+
+msgid "transportMode, serviceType and branchId are required."
+msgstr "El modo de transporte, el tipo de servicio y el ID de sucursal son obligatorios."
+
+msgid "Branch not found."
+msgstr "Sucursal no encontrada."
+
+msgid "Cannot edit a cancelled consolidation."
+msgstr "No se puede editar una consolidación cancelada."
+
+msgid "Only a closed consolidation can be departed."
+msgstr "Solo una consolidación cerrada puede ser despachada."
+
+msgid "Only a departed consolidation can be marked as arrived."
+msgstr "Solo una consolidación despachada puede marcarse como llegada."
+
+msgid "Remove all child shipments before cancelling."
+msgstr "Elimine todos los envíos secundarios antes de cancelar."
+
+msgid "Cannot add shipments to a closed consolidation."
+msgstr "No se pueden agregar envíos a una consolidación cerrada."
+
+msgid "Shipment not found."
+msgstr "Envío no encontrado."
+
+msgid "Shipment already belongs to another consolidation."
+msgstr "El envío ya pertenece a otra consolidación."
+
+msgid "Hold reason is required."
+msgstr "El motivo de retención es obligatorio."
+
+msgid "Invalid doc type."
+msgstr "Tipo de documento no válido."
+
+msgid "Required documents cannot be deleted."
+msgstr "Los documentos obligatorios no pueden eliminarse."
+
+msgid "Invalid milestoneCode."
+msgstr "Código de hito no válido."
+
+msgid "Milestone blocked by incomplete mandatory tasks."
+msgstr "Hito bloqueado por tareas obligatorias incompletas."
+
+msgid "System milestones cannot be deleted."
+msgstr "Los hitos del sistema no pueden eliminarse."
+
+msgid "Note body cannot be empty."
+msgstr "El cuerpo de la nota no puede estar vacío."
+
+msgid "System notes cannot be deleted."
+msgstr "Las notas del sistema no pueden eliminarse."
+
+msgid "Invalid role."
+msgstr "Rol no válido."
+
+msgid "Role already assigned."
+msgstr "Rol ya asignado."
+
+msgid "Title is required."
+msgstr "El título es obligatorio."
+
+msgid "Mandatory tasks cannot be deleted."
+msgstr "Las tareas obligatorias no pueden eliminarse."
+
+msgid "Draft"
+msgstr "Borrador"
+
+msgid "Completed"
+msgstr "Completado"
+
+msgid "Cancelled"
+msgstr "Cancelado"
+
+msgid "Client credit status does not allow new quotes"
+msgstr "El estado de crédito del cliente no permite nuevos presupuestos"
+
+msgid "pol and pod are required"
+msgstr "El puerto de carga y el puerto de descarga son obligatorios"
+
+msgid "No file uploaded"
+msgstr "No se ha subido ningún archivo"
+
+msgid "transportType, effectiveDate and expiryDate are required"
+msgstr "El tipo de transporte, la fecha de vigencia y la fecha de vencimiento son obligatorios"
+
+msgid "entryType is required."
+msgstr "El tipo de entrada es obligatorio."
+
+msgid "Only DRAFT entries can be deleted."
+msgstr "Solo las entradas en borrador pueden eliminarse."
+
+msgid "Only DRAFT or REJECTED entries can be submitted."
+msgstr "Solo las entradas en borrador o rechazadas pueden enviarse."
+
+msgid "No declaration number yet."
+msgstr "Aún no hay número de declaración."
+
+msgid "hsCodeId is required."
+msgstr "El ID del código HS es obligatorio."
+
+msgid "HS code not found."
+msgstr "Código HS no encontrado."
+
+msgid "%s not found"
+msgstr "%s no encontrado"
+
+msgid "Unsupported format."
+msgstr "Formato no compatible."
+
+msgid "Unsupported format, expects \"%s\", but \"%s\" given."
+msgstr "Formato no compatible, se esperaba \"%s\", pero se proporcionó \"%s\"."
+
+msgid "No %entityName% found for id %id%"
+msgstr "No se encontró %entityName% para el ID %id%"
+
+msgid "Missing credentials."
+msgstr "Credenciales faltantes."
+
+msgid "Invalid or expired token."
+msgstr "Token no válido o caducado."
+
+msgid "Portal account is inactive."
+msgstr "La cuenta del portal está inactiva."
+
+msgid "Unauthorized."
+msgstr "No autorizado."
+
+msgid "Portal user \"%s\" not found."
+msgstr "Usuario del portal \"%s\" no encontrado."
+
+msgid "Login to office"
+msgstr "Iniciar sesión en la oficina"
+
+msgid "All rights reserved"
+msgstr "Todos los derechos reservados"
+
+msgid "Contact us"
+msgstr "Contáctenos"
+
+msgid "About us"
+msgstr "Sobre nosotros"
+
+msgid "Unsubscribe"
+msgstr "Cancelar suscripción"
+
+msgid "ARRIVAL NOTICE"
+msgstr "AVISO DE LLEGADA"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Shipment"
+msgstr "Envío"
+
+msgid "TO"
+msgstr "PARA"
+
+msgid "Port of Loading"
+msgstr "Puerto de carga"
+
+msgid "Port of Discharge"
+msgstr "Puerto de descarga"
+
+msgid "Vessel / Voyage"
+msgstr "Buque / Viaje"
+
+msgid "ETD"
+msgstr "Fecha estimada de salida"
+
+msgid "House B/L No."
+msgstr "N.° de conocimiento de embarque de la casa"
+
+msgid "Master B/L No."
+msgstr "N.° de conocimiento de embarque maestro"
+
+msgid "Destination Charges"
+msgstr "Cargos en destino"
+
+msgid "Required Documents"
+msgstr "Documentos requeridos"
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "This is an automatically generated document."
+msgstr "Este es un documento generado automáticamente."
+
+msgid "Tel"
+msgstr "Tel."
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "Booking Confirmation"
+msgstr "Confirmación de reserva"
+
+msgid "Booking No"
+msgstr "N.° de reserva"
+
+msgid "To"
+msgstr "Para"
+
+msgid "We are pleased to inform you that your shipment has been confirmed as below"
+msgstr "Nos complace informarle que su envío ha sido confirmado según se detalla a continuación"
+
+msgid "Air Waybill No."
+msgstr "N.° de guía aérea"
+
+msgid "Airport of Loading"
+msgstr "Aeropuerto de origen"
+
+msgid "Airport of Destination"
+msgstr "Aeropuerto de destino"
+
+msgid "No. of Package(s)"
+msgstr "N.° de paquetes"
+
+msgid "Container"
+msgstr "Contenedor"
+
+msgid "Commodity"
+msgstr "Mercancía"
+
+msgid "Gross Weight"
+msgstr "Peso bruto"
+
+msgid "Measurement"
+msgstr "Medidas"
+
+msgid "PIC"
+msgstr "Persona a cargo"
+
+msgid "Flight Schedule"
+msgstr "Itinerario de vuelo"
+
+msgid "No."
+msgstr "N.°"
+
+msgid "Flight"
+msgstr "Vuelo"
+
+msgid "Route"
+msgstr "Ruta"
+
+msgid "ETA"
+msgstr "Hora estimada de llegada"
+
+msgid "Contact Information"
+msgstr "Información de contacto"
+
+msgid "Cut off time"
+msgstr "Hora de cierre"
+
+msgid "Warehouse"
+msgstr "Almacén"
+
+msgid "Contact No."
+msgstr "N.° de contacto"
+
+msgid "Terms and Conditions"
+msgstr "Términos y condiciones"
+
+msgid "DANGEROUS GOODS DECLARATION"
+msgstr "DECLARACIÓN DE MERCANCÍAS PELIGROSAS"
+
+msgid "WARNING: This shipment contains dangerous goods"
+msgstr "ADVERTENCIA: Este envío contiene mercancías peligrosas"
+
+msgid "HBL"
+msgstr "Conocimiento de embarque de la casa"
+
+msgid "MBL"
+msgstr "Conocimiento de embarque maestro"
+
+msgid "IMO Class"
+msgstr "Clase IMO"
+
+msgid "UN No."
+msgstr "N.° ONU"
+
+msgid "Packing Group"
+msgstr "Grupo de embalaje"
+
+msgid "Proper Shipping Name"
+msgstr "Nombre de expedición correcto"
+
+msgid "Technical Name"
+msgstr "Nombre técnico"
+
+msgid "Net Qty"
+msgstr "Cantidad neta"
+
+msgid "Gross Qty"
+msgstr "Cantidad bruta"
+
+msgid "UOM"
+msgstr "Unidad de medida"
+
+msgid "Flash Point"
+msgstr "Punto de inflamación"
+
+msgid "Flags"
+msgstr "Indicadores"
+
+msgid "Subsidiary Risk"
+msgstr "Riesgo subsidiario"
+
+msgid "Emergency"
+msgstr "Emergencia"
+
+msgid "I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations."
+msgstr "Por la presente declaro que el contenido de este envío está total y exactamente descrito arriba con el nombre de expedición correcto, y está clasificado, embalado, marcado y etiquetado, y en todos los aspectos en condición adecuada para el transporte de acuerdo con las normativas internacionales y nacionales vigentes."
+
+msgid "Shipper's Signature"
+msgstr "Firma del remitente"
+
+msgid "DELIVERY ORDER"
+msgstr "ORDEN DE ENTREGA"
+
+msgid "Issue Date"
+msgstr "Fecha de emisión"
+
+msgid "Release Date"
+msgstr "Fecha de liberación"
+
+msgid "Authorized Signature"
+msgstr "Firma autorizada"
+
+msgid "Consignee Signature"
+msgstr "Firma del consignatario"
+
+msgid "Debit Note"
+msgstr "Nota de débito"
+
+msgid "Credit Note"
+msgstr "Nota de crédito"
+
+msgid "Invoice"
+msgstr "Factura"
+
+msgid "Payment On Behalf Of"
+msgstr "Pago en nombre de"
+
+msgid "Collect On Behalf Of"
+msgstr "Cobro en nombre de"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Tax Number"
+msgstr "Número de impuesto"
+
+msgid "Bank Account"
+msgstr "Cuenta bancaria"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Due Date"
+msgstr "Fecha de vencimiento"
+
+msgid "Payment Method"
+msgstr "Método de pago"
+
+msgid "Bill To"
+msgstr "Facturar a"
+
+msgid "Pay For"
+msgstr "Pagar por"
+
+msgid "Undefined Provider"
+msgstr "Proveedor no definido"
+
+msgid "Vessel No."
+msgstr "N.° de buque"
+
+msgid "B/L"
+msgstr "Conocimiento de embarque"
+
+msgid "Shipment ID"
+msgstr "ID de envío"
+
+msgid "Reference ID"
+msgstr "ID de referencia"
+
+msgid "Booking No."
+msgstr "N.° de reserva"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Calculate"
+msgstr "Calcular"
+
+msgid "Curr."
+msgstr "Mon."
+
+msgid "Price"
+msgstr "Precio"
+
+msgid "Qty"
+msgstr "Cant."
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Tax"
+msgstr "Impuesto"
+
+msgid "Include Tax"
+msgstr "Incluir impuesto"
+
+msgid "Exchange rate"
+msgstr "Tipo de cambio"
+
+msgid "PACKING LIST"
+msgstr "LISTA DE EMPAQUE"
+
+msgid "Ref No."
+msgstr "N.° de referencia"
+
+msgid "Shipper"
+msgstr "Remitente"
+
+msgid "Consignee"
+msgstr "Consignatario"
+
+msgid "Container No."
+msgstr "N.° de contenedor"
+
+msgid "Seal No."
+msgstr "N.° de precinto"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Packages"
+msgstr "Paquetes"
+
+msgid "Volume (CBM)"
+msgstr "Volumen (m³)"
+
+msgid "Package Type"
+msgstr "Tipo de paquete"
+
+msgid "Description of Goods"
+msgstr "Descripción de la mercancía"
+
+msgid "Shipping Marks"
+msgstr "Marcas de envío"
+
+msgid "From"
+msgstr "De"
+
+msgid "Address"
+msgstr "Dirección"
+
+msgid "Prepared By"
+msgstr "Preparado por"
+
+msgid "Mobile"
+msgstr "Móvil"
+
+msgid "Contact Person"
+msgstr "Persona de contacto"
+
+msgid "Quotation"
+msgstr "Cotización"
+
+msgid "Created at"
+msgstr "Creado el"
+
+msgid "Valid until"
+msgstr "Válido hasta"
+
+msgid "Quote ID"
+msgstr "ID de cotización"
+
+msgid "Origin"
+msgstr "Origen"
+
+msgid "Transit Port"
+msgstr "Puerto de tránsito"
+
+msgid "Incoterms"
+msgstr "Incoterms"
+
+msgid "Commodities"
+msgstr "Mercancías"
+
+msgid "Remark"
+msgstr "Observación"
+
+msgid "Destination"
+msgstr "Destino"
+
+msgid "Place of Delivery"
+msgstr "Lugar de entrega"
+
+msgid "Volume"
+msgstr "Volumen"
+
+msgid "Air-port of Loading"
+msgstr "Aeropuerto de origen"
+
+msgid "Mode"
+msgstr "Modo"
+
+msgid "Chargeable Weight"
+msgstr "Peso facturable"
+
+msgid "Air-port of Discharge"
+msgstr "Aeropuerto de destino"
+
+msgid "Transit Time"
+msgstr "Tiempo de tránsito"
+
+msgid "days"
+msgstr "días"
+
+msgid "Schedule"
+msgstr "Horario"
+
+msgid "Cargo ready date"
+msgstr "Fecha de disponibilidad de la carga"
+
+msgid "Quote Detail"
+msgstr "Detalle de cotización"
+
+msgid "Charge"
+msgstr "Cargo"
+
+msgid "Item Name"
+msgstr "Nombre del artículo"
+
+msgid "Curr"
+msgstr "Moneda"
+
+msgid "Amount"
+msgstr "Importe"
+
+msgid "Sub-Total"
+msgstr "Subtotal"
+
+msgid "Receipt"
+msgstr "Recibo"
+
+msgid "Payment"
+msgstr "Pago"
+
+msgid "Received from"
+msgstr "Recibido de"
+
+msgid "Payment to"
+msgstr "Pago a"
+
+msgid "In words"
+msgstr "En palabras"
+
+msgid "Accountant"
+msgstr "Contador"
+
+msgid "Manager"
+msgstr "Gerente"
+
+msgid "Statement of account"
+msgstr "Estado de cuenta"
+
+msgid "Statement Date"
+msgstr "Fecha del estado"
+
+msgid "Invoice No."
+msgstr "N.° de factura"
+
+msgid "Bill No."
+msgstr "N.° de factura"
+
+msgid "Ex."
+msgstr "Ex."

@@ -1,0 +1,11 @@
+App\Module\Finance\Entity\ExchangeRateGroup:
+
+    list:
+        - id
+        - exchangeRates
+        - currency
+        - createdBy
+        - createdDate
+    currentExchangeRates:
+        - exchangeRates
+        - currency

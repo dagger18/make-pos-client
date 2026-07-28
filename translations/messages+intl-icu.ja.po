@@ -1,0 +1,665 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+
+msgid "Feature %feature% is not enabled on this plan."
+msgstr "この料金プランでは %feature% 機能は有効になっていません。"
+
+msgid "Provider not found"
+msgstr "プロバイダーが見つかりません"
+
+msgid "Shipment not found"
+msgstr "貨物が見つかりません"
+
+msgid "Not found"
+msgstr "見つかりません"
+
+msgid "trackingType and trackingRef are required."
+msgstr "trackingType と trackingRef は必須です。"
+
+msgid "Not found."
+msgstr "見つかりません。"
+
+msgid "Invalid secret."
+msgstr "シークレットが無効です。"
+
+msgid "email is required"
+msgstr "メールアドレスは必須です"
+
+msgid "Wrong credentials"
+msgstr "認証情報が間違っています"
+
+msgid "invalid token"
+msgstr "トークンが無効です"
+
+msgid "Invalid service token."
+msgstr "サービストークンが無効です。"
+
+msgid "maximumUsers must be a non-negative integer."
+msgstr "maximumUsers は非負の整数である必要があります。"
+
+msgid "Could not generate upgrade link."
+msgstr "アップグレードリンクを生成できませんでした。"
+
+msgid "id is required."
+msgstr "IDは必須です。"
+
+msgid "transportMode is required"
+msgstr "輸送モードは必須です"
+
+msgid "Already closed"
+msgstr "すでに終了しています"
+
+msgid "Already locked."
+msgstr "すでにロックされています。"
+
+msgid "Pending"
+msgstr "保留中"
+
+msgid "Active"
+msgstr "有効"
+
+msgid "Sent"
+msgstr "送信済み"
+
+msgid "Done"
+msgstr "完了"
+
+msgid "Policy not found"
+msgstr "ポリシーが見つかりません"
+
+msgid "connectorType, partnerName and protocol are required."
+msgstr "connectorType、partnerName、protocol は必須です。"
+
+msgid "Email and password are required."
+msgstr "メールアドレスとパスワードは必須です。"
+
+msgid "Invalid credentials."
+msgstr "認証情報が無効です。"
+
+msgid "Invalid or expired link."
+msgstr "リンクが無効または期限切れです。"
+
+msgid "LC not found"
+msgstr "信用状が見つかりません"
+
+msgid "transportMode, serviceType and branchId are required."
+msgstr "輸送モード、サービスタイプ、支店IDは必須です。"
+
+msgid "Branch not found."
+msgstr "支店が見つかりません。"
+
+msgid "Cannot edit a cancelled consolidation."
+msgstr "キャンセルされた混載貨物は編集できません。"
+
+msgid "Only a closed consolidation can be departed."
+msgstr "終了した混載貨物のみ出発できます。"
+
+msgid "Only a departed consolidation can be marked as arrived."
+msgstr "出発済みの混載貨物のみ到着済みにできます。"
+
+msgid "Remove all child shipments before cancelling."
+msgstr "キャンセルする前にすべての子貨物を削除してください。"
+
+msgid "Cannot add shipments to a closed consolidation."
+msgstr "終了した混載貨物に貨物を追加できません。"
+
+msgid "Shipment not found."
+msgstr "貨物が見つかりません。"
+
+msgid "Shipment already belongs to another consolidation."
+msgstr "この貨物はすでに別の混載に属しています。"
+
+msgid "Hold reason is required."
+msgstr "保留理由は必須です。"
+
+msgid "Invalid doc type."
+msgstr "書類タイプが無効です。"
+
+msgid "Required documents cannot be deleted."
+msgstr "必須書類は削除できません。"
+
+msgid "Invalid milestoneCode."
+msgstr "マイルストーンコードが無効です。"
+
+msgid "Milestone blocked by incomplete mandatory tasks."
+msgstr "未完了の必須タスクによりマイルストーンがブロックされています。"
+
+msgid "System milestones cannot be deleted."
+msgstr "システムマイルストーンは削除できません。"
+
+msgid "Note body cannot be empty."
+msgstr "メモの内容は空にできません。"
+
+msgid "System notes cannot be deleted."
+msgstr "システムメモは削除できません。"
+
+msgid "Invalid role."
+msgstr "ロールが無効です。"
+
+msgid "Role already assigned."
+msgstr "ロールはすでに割り当てられています。"
+
+msgid "Title is required."
+msgstr "タイトルは必須です。"
+
+msgid "Mandatory tasks cannot be deleted."
+msgstr "必須タスクは削除できません。"
+
+msgid "Draft"
+msgstr "下書き"
+
+msgid "Completed"
+msgstr "完了"
+
+msgid "Cancelled"
+msgstr "キャンセル"
+
+msgid "Client credit status does not allow new quotes"
+msgstr "顧客のクレジットステータスにより新規見積もりが許可されていません"
+
+msgid "pol and pod are required"
+msgstr "積港と揚港は必須です"
+
+msgid "No file uploaded"
+msgstr "ファイルがアップロードされていません"
+
+msgid "transportType, effectiveDate and expiryDate are required"
+msgstr "輸送タイプ、有効日、有効期限は必須です"
+
+msgid "entryType is required."
+msgstr "エントリータイプは必須です。"
+
+msgid "Only DRAFT entries can be deleted."
+msgstr "下書きのエントリのみ削除できます。"
+
+msgid "Only DRAFT or REJECTED entries can be submitted."
+msgstr "下書きまたは却下されたエントリのみ提出できます。"
+
+msgid "No declaration number yet."
+msgstr "申告番号がまだありません。"
+
+msgid "hsCodeId is required."
+msgstr "HSコードIDは必須です。"
+
+msgid "HS code not found."
+msgstr "HSコードが見つかりません。"
+
+msgid "%s not found"
+msgstr "%s が見つかりません"
+
+msgid "Unsupported format."
+msgstr "サポートされていない形式です。"
+
+msgid "Unsupported format, expects \"%s\", but \"%s\" given."
+msgstr "サポートされていない形式です。\"%s\" が期待されますが、\"%s\" が指定されました。"
+
+msgid "No %entityName% found for id %id%"
+msgstr "ID %id% の %entityName% が見つかりません"
+
+msgid "Missing credentials."
+msgstr "認証情報がありません。"
+
+msgid "Invalid or expired token."
+msgstr "トークンが無効または期限切れです。"
+
+msgid "Portal account is inactive."
+msgstr "ポータルアカウントが非アクティブです。"
+
+msgid "Unauthorized."
+msgstr "認証されていません。"
+
+msgid "Portal user \"%s\" not found."
+msgstr "ポータルユーザー \"%s\" が見つかりません。"
+
+msgid "Login to office"
+msgstr "オフィスにログイン"
+
+msgid "All rights reserved"
+msgstr "無断複写・転載を禁じます"
+
+msgid "Contact us"
+msgstr "お問い合わせ"
+
+msgid "About us"
+msgstr "会社概要"
+
+msgid "Unsubscribe"
+msgstr "配信停止"
+
+msgid "ARRIVAL NOTICE"
+msgstr "到着案内"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Shipment"
+msgstr "貨物"
+
+msgid "TO"
+msgstr "宛先"
+
+msgid "Port of Loading"
+msgstr "積港"
+
+msgid "Port of Discharge"
+msgstr "揚港"
+
+msgid "Vessel / Voyage"
+msgstr "船名 / 航海番号"
+
+msgid "ETD"
+msgstr "出港予定日"
+
+msgid "House B/L No."
+msgstr "ハウス船荷証券番号"
+
+msgid "Master B/L No."
+msgstr "マスター船荷証券番号"
+
+msgid "Destination Charges"
+msgstr "仕向地費用"
+
+msgid "Required Documents"
+msgstr "必要書類"
+
+msgid "Note"
+msgstr "備考"
+
+msgid "This is an automatically generated document."
+msgstr "このドキュメントは自動生成されました。"
+
+msgid "Tel"
+msgstr "電話"
+
+msgid "Email"
+msgstr "メール"
+
+msgid "Booking Confirmation"
+msgstr "予約確認書"
+
+msgid "Booking No"
+msgstr "予約番号"
+
+msgid "To"
+msgstr "宛先"
+
+msgid "We are pleased to inform you that your shipment has been confirmed as below"
+msgstr "お客様の貨物が以下のとおり確定しましたことをお知らせします"
+
+msgid "Air Waybill No."
+msgstr "航空貨物運送状番号"
+
+msgid "Airport of Loading"
+msgstr "出発空港"
+
+msgid "Airport of Destination"
+msgstr "到着空港"
+
+msgid "No. of Package(s)"
+msgstr "個数"
+
+msgid "Container"
+msgstr "コンテナ"
+
+msgid "Commodity"
+msgstr "品名"
+
+msgid "Gross Weight"
+msgstr "総重量"
+
+msgid "Measurement"
+msgstr "寸法"
+
+msgid "PIC"
+msgstr "担当者"
+
+msgid "Flight Schedule"
+msgstr "フライトスケジュール"
+
+msgid "No."
+msgstr "番号"
+
+msgid "Flight"
+msgstr "フライト"
+
+msgid "Route"
+msgstr "ルート"
+
+msgid "ETA"
+msgstr "到着予定時刻"
+
+msgid "Contact Information"
+msgstr "連絡先情報"
+
+msgid "Cut off time"
+msgstr "カットオフ時間"
+
+msgid "Warehouse"
+msgstr "倉庫"
+
+msgid "Contact No."
+msgstr "連絡先番号"
+
+msgid "Terms and Conditions"
+msgstr "利用規約"
+
+msgid "DANGEROUS GOODS DECLARATION"
+msgstr "危険物申告書"
+
+msgid "WARNING: This shipment contains dangerous goods"
+msgstr "警告：この貨物には危険物が含まれています"
+
+msgid "HBL"
+msgstr "ハウス船荷証券"
+
+msgid "MBL"
+msgstr "マスター船荷証券"
+
+msgid "IMO Class"
+msgstr "IMOクラス"
+
+msgid "UN No."
+msgstr "UN番号"
+
+msgid "Packing Group"
+msgstr "梱包等級"
+
+msgid "Proper Shipping Name"
+msgstr "正式品名"
+
+msgid "Technical Name"
+msgstr "技術名称"
+
+msgid "Net Qty"
+msgstr "正味数量"
+
+msgid "Gross Qty"
+msgstr "総数量"
+
+msgid "UOM"
+msgstr "単位"
+
+msgid "Flash Point"
+msgstr "引火点"
+
+msgid "Flags"
+msgstr "フラグ"
+
+msgid "Subsidiary Risk"
+msgstr "副次危険性"
+
+msgid "Emergency"
+msgstr "緊急"
+
+msgid "I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations."
+msgstr "本申告者は、この荷物の内容物が正式品名により上記に完全かつ正確に記載されており、適用される国際および国内政府規制に従い、分類、梱包、表示、ラベル貼付がなされ、輸送に適した状態であることを宣言します。"
+
+msgid "Shipper's Signature"
+msgstr "荷送人署名"
+
+msgid "DELIVERY ORDER"
+msgstr "荷渡指図書"
+
+msgid "Issue Date"
+msgstr "発行日"
+
+msgid "Release Date"
+msgstr "リリース日"
+
+msgid "Authorized Signature"
+msgstr "認証署名"
+
+msgid "Consignee Signature"
+msgstr "荷受人署名"
+
+msgid "Debit Note"
+msgstr "デビットノート"
+
+msgid "Credit Note"
+msgstr "クレジットノート"
+
+msgid "Invoice"
+msgstr "請求書"
+
+msgid "Payment On Behalf Of"
+msgstr "代理支払"
+
+msgid "Collect On Behalf Of"
+msgstr "代理回収"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "Tax Number"
+msgstr "税番号"
+
+msgid "Bank Account"
+msgstr "銀行口座"
+
+msgid "Created"
+msgstr "作成済み"
+
+msgid "Due Date"
+msgstr "支払期日"
+
+msgid "Payment Method"
+msgstr "支払方法"
+
+msgid "Bill To"
+msgstr "請求先"
+
+msgid "Pay For"
+msgstr "支払対象"
+
+msgid "Undefined Provider"
+msgstr "未定義プロバイダー"
+
+msgid "Vessel No."
+msgstr "船番号"
+
+msgid "B/L"
+msgstr "船荷証券"
+
+msgid "Shipment ID"
+msgstr "貨物ID"
+
+msgid "Reference ID"
+msgstr "参照ID"
+
+msgid "Booking No."
+msgstr "予約番号"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Calculate"
+msgstr "計算"
+
+msgid "Curr."
+msgstr "通貨"
+
+msgid "Price"
+msgstr "価格"
+
+msgid "Qty"
+msgstr "数量"
+
+msgid "Total"
+msgstr "合計"
+
+msgid "Tax"
+msgstr "税"
+
+msgid "Include Tax"
+msgstr "税込み"
+
+msgid "Exchange rate"
+msgstr "為替レート"
+
+msgid "PACKING LIST"
+msgstr "梱包明細書"
+
+msgid "Ref No."
+msgstr "参照番号"
+
+msgid "Shipper"
+msgstr "荷送人"
+
+msgid "Consignee"
+msgstr "荷受人"
+
+msgid "Container No."
+msgstr "コンテナ番号"
+
+msgid "Seal No."
+msgstr "封印番号"
+
+msgid "Type"
+msgstr "種類"
+
+msgid "Packages"
+msgstr "梱包数"
+
+msgid "Volume (CBM)"
+msgstr "容積（CBM）"
+
+msgid "Package Type"
+msgstr "梱包種類"
+
+msgid "Description of Goods"
+msgstr "品名・明細"
+
+msgid "Shipping Marks"
+msgstr "荷印"
+
+msgid "From"
+msgstr "送信元"
+
+msgid "Address"
+msgstr "住所"
+
+msgid "Prepared By"
+msgstr "作成者"
+
+msgid "Mobile"
+msgstr "携帯電話"
+
+msgid "Contact Person"
+msgstr "担当者"
+
+msgid "Quotation"
+msgstr "見積書"
+
+msgid "Created at"
+msgstr "作成日時"
+
+msgid "Valid until"
+msgstr "有効期限"
+
+msgid "Quote ID"
+msgstr "見積ID"
+
+msgid "Origin"
+msgstr "出発地"
+
+msgid "Transit Port"
+msgstr "中継港"
+
+msgid "Incoterms"
+msgstr "インコタームズ"
+
+msgid "Commodities"
+msgstr "品目"
+
+msgid "Remark"
+msgstr "備考"
+
+msgid "Destination"
+msgstr "目的地"
+
+msgid "Place of Delivery"
+msgstr "引渡地"
+
+msgid "Volume"
+msgstr "容積"
+
+msgid "Air-port of Loading"
+msgstr "出発空港"
+
+msgid "Mode"
+msgstr "輸送手段"
+
+msgid "Chargeable Weight"
+msgstr "課金重量"
+
+msgid "Air-port of Discharge"
+msgstr "到着空港"
+
+msgid "Transit Time"
+msgstr "所要時間"
+
+msgid "days"
+msgstr "日"
+
+msgid "Schedule"
+msgstr "スケジュール"
+
+msgid "Cargo ready date"
+msgstr "貨物準備日"
+
+msgid "Quote Detail"
+msgstr "見積詳細"
+
+msgid "Charge"
+msgstr "料金"
+
+msgid "Item Name"
+msgstr "品目名"
+
+msgid "Curr"
+msgstr "通貨"
+
+msgid "Amount"
+msgstr "金額"
+
+msgid "Sub-Total"
+msgstr "小計"
+
+msgid "Receipt"
+msgstr "領収書"
+
+msgid "Payment"
+msgstr "支払"
+
+msgid "Received from"
+msgstr "受取先"
+
+msgid "Payment to"
+msgstr "支払先"
+
+msgid "In words"
+msgstr "金額（文字）"
+
+msgid "Accountant"
+msgstr "経理担当"
+
+msgid "Manager"
+msgstr "管理者"
+
+msgid "Statement of account"
+msgstr "勘定明細書"
+
+msgid "Statement Date"
+msgstr "明細書日付"
+
+msgid "Invoice No."
+msgstr "請求書番号"
+
+msgid "Bill No."
+msgstr "請求書番号"
+
+msgid "Ex."
+msgstr "前"

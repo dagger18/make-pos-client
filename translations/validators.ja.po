@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+
+msgid "This value should be false."
+msgstr "falseでなければなりません。"
+
+msgid "This value should be true."
+msgstr "trueでなければなりません。"
+
+msgid "This value should be of type {{ type }}."
+msgstr "型は{{ type }}でなければなりません。"
+
+msgid "This value should be blank."
+msgstr "空でなければなりません。"
+
+msgid "The value you selected is not a valid choice."
+msgstr "有効な選択肢ではありません。"
+
+msgid "You must select at least {{ limit }} choice."
+msgid_plural "You must select at least {{ limit }} choices."
+msgstr[0] "{{ limit }}個以上選択してください。"
+
+msgid "You must select at most {{ limit }} choice."
+msgid_plural "You must select at most {{ limit }} choices."
+msgstr[0] "{{ limit }}個以内で選択してください。"
+
+msgid "One or more of the given values is invalid."
+msgstr "無効な選択肢が含まれています。"
+
+msgid "This field was not expected."
+msgstr "このフィールドは予期されていませんでした。"
+
+msgid "This field is missing."
+msgstr "このフィールドは、欠落しています。"
+
+msgid "This value is not a valid date."
+msgstr "有効な日付ではありません。"
+
+msgid "This value is not a valid datetime."
+msgstr "有効な日時ではありません。"
+
+msgid "This value is not a valid email address."
+msgstr "有効なメールアドレスではありません。"
+
+msgid "The file could not be found."
+msgstr "ファイルが見つかりません。"
+
+msgid "The file is not readable."
+msgstr "ファイルを読み込めません。"
+
+msgid "The file is too large ({{ size }} {{ suffix }}). Allowed maximum size is {{ limit }} {{ suffix }}."
+msgstr "ファイルのサイズが大きすぎます({{ size }} {{ suffix }})。有効な最大サイズは{{ limit }} {{ suffix }}です。"
+
+msgid "The mime type of the file is invalid ({{ type }}). Allowed mime types are {{ types }}."
+msgstr "ファイルのMIMEタイプが無効です({{ type }})。有効なMIMEタイプは{{ types }}です。"
+
+msgid "This value should be {{ limit }} or less."
+msgstr "{{ limit }}以下でなければなりません。"
+
+msgid "This value is too long. It should have {{ limit }} character or less."
+msgid_plural "This value is too long. It should have {{ limit }} characters or less."
+msgstr[0] "値が長すぎます。{{ limit }}文字以内でなければなりません。"
+
+msgid "This value should be {{ limit }} or more."
+msgstr "{{ limit }}以上でなければなりません。"
+
+msgid "This value is too short. It should have {{ limit }} character or more."
+msgid_plural "This value is too short. It should have {{ limit }} characters or more."
+msgstr[0] "値が短すぎます。{{ limit }}文字以上でなければなりません。"
+
+msgid "This value should not be blank."
+msgstr "空であってはなりません。"
+
+msgid "This value should not be null."
+msgstr "nullであってはなりません。"
+
+msgid "This value should be null."
+msgstr "nullでなければなりません。"
+
+msgid "This value is not valid."
+msgstr "有効な値ではありません。"
+
+msgid "This value is not a valid time."
+msgstr "有効な時刻ではありません。"
+
+msgid "This value is not a valid URL."
+msgstr "有効なURLではありません。"
+
+msgid "The two values should be equal."
+msgstr "2つの値が同じでなければなりません。"
+
+msgid "The file is too large. Allowed maximum size is {{ limit }} {{ suffix }}."
+msgstr "ファイルのサイズが大きすぎます。有効な最大サイズは{{ limit }} {{ suffix }}です。"
+
+msgid "The file is too large."
+msgstr "ファイルのサイズが大きすぎます。"
+
+msgid "The file could not be uploaded."
+msgstr "ファイルをアップロードできませんでした。"
+
+msgid "This value should be a valid number."
+msgstr "有効な数字ではありません。"
+
+msgid "This file is not a valid image."
+msgstr "ファイルが画像ではありません。"
+
+msgid "This is not a valid IP address."
+msgstr "有効なIPアドレスではありません。"
+
+msgid "This value is not a valid language."
+msgstr "有効な言語名ではありません。"
+
+msgid "This value is not a valid locale."
+msgstr "有効なロケールではありません。"
+
+msgid "This value is not a valid country."
+msgstr "有効な国名ではありません。"
+
+msgid "This value is already used."
+msgstr "既に使用されています。"
+
+msgid "The size of the image could not be detected."
+msgstr "画像のサイズが検出できません。"
+
+msgid "The image width is too big ({{ width }}px). Allowed maximum width is {{ max_width }}px."
+msgstr "画像の幅が大きすぎます({{ width }}ピクセル)。{{ max_width }}ピクセルまでにしてください。"
+
+msgid "The image width is too small ({{ width }}px). Minimum width expected is {{ min_width }}px."
+msgstr "画像の幅が小さすぎます({{ width }}ピクセル)。{{ min_width }}ピクセル以上にしてください。"
+
+msgid "The image height is too big ({{ height }}px). Allowed maximum height is {{ max_height }}px."
+msgstr "画像の高さが大きすぎます({{ height }}ピクセル)。{{ max_height }}ピクセルまでにしてください。"
+
+msgid "The image height is too small ({{ height }}px). Minimum height expected is {{ min_height }}px."
+msgstr "画像の高さが小さすぎます({{ height }}ピクセル)。{{ min_height }}ピクセル以上にしてください。"
+
+msgid "This value should be the user's current password."
+msgstr "ユーザーの現在のパスワードでなければなりません。"
+
+msgid "This value should have exactly {{ limit }} character."
+msgid_plural "This value should have exactly {{ limit }} characters."
+msgstr[0] "ちょうど{{ limit }}文字でなければなりません。"
+
+msgid "The file was only partially uploaded."
+msgstr "ファイルのアップロードは完全ではありません。"
+
+msgid "No file was uploaded."
+msgstr "ファイルがアップロードされていません。"
+
+msgid "No temporary folder was configured in php.ini."
+msgstr "php.iniに一時フォルダが設定されていないか、設定されたフォルダが存在しません。"
+
+msgid "Cannot write temporary file to disk."
+msgstr "一時ファイルをディスクに書き込むことができません。"
+
+msgid "A PHP extension caused the upload to fail."
+msgstr "PHP拡張によってアップロードに失敗しました。"
+
+msgid "This collection should contain {{ limit }} element or more."
+msgid_plural "This collection should contain {{ limit }} elements or more."
+msgstr[0] "{{ limit }}個以上の要素を含んでなければいけません。"
+
+msgid "This collection should contain {{ limit }} element or less."
+msgid_plural "This collection should contain {{ limit }} elements or less."
+msgstr[0] "要素は{{ limit }}個までです。"
+
+msgid "This collection should contain exactly {{ limit }} element."
+msgid_plural "This collection should contain exactly {{ limit }} elements."
+msgstr[0] "要素はちょうど{{ limit }}個でなければなりません。"
+
+msgid "Invalid card number."
+msgstr "無効なカード番号です。"
+
+msgid "Unsupported card type or invalid card number."
+msgstr "未対応のカード種類又は無効なカード番号です。"
+
+msgid "This is not a valid International Bank Account Number (IBAN)."
+msgstr "有効な国際銀行勘定番号（IBAN）ではありません。"
+
+msgid "This value is not a valid ISBN-10."
+msgstr "有効なISBN-10コードではありません。"
+
+msgid "This value is not a valid ISBN-13."
+msgstr "有効なISBN-13コードではありません。"
+
+msgid "This value is neither a valid ISBN-10 nor a valid ISBN-13."
+msgstr "有効なISBN-10コード又はISBN-13コードではありません。"
+
+msgid "This value is not a valid ISSN."
+msgstr "有効なISSNコードではありません。"
+
+msgid "This value is not a valid currency."
+msgstr "有効な貨幣ではありません。"
+
+msgid "This value should be equal to {{ compared_value }}."
+msgstr "{{ compared_value }}と等しくなければなりません。"
+
+msgid "This value should be greater than {{ compared_value }}."
+msgstr "{{ compared_value }}より大きくなければなりません。"
+
+msgid "This value should be greater than or equal to {{ compared_value }}."
+msgstr "{{ compared_value }}以上でなければなりません。"
+
+msgid "This value should be identical to {{ compared_value_type }} {{ compared_value }}."
+msgstr "{{ compared_value_type }}としての{{ compared_value }}と等しくなければなりません。"
+
+msgid "This value should be less than {{ compared_value }}."
+msgstr "{{ compared_value }}未満でなければなりません。"
+
+msgid "This value should be less than or equal to {{ compared_value }}."
+msgstr "{{ compared_value }}以下でなければなりません。"
+
+msgid "This value should not be equal to {{ compared_value }}."
+msgstr "{{ compared_value }}と等しくてはいけません。"
+
+msgid "This value should not be identical to {{ compared_value_type }} {{ compared_value }}."
+msgstr "{{ compared_value_type }}としての{{ compared_value }}と等しくてはいけません。"
+
+msgid "The image ratio is too big ({{ ratio }}). Allowed maximum ratio is {{ max_ratio }}."
+msgstr "画像のアスペクト比が大きすぎます({{ ratio }})。{{ max_ratio }}までにしてください。"
+
+msgid "The image ratio is too small ({{ ratio }}). Minimum ratio expected is {{ min_ratio }}."
+msgstr "画像のアスペクト比が小さすぎます({{ ratio }})。{{ min_ratio }}以上にしてください。"
+
+msgid "The image is square ({{ width }}x{{ height }}px). Square images are not allowed."
+msgstr "画像が正方形になっています({{ width }}x{{ height }}ピクセル)。正方形の画像は許可されていません。"
+
+msgid "The image is landscape oriented ({{ width }}x{{ height }}px). Landscape oriented images are not allowed."
+msgstr "画像が横向きになっています({{ width }}x{{ height }}ピクセル)。横向きの画像は許可されていません。"
+
+msgid "The image is portrait oriented ({{ width }}x{{ height }}px). Portrait oriented images are not allowed."
+msgstr "画像が縦向きになっています({{ width }}x{{ height }}ピクセル)。縦向きの画像は許可されていません。"
+
+msgid "An empty file is not allowed."
+msgstr "空のファイルは許可されていません。"
+
+msgid "The host could not be resolved."
+msgstr "ホストを解決できませんでした。"
+
+msgid "This value does not match the expected {{ charset }} charset."
+msgstr "この値は予期される文字コード（{{ charset }}）と異なります。"
+
+msgid "This is not a valid Business Identifier Code (BIC)."
+msgstr "有効なSWIFTコードではありません。"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "This is not a valid UUID."
+msgstr "有効なUUIDではありません。"
+
+msgid "This value should be a multiple of {{ compared_value }}."
+msgstr "{{ compared_value }}の倍数でなければなりません。"
+
+msgid "This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}."
+msgstr "このSWIFTコードはIBANコード（{{ iban }}）に関連付けられていません。"
+
+msgid "This value should be valid JSON."
+msgstr "JSONでなければなりません。"
+
+msgid "This collection should contain only unique elements."
+msgstr "要素は重複してはなりません。"
+
+msgid "This value should be positive."
+msgstr "正の数でなければなりません。"
+
+msgid "This value should be either positive or zero."
+msgstr "正の数、または0でなければなりません。"
+
+msgid "This value should be negative."
+msgstr "負の数でなければなりません。"
+
+msgid "This value should be either negative or zero."
+msgstr "負の数、または0でなければなりません。"
+
+msgid "This value is not a valid timezone."
+msgstr "有効なタイムゾーンではありません。"
+
+msgid "This password has been leaked in a data breach, it must not be used. Please use another password."
+msgstr "このパスワードは漏洩している為使用できません。"
+
+msgid "This value should be between {{ min }} and {{ max }}."
+msgstr "{{ min }}以上{{ max }}以下でなければなりません。"
+
+msgid "This value is not a valid hostname."
+msgstr "有効なホスト名ではありません。"
+
+msgid "The number of elements in this collection should be a multiple of {{ compared_value }}."
+msgstr "要素の数は{{ compared_value }}の倍数でなければなりません。"
+
+msgid "This value should satisfy at least one of the following constraints:"
+msgstr "以下の制約のうち少なくとも1つを満たす必要があります:"
+
+msgid "Each element of this collection should satisfy its own set of constraints."
+msgstr "コレクションの各要素は、それぞれの制約を満たす必要があります。"
+
+msgid "This value is not a valid International Securities Identification Number (ISIN)."
+msgstr "この値は有効な国際証券識別番号（ISIN）ではありません。"
+
+msgid "This value should be a valid expression."
+msgstr "式でなければなりません。"
+
+msgid "This value is not a valid CSS color."
+msgstr "この値は有効なCSSカラーではありません。"
+
+msgid "This value is not a valid CIDR notation."
+msgstr "この値は有効なCIDR表記ではありません。"
+
+msgid "The value of the netmask should be between {{ min }} and {{ max }}."
+msgstr "ネットマスクの値は、{{ min }}から{{ max }}の間にある必要があります。"
+
+msgid "The filename is too long. It should have {{ filename_max_length }} character or less."
+msgid_plural "The filename is too long. It should have {{ filename_max_length }} characters or less."
+msgstr[0] "ファイル名が長すぎます。ファイル名の長さは{{ filename_max_length }}文字以下でなければなりません。"
+
+msgid "The password strength is too low. Please use a stronger password."
+msgstr "パスワードの強度が弱すぎます。より強いパスワードを使用してください。"
+
+msgid "This value contains characters that are not allowed by the current restriction-level."
+msgstr "この値は現在の制限レベルで許可されていない文字を含んでいます。"
+
+msgid "Using invisible characters is not allowed."
+msgstr "不可視文字は使用できません。"
+
+msgid "Mixing numbers from different scripts is not allowed."
+msgstr "異なる種類の数字を使うことはできません。"
+
+msgid "Using hidden overlay characters is not allowed."
+msgstr "隠れたオーバレイ文字は使用できません。"
+
+msgid "The extension of the file is invalid ({{ extension }}). Allowed extensions are {{ extensions }}."
+msgstr "ファイルの拡張子が無効です({{ extension }})。有効な拡張子は{{ extensions }}です。"
+
+msgid "The detected character encoding is invalid ({{ detected }}). Allowed encodings are {{ encodings }}."
+msgstr "検出された文字コードは無効です({{ detected }})。有効な文字コードは{{ encodings }}です。"
+
+msgid "This value is not a valid MAC address."
+msgstr "有効なMACアドレスではありません。"
+
+msgid "This URL is missing a top-level domain."
+msgstr "このURLはトップレベルドメインがありません。"
+
+msgid "This form should not contain extra fields."
+msgstr "フィールドグループに追加のフィールドを含んではなりません。"
+
+msgid "The uploaded file was too large. Please try to upload a smaller file."
+msgstr "アップロードされたファイルが大きすぎます。小さなファイルで再度アップロードしてください。"
+
+msgid "The CSRF token is invalid. Please try to resubmit the form."
+msgstr "CSRFトークンが無効です、再送信してください。"
+
+msgid "This value is not a valid HTML5 color."
+msgstr "有効なHTML5の色ではありません。"
+
+msgid "Please enter a valid birthdate."
+msgstr "有効な生年月日を入力してください。"
+
+msgid "The selected choice is invalid."
+msgstr "選択した値は無効です。"
+
+msgid "The collection is invalid."
+msgstr "コレクションは無効です。"
+
+msgid "Please select a valid color."
+msgstr "有効な色を選択してください。"
+
+msgid "Please select a valid country."
+msgstr "有効な国を選択してください。"
+
+msgid "Please select a valid currency."
+msgstr "有効な通貨を選択してください。"
+
+msgid "Please choose a valid date interval."
+msgstr "有効な日付間隔を選択してください。"
+
+msgid "Please enter a valid date and time."
+msgstr "有効な日時を入力してください。"
+
+msgid "Please enter a valid date."
+msgstr "有効な日付を入力してください。"
+
+msgid "Please select a valid file."
+msgstr "有効なファイルを選択してください。"
+
+msgid "The hidden field is invalid."
+msgstr "隠しフィールドが無効です。"
+
+msgid "Please enter an integer."
+msgstr "整数で入力してください。"
+
+msgid "Please select a valid language."
+msgstr "有効な言語を選択してください。"
+
+msgid "Please select a valid locale."
+msgstr "有効なロケールを選択してください。"
+
+msgid "Please enter a valid money amount."
+msgstr "有効な金額を入力してください。"
+
+msgid "Please enter a number."
+msgstr "数値で入力してください。"
+
+msgid "The password is invalid."
+msgstr "パスワードが無効です。"
+
+msgid "Please enter a percentage value."
+msgstr "パーセント値で入力してください。"
+
+msgid "The values do not match."
+msgstr "値が一致しません。"
+
+msgid "Please enter a valid time."
+msgstr "有効な時間を入力してください。"
+
+msgid "Please select a valid timezone."
+msgstr "有効なタイムゾーンを選択してください。"
+
+msgid "Please enter a valid URL."
+msgstr "有効なURLを入力してください。"
+
+msgid "Please enter a valid search term."
+msgstr "有効な検索語を入力してください。"
+
+msgid "Please provide a valid phone number."
+msgstr "有効な電話番号を入力してください。"
+
+msgid "The checkbox has an invalid value."
+msgstr "チェックボックスの値が無効です。"
+
+msgid "Please enter a valid email address."
+msgstr "有効なメールアドレスを入力してください。"
+
+msgid "Please select a valid option."
+msgstr "有効な値を選択してください。"
+
+msgid "Please select a valid range."
+msgstr "有効な範囲を選択してください。"
+
+msgid "Please enter a valid week."
+msgstr "有効な週を入力してください。"

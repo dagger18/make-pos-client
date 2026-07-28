@@ -1,0 +1,13 @@
+App\Module\Core\Entity\Department:
+
+    list:
+        - id
+        - name
+        - branch
+        - direction
+        - isActive
+
+    subList:
+        - id
+        - name
+        - direction

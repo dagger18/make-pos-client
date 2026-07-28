@@ -1,0 +1,19 @@
+App\Module\Tax\Entity\HsVersionMapping:
+
+    list:
+        - id
+        - oldHsCode
+        - newHsCode
+        - oldVersion
+        - newVersion
+        - changeType
+
+    detail:
+        - id
+        - oldHsCode
+        - newHsCode
+        - oldVersion
+        - newVersion
+        - changeType
+        - createdAt
+        - updatedAt

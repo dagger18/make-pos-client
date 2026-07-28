@@ -1,0 +1,21 @@
+App\Module\Carrier\Entity\CarrierEventMapping:
+
+    list:
+        - id
+        - carrierScac
+        - carrierEventCode
+        - carrierEventDescription
+        - milestoneCode
+        - confidence
+        - createdAt
+        - updatedAt
+
+    detail:
+        - id
+        - carrierScac
+        - carrierEventCode
+        - carrierEventDescription
+        - milestoneCode
+        - confidence
+        - createdAt
+        - updatedAt

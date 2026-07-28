@@ -1,0 +1,7 @@
+App\Module\Quote\Entity\CalculationType:
+
+    list:
+        - id
+        - name
+        - code
+        - transportTypes

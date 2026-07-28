@@ -1,0 +1,29 @@
+App\Module\Crm\Entity\Client:
+
+    list:
+        - id
+        - tier
+        - name
+        - tradingName
+        - code
+        - country
+        - email
+        - taxNumber
+        - registrationNo
+        - website
+        - isActive
+        - defaultContact
+        - defaultInvoiceInfo
+        - phone
+        - creditPeriod
+        - creditLimit
+        - unpaid
+        - creditStatus
+        - creditHoldReason
+        - creditReviewedAt
+        - creditReviewedBy
+        - createdDate
+        - createdBy
+        - accountManager
+        - establishmentDate
+

@@ -1,0 +1,18 @@
+App\Module\Finance\Entity\Currency:
+
+    list:
+        - id
+        - name
+        - code
+        - symbol
+        - rate
+        - thousandSeparator
+        - decimalSeparator
+        - decimalPlaces
+    currentExchangeRates:
+        - id
+        - code
+        - symbol
+        - thousandSeparator
+        - decimalSeparator
+        - decimalPlaces

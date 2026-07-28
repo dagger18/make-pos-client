@@ -1,0 +1,9 @@
+flysystem:
+    storages:
+        media.storage:
+            adapter: 'aws'
+            visibility: public
+            options:
+                client: 'app.s3_client'
+                bucket: '%env(resolve:AWS_S3_BUCKET)%'
+                streamReads: true

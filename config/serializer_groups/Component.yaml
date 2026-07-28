@@ -1,0 +1,13 @@
+App\Module\Core\Entity\Component:
+
+    list:
+        - id
+        - title
+        - dataset
+        - filters
+        - rowNumber
+        - orderNumber
+        - columnWidth
+        - type
+        - series
+        - stacked

@@ -1,0 +1,29 @@
+App\Module\Carrier\Entity\TrackingRequest:
+
+    list:
+        - id
+        - trackingType
+        - trackingRef
+        - carrierScac
+        - status
+        - masterJobId
+        - lastCheckedAt
+        - lastEventAt
+        - errorCount
+        - lastError
+        - createdAt
+        - updatedAt
+
+    detail:
+        - id
+        - trackingType
+        - trackingRef
+        - carrierScac
+        - status
+        - masterJobId
+        - lastCheckedAt
+        - lastEventAt
+        - errorCount
+        - lastError
+        - createdAt
+        - updatedAt

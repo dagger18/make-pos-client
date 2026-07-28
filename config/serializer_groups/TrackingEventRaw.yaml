@@ -1,0 +1,19 @@
+App\Module\Carrier\Entity\TrackingEventRaw:
+
+    list:
+        - id
+        - source
+        - rawPayload
+        - isProcessed
+        - processedAt
+        - error
+        - receivedAt
+
+    detail:
+        - id
+        - source
+        - rawPayload
+        - isProcessed
+        - processedAt
+        - error
+        - receivedAt

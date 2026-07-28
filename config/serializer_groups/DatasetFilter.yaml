@@ -1,0 +1,6 @@
+App\Module\Reporting\Entity\DatasetFilter:
+
+    list:
+        - property
+        - operator
+        - value

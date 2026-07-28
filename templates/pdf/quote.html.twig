@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}/" />
+{% endif %}
+{% if renderMode == 'preview' %}
+<link rel="stylesheet" href="build/css/dejavu.css">
+{% endif %}
+<link rel="stylesheet" href="build/css/pdf.css">
+<style type="text/css">
+.border-left {
+  border-left: 1px solid #000;
+  padding-left: 1rem;
+}
+</style>
+</head>
+<body>
+<table class="table is-fullwidth">
+<tr>
+  <td width="300px">
+    <div class="has-text-weight-bold is-size-6 has-text-grey is-uppercase">
+      {% trans %}From{% endtrans %}:
+    </div>
+    <div>
+      <div class="is-size-6 has-text-weight-bold is-uppercase">{{ company.defaultInvoiceInfo.company }}</div>
+      <div><b>{% trans %}Address{% endtrans %}:</b> {{ company.defaultInvoiceInfo.address }}</div>
+      <div><b>{% trans %}Phone{% endtrans %}:</b> {{ company.defaultInvoiceInfo.phone }}</div>
+      <div><b>{% trans %}Prepared By{% endtrans %}:</b> {{ printFullname(quote.createdBy) }}</div>
+      <div><b>{% trans %}Mobile{% endtrans %}:</b> {{ quote.createdBy.phone }}</div>
+      <div><b>{% trans %}Email{% endtrans %}:</b> {{ quote.createdBy.email }}</div>
+    </div><br>
+    <div class="has-text-weight-bold is-size-6 has-text-grey is-uppercase">
+      {% trans %}To{% endtrans %}:
+    </div>
+    <div>
+      <div class="is-size-6 has-text-weight-bold is-uppercase">{{ clientQuoteInfo.name ?? clientQuoteInfo.company }}</div>
+      <div><b>{% trans %}Address{% endtrans %}:</b> {{ clientQuoteInfo.address }}</div>
+      <div><b>{% trans %}Phone{% endtrans %}:</b> {{ clientQuoteInfo.phone }}</div>
+      <div><b>{% trans %}Contact Person{% endtrans %}:</b> {{ printFullname(client.defaultContact) }}</div>
+    </div>
+    
+  </td>
+  <td width="20px"></td>
+  <td class="has-text-right" width="160px">
+    <div class="logo">
+      {% if company.logo is not null %}
+      <img width="150" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+      {% endif %}
+    </div>
+    <h2 class="is-uppercase is-size-2 mb-2">{% trans %}Quotation{% endtrans %}</h2>
+    <table class="table is-fullwidth">
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">{% trans %}Created at{% endtrans %}</td>
+        <td class="has-text-right">{{ quote.createdDate | date("M, d Y") }}</td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">{% trans %}Valid until{% endtrans %}</td>
+        <td class="has-text-right" width="100px">{{ quote.validUntil | date("M, d Y") }}</td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">{% trans %}Quote ID{% endtrans %}</td>
+        <td class="has-text-right">{{ quote.code }}</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table><br>
+<table class="table is-fullwidth">
+<tr><td colspan=4 style="border-top: 1px solid #ddd; border-bottom: none" class="pb-4"></td></tr>
+<tr>
+  <td width="120px" style="border-bottom: none">
+    <div>{% trans %}Origin{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.originDoor ?? printPort(quote.originPort) }}</div>
+    {% if quote.transitPort %}
+    <div>{% trans %}Transit Port{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.transitPort }}</div>
+    {% endif %}
+    <div>{% trans %}Incoterms{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.incoterm ? quote.incoterm.name : '' }}</div>
+    <div>{% trans %}Commodities{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.commodities }}</div>
+    <div>{% trans %}Remark{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.remark }}</div>
+  </td>
+  <td width="120px" class="pr-2" style="border-bottom: none">
+    <div>{% trans %}Destination{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.destinationDoor ?? printPort(quote.destinationPort) }}</div>
+    <div>{% trans %}Place of Delivery{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ printPort(quote.destinationPort) }}</div>
+    {% if quote.cargoVolumeType != enum('VolumeType').Container %}
+      <div>{% trans %}Packages{% endtrans %}</div>
+      <div class="has-text-weight-bold">{{ quote.cargoVolume.totalUnit }}</div>
+      <div>{% trans %}Volume{% endtrans %}</div>
+      <div class="has-text-weight-bold">{{ quote.cargoVolume.totalCBM | round(2) }} CBM</div>
+    {% endif %}
+  </td>
+  <td width="100px" class="pr-2" style="border-bottom: none">
+    <div>{% trans %}Air-port of Loading{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ printPort(quote.originPort) }}</div>
+    <div>{% trans %}Mode{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.transportType.title }}</div>
+    {% if quote.cargoVolumeType != enum('VolumeType').Container %}
+      <div>{% trans %}Gross Weight{% endtrans %}</div>
+      <div class="has-text-weight-bold">{{ quote.cargoVolume.totalWeight }} KGS</div>
+      <div>{% trans %}Chargeable Weight{% endtrans %}</div>
+      <div class="has-text-weight-bold">{{ quote.cargoVolume.chargeableWeight | round(2) }} KGS</div>
+    {% endif %}
+  </td>
+  <td width="100px" class="pr-2" style="border-bottom: none">
+    <div>{% trans %}Air-port of Discharge{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ printPort(quote.destinationPort) }}</div>
+    {% if quote.transitTime %}
+    <div>{% trans %}Transit Time{% endtrans %} ({% trans %}days{% endtrans %})</div>
+    <div class="has-text-weight-bold">{{ quote.transitTime }}</div>
+    {% endif %}
+    {% if quote.schedule %}
+    <div>{% trans %}Schedule{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.schedule | map (s => s.value) | join(',') }}</div>
+    {% endif %}
+    <div>{% trans %}Cargo ready date{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.cargoReady | date("M, d Y") }}</div>
+    <div>{% trans %}ETD{% endtrans %}</div>
+    <div class="has-text-weight-bold">{{ quote.estimatedDeparture | date("M, d Y") }}</div>
+  </td>
+</tr>
+<tr><td colspan=4 style="border-bottom: 1px solid #ddd; border-top: none;" class="pt-4"></td></tr>
+</table>
+<div class="is-font-size-2 has-text-weight-bold is-uppercase pt-4 pb-2">{% trans %}Quote Detail{% endtrans %}</div>
+<table class="table is-fullwidth mb-0">
+<thead >
+  <tr>
+    <th class="has-text-left">
+      {% trans %}Charge{% endtrans %}
+    </th>
+    <th class="has-text-left">
+      {% trans %}Item Name{% endtrans %}
+    </th>
+    <th class="has-text-left">
+      {% trans %}Description{% endtrans %}
+    </th>
+    <th class="has-text-left">
+      {% trans %}Calculate{% endtrans %}
+    </th>
+    <th class="has-text-centered pr-2">
+      {% trans %}Qty{% endtrans %}
+    </th>
+    <th class="has-text-centered pr-2">
+      {% trans %}Curr{% endtrans %}
+    </th>
+    <th class="has-text-right">
+      {% trans %}Price{% endtrans %}
+    </th>
+    <th class="has-text-right">
+      {% trans %}Amount{% endtrans %}
+    </th>
+  </tr>
+</thead>
+<tbody>
+{% for price in quote.prices|sort(
+      (a, b) => 
+        a.position is not empty or b.position is not empty 
+        ? ((a.position ?? 999) <=> (b.position ?? 999)) 
+        : (a.id <=> b.id) ) %}
+  <tr
+  >
+    <td class="py-2">{{ price.chargeTypeName }}</td>
+    <td class="py-2">{{ price.chargeName }}</td>
+    <td class="py-2">{{ price.description }}</td>
+    <td class="py-2">{{ price.calculationType }}</td>
+    <td class="py-2 has-text-centered pr-2">{{ price.quantity }}</td>
+    <td class="py-2 has-text-centered pr-2">{{ price.selling.currency }}</td>
+    <td class="py-2 has-text-right">{{ price.selling.amount ? price.selling.amount | format_money(price.selling.currency) : '' }}</td>
+    <td class="py-2 has-text-right" width="100px">{{ price.amountSelling.amount ? price.amountSelling.amount | format_money(price.amountSelling.currency) : '' }}</td>
+  </tr>
+{% endfor %}
+<tr><td colspan=8 style="border-top: 1px solid #ddd; border-top: none;"></td></tr>
+</tbody>
+</table>
+<table class="table is-fullwidth" style="page-break-inside: avoid;">
+{% for currency in quote.subTotal | map((c,k) => {currency: k, selling: c.selling}) | filter(c => c.selling > 0)  %}
+  <tr>
+  {% if loop.index == 1 %}
+    <td 
+      rowspan="{{ loop.length  }}" 
+      class="py-3 has-text-weight-bold is-uppercase has-text-right pr-4"
+      style="vertical-align: middle;"
+    >
+      {% trans %}Sub-Total{% endtrans %}
+    </td>
+  {% endif %}
+    <td class="py-3 has-text-right" width="30px">{{ currency.currency }}</td>
+    <td class="py-3 has-text-right" width="100px">{{ currency.selling | format_money(currency.currency) }}</td>
+  </tr>
+{% endfor %}
+  <tr>
+    <td class="py-3 has-text-right has-text-weight-bold is-uppercase  pr-4">{% trans %}Total{% endtrans %}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="30px">{{ quote.quoteCurrency }}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="100px">{{ convertMoneyUsingRate(quote.totalSelling, 1, quote.exchangeRates[quote.quoteCurrency]) | format_money(quote.quoteCurrency) }}</td>
+  </tr>
+</table>
+{% if quote.exchangeRates | length > 0 
+    and quote.exchangeRates | filter((c, k) => k != 'USD') | length > 0  
+%}
+{# show convert from currencies of this entity to quote currency #}
+{# what if it does not exist in this exchangeRates ? => take current rate #}
+{# todo: missing rate => take current rate #}
+<div class="is-italic mt-2">{% trans %}Exchange rate{% endtrans %}: 
+  {% for currency, rate in quote.exchangeRates|merge({'USD': 1}) | sellingExchangeRates(quote.subTotal) | filter((c, k) => k != quote.quoteCurrency)  %}
+  <span >
+    1 {{ currency }} =
+    {{ convertMoneyUsingRate(1, rate, quote.exchangeRates[quote.quoteCurrency]) | format_money(quote.quoteCurrency) }}
+    {{ quote.quoteCurrency }};
+  </span>
+  {% endfor %}
+</div>
+{% endif %}
+
+  <hr style="background: #dbdbdb"/>
+  <div class="has-text-weight-bold mb-2 is-uppercase is-font-size-2">{% trans %}Note{% endtrans %}</div>
+  {{ quote.note }}
+</body>
+</html>

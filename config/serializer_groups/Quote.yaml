@@ -1,0 +1,29 @@
+App\Module\Quote\Entity\Quote:
+
+    list:
+        - id
+        - provider
+        - code
+        - client
+        - transportType
+        - serviceType
+        - cargoVolume
+        - cargoVolumeType
+        - originDoor
+        - destinationDoor
+        - originPort
+        - destinationPort
+        - status
+        - validUntil
+        - createdBy
+        - createdDate
+        - shipmentMode
+        - shipmentType
+        - carrier
+        - transitPort
+        - cargoReady
+        - exchangeRates
+
+    full:
+        - _extends:list
+        - prices

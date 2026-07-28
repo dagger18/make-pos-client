@@ -1,0 +1,60 @@
+doctrine:
+    dbal:
+        connections:
+            default:
+                url: '%env(string:resolve:DATABASE_URL_RESOLVED)%'
+
+                server_version: '%env(DOCTRINE_SERVER_VERSION)%'
+
+                profiling_collect_backtrace: '%kernel.debug%'
+                use_savepoints: true
+        types:
+            DatasetFilterCollectionType: App\Misc\Doctrine\Type\DatasetFilterCollectionType
+            DatasetPropCollectionType: App\Misc\Doctrine\Type\DatasetPropCollectionType
+            InstructionContainerCollectionType: App\Misc\Doctrine\Type\InstructionContainerCollectionType
+            ComponentSerieCollectionType: App\Misc\Doctrine\Type\ComponentSerieCollectionType
+    orm:
+        auto_generate_proxy_classes: true
+        # this will make proxies become a ghost at first
+        enable_lazy_ghost_objects: true
+        report_fields_where_declared: true
+        validate_xml_mapping: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        identity_generation_preferences:
+            Doctrine\DBAL\Platforms\PostgreSQLPlatform: identity
+        auto_mapping: false
+        mappings:
+            AppModule:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Module'
+                prefix: 'App\Module'
+                alias: App
+        controller_resolver:
+            auto_mapping: false
+
+when@test:
+    doctrine:
+        dbal:
+            # "TEST_TOKEN" is typically set by ParaTest
+            dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+
+when@prod:
+    doctrine:
+        orm:
+            auto_generate_proxy_classes: false
+            proxy_dir: '%kernel.build_dir%/doctrine/orm/Proxies'
+            query_cache_driver:
+                type: pool
+                pool: doctrine.system_cache_pool
+            result_cache_driver:
+                type: pool
+                pool: doctrine.result_cache_pool
+
+    framework:
+        cache:
+            pools:
+                doctrine.result_cache_pool:
+                    adapter: cache.app
+                doctrine.system_cache_pool:
+                    adapter: cache.system

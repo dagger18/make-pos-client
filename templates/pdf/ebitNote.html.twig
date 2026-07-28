@@ -1,0 +1,295 @@
+{% if ebitNote.type == enum('EbitNoteType').Debit 
+    or ebitNote.type == enum('EbitNoteType').InvoiceDebit
+    or ebitNote.type == enum('EbitNoteType').COBO
+%}
+  {% set target = ebitNote.collectFrom %}
+{% endif %}
+{% if ebitNote.type == enum('EbitNoteType').Credit 
+    or ebitNote.type == enum('EbitNoteType').InvoiceCredit
+    or ebitNote.type == enum('EbitNoteType').POBO
+%}
+  {% set target = ebitNote.payTo %}
+{% endif %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+{% if renderMode == 'preview' %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/dejavu.css">
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style type="text/css">
+.border-left {
+  border-left: 1px solid #000;
+  padding-left: 1rem;
+}
+</style>
+</head>
+<body>
+<table class="table is-fullwidth no-border-td">
+<tr>
+  <td class="pb-4">
+    <div class="logo pb-4">
+      <img width="130" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+    </div>
+  </td>
+  <td width="20px"></td>
+  <td style="vertical-align: middle;">
+    <h2 class="is-uppercase is-size-1 mb-2 has-text-right" >
+      {% if ebitNote.type == enum('EbitNoteType').Debit %}
+        {% trans %}Debit Note{% endtrans %}
+      {% elseif ebitNote.type == enum('EbitNoteType').Credit %}
+        {% trans %}Credit Note{% endtrans %}
+      {% elseif ebitNote.type == enum('EbitNoteType').InvoiceDebit %}
+        {% trans %}Invoice{% endtrans %}
+      {% elseif ebitNote.type == enum('EbitNoteType').InvoiceCredit %}
+        {% trans %}Invoice{% endtrans %}
+      {% elseif ebitNote.type == enum('EbitNoteType').POBO %}
+        {% trans %}Payment On Behalf Of{% endtrans %}
+      {% elseif ebitNote.type == enum('EbitNoteType').COBO %}
+        {% trans %}Collect On Behalf Of{% endtrans %}
+      {% endif %}
+    </h2>
+  </td>
+</tr>
+<tr>
+  <td width="300px">
+    <div>
+      <div class="is-size-6 has-text-weight-bold is-uppercase">{{ companyInvoice.company }}</div>
+      <div>{{ companyInvoice.address }}</div>
+      <div><b>{% trans %}Phone{% endtrans %}:</b> {{ companyInvoice.phone }}</div>
+      <div><b>{% trans %}Tax Number{% endtrans %}:</b> {{ companyInvoice.taxNumber }}</div>
+      <div>
+      <table>
+        <tr>
+          <td style="white-space: nowrap"><b class="mb-4">{% trans %}Bank Account{% endtrans %}:&nbsp;</b> </td>
+          <td>
+            <span>
+              {{ companyInvoice.bankAccount.accountNumber }}<br>
+              ({{ companyInvoice.bankAccount.bankName }} - {{ companyInvoice.bankAccount.branch }})
+            </span>
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+  </td>
+  <td width="20px"></td>
+  <td class="has-text-right" width="360px">
+    <table class="table is-fullwidth">
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% trans %}Date{% endtrans %}
+          {% if ebitNote.type == enum('EbitNoteType').Debit %}
+            {% trans %}Debit Note{% endtrans %}
+          {% elseif ebitNote.type == enum('EbitNoteType').Credit %}
+            {% trans %}Credit Note{% endtrans %}
+          {% elseif ebitNote.type == enum('EbitNoteType').InvoiceDebit %}
+            {% trans %}Invoice{% endtrans %}
+          {% elseif ebitNote.type == enum('EbitNoteType').InvoiceCredit %}
+            {% trans %}Invoice{% endtrans %}
+          {% else %}
+            {% trans %}Created{% endtrans %}
+          {% endif %}
+        </td>
+        <td class="has-text-right">
+          {{ (ebitNote.noteDate ?? ebitNote.createdDate) | date("M, d Y") }}
+        </td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% trans %}Due Date{% endtrans %}
+        </td>
+        <td class="has-text-right" width="100px">{{ ebitNote.dueDate | date("M, d Y") }}</td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% if ebitNote.type == enum('EbitNoteType').Debit %}
+            {% trans %}Debit Note{% endtrans %}
+          {% endif %}
+          {% if ebitNote.type == enum('EbitNoteType').Credit %}
+            {% trans %}Credit Note{% endtrans %}
+          {% else %}
+            {% trans %}Invoice{% endtrans %}
+          {% endif %} ID
+        </td>
+        <td class="has-text-right">{{ ebitNote.code }}</td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% trans %}Payment Method{% endtrans %}
+        </td>
+        <td class="has-text-right" width="100px">{{ ebitNote.paymentMethod.name ?? '' }}</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr><td colspan=3 style="border-bottom: 1px solid #ddd; border-top: none" class="pb-4"></td></tr>
+<tr><td colspan=3 style="border-top: 1px solid #ddd; border-bottom: none" class="pb-4"></td></tr>
+<tr>
+  <td>
+    <div class="has-text-weight-bold is-size-6 has-text-grey is-uppercase">
+      {% if ebitNote.type == enum('EbitNoteType').Debit 
+            or ebitNote.type == enum('EbitNoteType').InvoiceDebit 
+            or ebitNote.type == enum('EbitNoteType').COBO 
+      %}
+        {% trans %}Bill To{% endtrans %}
+      {% endif %}
+      {% if ebitNote.type == enum('EbitNoteType').Credit 
+          or ebitNote.type == enum('EbitNoteType').InvoiceCredit 
+          or ebitNote.type == enum('EbitNoteType').POBO 
+      %}
+        {% trans %}Pay For{% endtrans %}
+      {% endif %}:
+    </div>
+    <div>
+      <div class="is-size-6 has-text-weight-bold is-uppercase">
+        {{ target.defaultInvoiceInfo.company ?? ('Undefined Provider' | trans) }}
+      </div>
+      {% if target %}
+      <div>{{ target.defaultInvoiceInfo.address }}</div>
+      <div><b>{% trans %}Tax Number{% endtrans %}:</b> {{ target.defaultInvoiceInfo.taxNumber }}</div>
+      {% endif %}
+    </div>
+    
+  </td>
+  <td width="20px"></td>
+  <td>
+    <div class="pt-4">
+      <div>
+        <b>{% trans %}Route{% endtrans %}:</b>
+          {{ quote.originPort ? quote.originPort.code : printDoorCode(quote.originDoor) }} 
+          -
+          {{ quote.destinationPort ? quote.destinationPort.code : printDoorCode(quote.destinationDoor) }}
+          {% if quote.vesselNo %}
+           / <b>{% trans %}Vessel No.{% endtrans %}:</b> {{ quote.vesselNo }}
+          {% endif %}
+      </div>
+      {% if quote.subOriginPort or quote.subDestinationPort or quote.subVesselNo %}
+      <div>
+        <b>{% trans %}Route{% endtrans %} 2:</b>
+        {{ quote.subOriginPort ? quote.subOriginPort.code : '' }} 
+        {{ quote.subDestinationPort ? (' - ' ~ quote.subDestinationPort.code) : '' }} 
+        {% if quote.subVesselNo %}
+          / <b>{% trans %}Vessel No.{% endtrans %} 2:</b> {{ quote.subVesselNo }}
+        {% endif %}
+      </div>
+      {% endif %}
+      <div><b>{% trans %}B/L{% endtrans %}:</b> {{ shipment.masterBill }}/{{ shipment.houseBill }}</div>
+      {% if shipment.code %}
+      <div><b>{% trans %}Shipment ID{% endtrans %}:</b> {{ shipment.code }}</div>
+      {% endif %}
+      {% if shipment.referenceId %}
+      <div><b>{% trans %}Reference ID{% endtrans %}:</b> {{ shipment.referenceId }}</div>
+      {% endif %}
+      {% if booking.code %}
+      <div><b>{% trans %}Booking No.{% endtrans %}:</b> {{ booking.code }}</div>
+      {% endif %}
+      <div><b>{% trans %}ETD{% endtrans %}:</b> {{ booking.etd | date("M, d Y") }}</div>
+    </div>
+  </td>
+</tr>
+</table><br>
+<table class="table is-fullwidth mb-0">
+<thead >
+  <tr>
+    <th class="has-text-left" style="width: 140px">
+      {% trans %}Description{% endtrans %}
+    </th>
+    <th class="has-text-left" style="width: 120px">
+      {% trans %}Calculate{% endtrans %}
+    </th>
+    {% if not ebitNote.showOneCurrency %}
+    <th class="has-text-centered">
+      {% trans %}Curr.{% endtrans %}
+    </th>
+    <th class="has-text-right pr-2">
+      {% trans %}Price{% endtrans %}
+    </th>
+    {% endif %}
+    <th class="has-text-right pr-2">
+      {% trans %}Price{% endtrans %} ({{ ebitNote.currency }})
+    </th>
+    <th class="has-text-centered">
+      {% trans %}Qty{% endtrans %}
+    </th>
+    <th class="has-text-right pr-2">
+      {% trans %}Total{% endtrans %} ({{ ebitNote.currency }})
+    </th>
+    <th class="has-text-centered">
+      {% trans %}Tax{% endtrans %}
+    </th>
+    <th class="has-text-right">
+      {% trans %}Tax{% endtrans %} ({{ ebitNote.currency }})
+    </th>
+  </tr>
+</thead>
+<tbody>
+{% for item in ebitNote.chargeItems|sort(
+      (a, b) => 
+        a.position is not empty or b.position is not empty 
+        ? ((a.position ?? 999) <=> (b.position ?? 999)) 
+        : (a.id <=> b.id) ) 
+   %}
+  <tr
+  >
+    <td class="py-2 pr-2">{{ item.description is empty ? item.chargeName : item.description  }}</td>
+    <td class="py-2 pr-2">{{ item.calculationType }}</td>
+    {% if not ebitNote.showOneCurrency %}
+    <td class="py-2 has-text-centered">{{ item.price.currency }}</td>
+    <td class="py-2 has-text-right pr-2">{{ item.price.amount }}</td>
+    {% endif %}
+    <td class="py-2 has-text-right pr-2">{{ item.chargePrice.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}</td>
+    <td class="py-2 has-text-centered">{{ item.quantity }}</td>
+    <td class="py-2 has-text-right pr-2">{{ item.amount.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}</td>
+    <td class="py-2 has-text-centered">{{ item.taxGroup.name }}</td>
+    <td class="py-2 has-text-right">{{ item.tax.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}</td>
+  </tr>
+{% endfor %}
+<tr><td colspan={{ 7 + (ebitNote.showOneCurrency ? 0 : 2) }} style="border-top: 1px solid #ddd;"></td></tr>
+</tbody>
+</table>
+<table class="table is-fullwidth" style="page-break-inside: avoid;">
+  <tr>
+    <td class="py-3 has-text-right has-text-weight-bold is-uppercase  pr-4">{% trans %}Total{% endtrans %}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="30px">{{ ebitNote.currency }}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="100px">{{ ebitNote.amountNoTax.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}</td>
+  </tr>
+  <tr>
+    <td class="py-3 has-text-right has-text-weight-bold is-uppercase  pr-4">{% trans %}Tax{% endtrans %}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="30px">{{ ebitNote.currency }}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="100px">{{ ebitNote.tax.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}</td>
+  </tr>
+  <tr>
+    <td class="py-3 has-text-right has-text-weight-bold is-uppercase  pr-4">
+      {% trans %}Total{% endtrans %} ({% trans %}Include Tax{% endtrans %})
+    </td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="30px">{{ ebitNote.currency }}</td>
+    <td class="py-3 has-text-right has-text-weight-bold" width="100px">{{ ebitNote.amount.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}</td>
+  </tr>
+</table>
+{% if not ebitNote.showOneCurrency 
+  and ebitNote.exchangeRates | length > 0 
+  and ebitNote.exchangeRates | filter((c, k) => k != ebitNote.currency) | length > 0  
+%}
+<div class="is-italic mt-2">{% trans %}Exchange rate{% endtrans %}: 
+  {% for currency, rate in ebitNote.exchangeRates | filter((c, k) => k != ebitNote.currency)  %}
+  <span >
+    1 {{ currency }} =
+    {{ (ebitNote.exchangeRates[ebitNote.currency] / rate) | format_number({fraction_digit: ebitNote.moneyScale}) }}
+    {{ ebitNote.currency }};
+  </span>
+  {% endfor %}
+</div>
+{% endif %}
+{% if ebitNote.note %}
+  <hr style="background: #dbdbdb"/>
+  <div class="has-text-weight-bold mb-2 is-uppercase is-font-size-2">{% trans %}Note{% endtrans %}</div>
+  {{ ebitNote.note }}
+{% endif %}
+</body>
+</html>

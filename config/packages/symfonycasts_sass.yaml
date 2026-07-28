@@ -1,0 +1,7 @@
+symfonycasts_sass:
+    sass_options:
+        style: compressed
+        load_path:
+            - '%kernel.project_dir%/vendor/twbs/bootstrap'
+    binary: var/dart-sass/sass
+    

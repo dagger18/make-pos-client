@@ -1,0 +1,665 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+
+msgid "Feature %feature% is not enabled on this plan."
+msgstr "이 요금제에서는 %feature% 기능이 활성화되어 있지 않습니다."
+
+msgid "Provider not found"
+msgstr "공급업체를 찾을 수 없습니다"
+
+msgid "Shipment not found"
+msgstr "화물을 찾을 수 없습니다"
+
+msgid "Not found"
+msgstr "찾을 수 없습니다"
+
+msgid "trackingType and trackingRef are required."
+msgstr "trackingType과 trackingRef는 필수입니다."
+
+msgid "Not found."
+msgstr "찾을 수 없습니다."
+
+msgid "Invalid secret."
+msgstr "시크릿이 유효하지 않습니다."
+
+msgid "email is required"
+msgstr "이메일은 필수입니다"
+
+msgid "Wrong credentials"
+msgstr "인증 정보가 잘못되었습니다"
+
+msgid "invalid token"
+msgstr "유효하지 않은 토큰"
+
+msgid "Invalid service token."
+msgstr "서비스 토큰이 유효하지 않습니다."
+
+msgid "maximumUsers must be a non-negative integer."
+msgstr "maximumUsers는 음수가 아닌 정수여야 합니다."
+
+msgid "Could not generate upgrade link."
+msgstr "업그레이드 링크를 생성할 수 없습니다."
+
+msgid "id is required."
+msgstr "ID는 필수입니다."
+
+msgid "transportMode is required"
+msgstr "운송 방식은 필수입니다"
+
+msgid "Already closed"
+msgstr "이미 종료되었습니다"
+
+msgid "Already locked."
+msgstr "이미 잠겨 있습니다."
+
+msgid "Pending"
+msgstr "대기 중"
+
+msgid "Active"
+msgstr "활성"
+
+msgid "Sent"
+msgstr "전송됨"
+
+msgid "Done"
+msgstr "완료"
+
+msgid "Policy not found"
+msgstr "정책을 찾을 수 없습니다"
+
+msgid "connectorType, partnerName and protocol are required."
+msgstr "connectorType, partnerName 및 protocol은 필수입니다."
+
+msgid "Email and password are required."
+msgstr "이메일과 비밀번호는 필수입니다."
+
+msgid "Invalid credentials."
+msgstr "인증 정보가 유효하지 않습니다."
+
+msgid "Invalid or expired link."
+msgstr "링크가 유효하지 않거나 만료되었습니다."
+
+msgid "LC not found"
+msgstr "신용장을 찾을 수 없습니다"
+
+msgid "transportMode, serviceType and branchId are required."
+msgstr "운송 방식, 서비스 유형 및 지점 ID는 필수입니다."
+
+msgid "Branch not found."
+msgstr "지점을 찾을 수 없습니다."
+
+msgid "Cannot edit a cancelled consolidation."
+msgstr "취소된 혼재 화물은 수정할 수 없습니다."
+
+msgid "Only a closed consolidation can be departed."
+msgstr "종료된 혼재 화물만 출발할 수 있습니다."
+
+msgid "Only a departed consolidation can be marked as arrived."
+msgstr "출발한 혼재 화물만 도착으로 표시할 수 있습니다."
+
+msgid "Remove all child shipments before cancelling."
+msgstr "취소하기 전에 모든 하위 화물을 제거하세요."
+
+msgid "Cannot add shipments to a closed consolidation."
+msgstr "종료된 혼재 화물에 화물을 추가할 수 없습니다."
+
+msgid "Shipment not found."
+msgstr "화물을 찾을 수 없습니다."
+
+msgid "Shipment already belongs to another consolidation."
+msgstr "화물이 이미 다른 혼재에 속해 있습니다."
+
+msgid "Hold reason is required."
+msgstr "보류 사유는 필수입니다."
+
+msgid "Invalid doc type."
+msgstr "유효하지 않은 문서 유형입니다."
+
+msgid "Required documents cannot be deleted."
+msgstr "필수 문서는 삭제할 수 없습니다."
+
+msgid "Invalid milestoneCode."
+msgstr "마일스톤 코드가 유효하지 않습니다."
+
+msgid "Milestone blocked by incomplete mandatory tasks."
+msgstr "완료되지 않은 필수 작업으로 인해 마일스톤이 차단되었습니다."
+
+msgid "System milestones cannot be deleted."
+msgstr "시스템 마일스톤은 삭제할 수 없습니다."
+
+msgid "Note body cannot be empty."
+msgstr "메모 내용은 비워둘 수 없습니다."
+
+msgid "System notes cannot be deleted."
+msgstr "시스템 메모는 삭제할 수 없습니다."
+
+msgid "Invalid role."
+msgstr "유효하지 않은 역할입니다."
+
+msgid "Role already assigned."
+msgstr "역할이 이미 할당되었습니다."
+
+msgid "Title is required."
+msgstr "제목은 필수입니다."
+
+msgid "Mandatory tasks cannot be deleted."
+msgstr "필수 작업은 삭제할 수 없습니다."
+
+msgid "Draft"
+msgstr "임시저장"
+
+msgid "Completed"
+msgstr "완료됨"
+
+msgid "Cancelled"
+msgstr "취소됨"
+
+msgid "Client credit status does not allow new quotes"
+msgstr "고객의 신용 상태로 인해 새 견적을 낼 수 없습니다"
+
+msgid "pol and pod are required"
+msgstr "선적항과 양하항은 필수입니다"
+
+msgid "No file uploaded"
+msgstr "업로드된 파일이 없습니다"
+
+msgid "transportType, effectiveDate and expiryDate are required"
+msgstr "운송 유형, 유효 시작일 및 만료일은 필수입니다"
+
+msgid "entryType is required."
+msgstr "항목 유형은 필수입니다."
+
+msgid "Only DRAFT entries can be deleted."
+msgstr "임시저장 상태의 항목만 삭제할 수 있습니다."
+
+msgid "Only DRAFT or REJECTED entries can be submitted."
+msgstr "임시저장 또는 거부된 항목만 제출할 수 있습니다."
+
+msgid "No declaration number yet."
+msgstr "아직 신고 번호가 없습니다."
+
+msgid "hsCodeId is required."
+msgstr "HS 코드 ID는 필수입니다."
+
+msgid "HS code not found."
+msgstr "HS 코드를 찾을 수 없습니다."
+
+msgid "%s not found"
+msgstr "%s을(를) 찾을 수 없습니다"
+
+msgid "Unsupported format."
+msgstr "지원되지 않는 형식입니다."
+
+msgid "Unsupported format, expects \"%s\", but \"%s\" given."
+msgstr "지원되지 않는 형식입니다. \"%s\"이(가) 필요하지만 \"%s\"이(가) 제공되었습니다."
+
+msgid "No %entityName% found for id %id%"
+msgstr "ID %id%에 해당하는 %entityName%을(를) 찾을 수 없습니다"
+
+msgid "Missing credentials."
+msgstr "인증 정보가 없습니다."
+
+msgid "Invalid or expired token."
+msgstr "토큰이 유효하지 않거나 만료되었습니다."
+
+msgid "Portal account is inactive."
+msgstr "포털 계정이 비활성화되어 있습니다."
+
+msgid "Unauthorized."
+msgstr "권한이 없습니다."
+
+msgid "Portal user \"%s\" not found."
+msgstr "포털 사용자 \"%s\"을(를) 찾을 수 없습니다."
+
+msgid "Login to office"
+msgstr "사무실 로그인"
+
+msgid "All rights reserved"
+msgstr "모든 권리 보유"
+
+msgid "Contact us"
+msgstr "문의하기"
+
+msgid "About us"
+msgstr "회사 소개"
+
+msgid "Unsubscribe"
+msgstr "구독 취소"
+
+msgid "ARRIVAL NOTICE"
+msgstr "도착 통지"
+
+msgid "Date"
+msgstr "날짜"
+
+msgid "Shipment"
+msgstr "화물"
+
+msgid "TO"
+msgstr "수신"
+
+msgid "Port of Loading"
+msgstr "선적항"
+
+msgid "Port of Discharge"
+msgstr "양하항"
+
+msgid "Vessel / Voyage"
+msgstr "선박명 / 항차"
+
+msgid "ETD"
+msgstr "출항 예정일"
+
+msgid "House B/L No."
+msgstr "하우스 선하증권 번호"
+
+msgid "Master B/L No."
+msgstr "마스터 선하증권 번호"
+
+msgid "Destination Charges"
+msgstr "목적지 비용"
+
+msgid "Required Documents"
+msgstr "필요 서류"
+
+msgid "Note"
+msgstr "비고"
+
+msgid "This is an automatically generated document."
+msgstr "이 문서는 자동으로 생성되었습니다."
+
+msgid "Tel"
+msgstr "전화"
+
+msgid "Email"
+msgstr "이메일"
+
+msgid "Booking Confirmation"
+msgstr "예약 확인서"
+
+msgid "Booking No"
+msgstr "예약 번호"
+
+msgid "To"
+msgstr "받는 사람"
+
+msgid "We are pleased to inform you that your shipment has been confirmed as below"
+msgstr "귀하의 화물이 아래와 같이 확정되었음을 알려드립니다"
+
+msgid "Air Waybill No."
+msgstr "항공 화물 운송장 번호"
+
+msgid "Airport of Loading"
+msgstr "출발 공항"
+
+msgid "Airport of Destination"
+msgstr "도착 공항"
+
+msgid "No. of Package(s)"
+msgstr "포장 수량"
+
+msgid "Container"
+msgstr "컨테이너"
+
+msgid "Commodity"
+msgstr "상품명"
+
+msgid "Gross Weight"
+msgstr "총 중량"
+
+msgid "Measurement"
+msgstr "치수"
+
+msgid "PIC"
+msgstr "담당자"
+
+msgid "Flight Schedule"
+msgstr "항공편 일정"
+
+msgid "No."
+msgstr "번호"
+
+msgid "Flight"
+msgstr "항공편"
+
+msgid "Route"
+msgstr "노선"
+
+msgid "ETA"
+msgstr "도착 예정 시간"
+
+msgid "Contact Information"
+msgstr "연락처 정보"
+
+msgid "Cut off time"
+msgstr "마감 시간"
+
+msgid "Warehouse"
+msgstr "창고"
+
+msgid "Contact No."
+msgstr "연락처 번호"
+
+msgid "Terms and Conditions"
+msgstr "이용 약관"
+
+msgid "DANGEROUS GOODS DECLARATION"
+msgstr "위험물 신고서"
+
+msgid "WARNING: This shipment contains dangerous goods"
+msgstr "경고: 이 화물에는 위험물이 포함되어 있습니다"
+
+msgid "HBL"
+msgstr "하우스 선하증권"
+
+msgid "MBL"
+msgstr "마스터 선하증권"
+
+msgid "IMO Class"
+msgstr "IMO 등급"
+
+msgid "UN No."
+msgstr "UN 번호"
+
+msgid "Packing Group"
+msgstr "포장 등급"
+
+msgid "Proper Shipping Name"
+msgstr "공식 운송 명칭"
+
+msgid "Technical Name"
+msgstr "기술 명칭"
+
+msgid "Net Qty"
+msgstr "순 수량"
+
+msgid "Gross Qty"
+msgstr "총 수량"
+
+msgid "UOM"
+msgstr "측정 단위"
+
+msgid "Flash Point"
+msgstr "인화점"
+
+msgid "Flags"
+msgstr "표시"
+
+msgid "Subsidiary Risk"
+msgstr "부가 위험"
+
+msgid "Emergency"
+msgstr "긴급"
+
+msgid "I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations."
+msgstr "본인은 이 화물의 내용이 공식 운송 명칭으로 위에 완전하고 정확하게 기재되었으며, 적용 가능한 국제 및 국내 정부 규정에 따라 분류, 포장, 표시 및 라벨/표지판이 부착되어 모든 면에서 운송에 적합한 상태임을 선언합니다."
+
+msgid "Shipper's Signature"
+msgstr "화주 서명"
+
+msgid "DELIVERY ORDER"
+msgstr "인도 지시서"
+
+msgid "Issue Date"
+msgstr "발급일"
+
+msgid "Release Date"
+msgstr "릴리즈 날짜"
+
+msgid "Authorized Signature"
+msgstr "권한 있는 서명"
+
+msgid "Consignee Signature"
+msgstr "수하인 서명"
+
+msgid "Debit Note"
+msgstr "청구서"
+
+msgid "Credit Note"
+msgstr "크레딧 메모"
+
+msgid "Invoice"
+msgstr "인보이스"
+
+msgid "Payment On Behalf Of"
+msgstr "대리 지급"
+
+msgid "Collect On Behalf Of"
+msgstr "대리 수금"
+
+msgid "Phone"
+msgstr "전화번호"
+
+msgid "Tax Number"
+msgstr "세금 번호"
+
+msgid "Bank Account"
+msgstr "은행 계좌"
+
+msgid "Created"
+msgstr "생성됨"
+
+msgid "Due Date"
+msgstr "납기일"
+
+msgid "Payment Method"
+msgstr "결제 방법"
+
+msgid "Bill To"
+msgstr "청구처"
+
+msgid "Pay For"
+msgstr "결제 대상"
+
+msgid "Undefined Provider"
+msgstr "미정의 공급업체"
+
+msgid "Vessel No."
+msgstr "선박 번호"
+
+msgid "B/L"
+msgstr "선하증권"
+
+msgid "Shipment ID"
+msgstr "화물 ID"
+
+msgid "Reference ID"
+msgstr "참조 ID"
+
+msgid "Booking No."
+msgstr "예약 번호"
+
+msgid "Description"
+msgstr "설명"
+
+msgid "Calculate"
+msgstr "계산"
+
+msgid "Curr."
+msgstr "통화"
+
+msgid "Price"
+msgstr "가격"
+
+msgid "Qty"
+msgstr "수량"
+
+msgid "Total"
+msgstr "합계"
+
+msgid "Tax"
+msgstr "세금"
+
+msgid "Include Tax"
+msgstr "세금 포함"
+
+msgid "Exchange rate"
+msgstr "환율"
+
+msgid "PACKING LIST"
+msgstr "포장 명세서"
+
+msgid "Ref No."
+msgstr "참조 번호"
+
+msgid "Shipper"
+msgstr "화주"
+
+msgid "Consignee"
+msgstr "수하인"
+
+msgid "Container No."
+msgstr "컨테이너 번호"
+
+msgid "Seal No."
+msgstr "봉인 번호"
+
+msgid "Type"
+msgstr "유형"
+
+msgid "Packages"
+msgstr "포장"
+
+msgid "Volume (CBM)"
+msgstr "부피 (CBM)"
+
+msgid "Package Type"
+msgstr "포장 유형"
+
+msgid "Description of Goods"
+msgstr "품목 설명"
+
+msgid "Shipping Marks"
+msgstr "화인"
+
+msgid "From"
+msgstr "보내는 사람"
+
+msgid "Address"
+msgstr "주소"
+
+msgid "Prepared By"
+msgstr "작성자"
+
+msgid "Mobile"
+msgstr "휴대폰"
+
+msgid "Contact Person"
+msgstr "담당자"
+
+msgid "Quotation"
+msgstr "견적서"
+
+msgid "Created at"
+msgstr "생성 일시"
+
+msgid "Valid until"
+msgstr "유효 기간"
+
+msgid "Quote ID"
+msgstr "견적 ID"
+
+msgid "Origin"
+msgstr "출발지"
+
+msgid "Transit Port"
+msgstr "환적항"
+
+msgid "Incoterms"
+msgstr "인코텀즈"
+
+msgid "Commodities"
+msgstr "상품"
+
+msgid "Remark"
+msgstr "비고"
+
+msgid "Destination"
+msgstr "목적지"
+
+msgid "Place of Delivery"
+msgstr "인도 장소"
+
+msgid "Volume"
+msgstr "부피"
+
+msgid "Air-port of Loading"
+msgstr "출발 공항"
+
+msgid "Mode"
+msgstr "방식"
+
+msgid "Chargeable Weight"
+msgstr "과금 중량"
+
+msgid "Air-port of Discharge"
+msgstr "도착 공항"
+
+msgid "Transit Time"
+msgstr "운송 기간"
+
+msgid "days"
+msgstr "일"
+
+msgid "Schedule"
+msgstr "일정"
+
+msgid "Cargo ready date"
+msgstr "화물 준비일"
+
+msgid "Quote Detail"
+msgstr "견적 상세"
+
+msgid "Charge"
+msgstr "요금"
+
+msgid "Item Name"
+msgstr "품목명"
+
+msgid "Curr"
+msgstr "통화"
+
+msgid "Amount"
+msgstr "금액"
+
+msgid "Sub-Total"
+msgstr "소계"
+
+msgid "Receipt"
+msgstr "영수증"
+
+msgid "Payment"
+msgstr "결제"
+
+msgid "Received from"
+msgstr "수령처"
+
+msgid "Payment to"
+msgstr "지급처"
+
+msgid "In words"
+msgstr "금액 (문자)"
+
+msgid "Accountant"
+msgstr "회계"
+
+msgid "Manager"
+msgstr "관리자"
+
+msgid "Statement of account"
+msgstr "계좌 명세서"
+
+msgid "Statement Date"
+msgstr "명세서 날짜"
+
+msgid "Invoice No."
+msgstr "인보이스 번호"
+
+msgid "Bill No."
+msgstr "청구서 번호"
+
+msgid "Ex."
+msgstr "이전"

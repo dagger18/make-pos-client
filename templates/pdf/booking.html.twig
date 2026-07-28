@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+</head>
+<body>
+<table class="table is-fullwidth">
+<tr>
+  <td width="100px">
+    <div class="logo">
+      <img width="150" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+    </div>
+  </td>
+  <td width="20px"></td>
+  <td width="600px">
+    <div class="has-text-right">
+      <div class="is-size-4 has-text-weight-bold is-uppercase pb-3">{{ company.name }}</div>
+      <div class="pb-1">
+        {{ company.address }} {{ company.province }}, {{ company.city }}, {{ company.country }}
+      </div>
+      <div class="pb-1">{% trans %}Tel{% endtrans %}: {{ company.phone }}</div>
+      <div>{% trans %}Email{% endtrans %}: {{ company.email }}</div>
+    </div>
+  </td>
+</tr>
+</table>
+<hr />
+<div class="is-size-1 has-text-weight-bold has-text-centered is-uppercase pb-4">
+  {% trans %}Booking Confirmation{% endtrans %}
+</div>
+<table class="table is-fullwidth mb-4">
+  <tr>
+    <td style="border-bottom: none">
+      <div style="float: right">
+        <div class='has-text-left'>{% trans %}Date{% endtrans %}: <b>{{ (booking.bookingDate ?? booking.createdDate) | date("M, d Y H:i") }}</b></div>
+        <div class='has-text-left'>{% trans %}Booking No{% endtrans %}: <b>{{ booking.code }}</b></div>
+      <div>
+    </td>
+  </tr>
+  <tr>
+    <td class='has-text-left'>
+      <div>{% trans %}To{% endtrans %}: <span class="is-size-4 has-text-weight-bold">{{ booking.bookingTo }}</span></div>
+      <div>{% trans %}We are pleased to inform you that your shipment has been confirmed as below{% endtrans %}:</div>
+    </td>
+  </tr>
+</table>
+<table class="table is-fullwidth spacious no-border-td  mb-4" style="border: 1px solid #aaa">
+  <tr>
+    <td colspan=2 style="border-bottom: 1px solid #aaa">
+      <b>{% trans %}Air Waybill No.{% endtrans %}</b>: {{ booking.code }}
+    </td>
+  </tr>
+  <tr>
+    <td><b>{% trans %}Airport of Loading{% endtrans %}</b>: {{ printPort(booking.portLoading) }}</td>
+    <td><b>{% trans %}Airport of Destination{% endtrans %}</b>: {{ printPort(booking.portDischarge) }}</td>
+  </tr>
+  <tr>
+    {% if cargoVolumeType != enum('VolumeType').Container %}
+      <td><b>{% trans %}No. of Package(s){% endtrans %}</b>: {{ booking.cargoVolume.totalUnit }}</td>
+    {% else %}
+      <td>
+        <b>{% trans %}Container{% endtrans %}</b>: 
+        {{ booking.cargoVolume.items 
+          | map(i => "#{i.value} x #{i.amount}")
+          | join(', ') }}
+      </td>
+    {% endif %}
+    <td><b>{% trans %}Commodity{% endtrans %}</b>: {{ booking.commodities }}</td>
+    
+  </tr>
+  <tr>
+    <td><b>{% trans %}Gross Weight{% endtrans %} (KGS)</b>: {{ booking.cargoVolume.totalWeight }}</td>
+    <td><b>{% trans %}Measurement{% endtrans %} (CBM)</b>: {{ booking.cargoVolume.totalCBM }}</td>
+  </tr>
+  <tr>
+    <td colspan=2  style="border-top: 1px solid #aaa">
+    <b>{% trans %}PIC{% endtrans %}</b>: {{ printFullname(manager) }}, {% trans %}Tel{% endtrans %}: {{ manager.phone ?? '...' }}, {% trans %}Email{% endtrans %}: {{ manager.email ?? '...' }}</td>
+  </tr>
+</table>
+<div class="has-text-weight-bold">{% trans %}Flight Schedule{% endtrans %}:</div>
+<table class="table is-fullwidth is-bordered is-centered-all spacious  mb-4">
+  <tr>
+    <th>{% trans %}No.{% endtrans %}</th>
+    <th>{% trans %}Flight{% endtrans %}</th>
+    <th colspan=2>{% trans %}Route{% endtrans %}</th>
+    <th>{% trans %}ETD{% endtrans %}</th>
+    <th>{% trans %}ETA{% endtrans %}</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>{{ booking.vesselNo }}</td>
+    <td>{{ booking.portLoading.code }}</td>
+    <td>{{ booking.portDischarge.code }}</td>
+    <td>
+      <div>{{ booking.etd | date("M, d Y") }}</div>
+      <div>{{ booking.etd | date("H:i:s") }}</div>
+    </td>
+    <td>
+      <div>{{ booking.eta | date("M, d Y") }}</div>
+      <div>{{ booking.eta | date("H:i:s") }}</div>
+    </td>
+  </tr>
+</table>
+<div class="has-text-weight-bold">{% trans %}Contact Information{% endtrans %}:</div>
+<table class="table is-fullwidth spacious no-border-td  mb-4" style="border: 1px solid #aaa">
+  <tr>
+    <td><b>{% trans %}Cut off time{% endtrans %}</b>:</td>
+    <td>{{ booking.cyCutOff | date('M, d Y H:i:s') }}</td>
+  </tr>
+  <tr>
+    <td><b>{% trans %}Warehouse{% endtrans %}</b>:</td>
+    <td>{{ booking.warehouse }}</td>
+  </tr>
+  <tr>
+    <td><b>{% trans %}Contact No.{% endtrans %}</b>:</td>
+    <td>{{ booking.contactNumber }}</td>
+  </tr>
+</table>
+<div class="has-text-weight-bold">{% trans %}Terms and Conditions{% endtrans %}:</div>
+{{ booking.terms }}
+</body>
+</html>

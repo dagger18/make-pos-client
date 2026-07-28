@@ -1,0 +1,452 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+
+msgid "This value should be false."
+msgstr "Giá trị này phải là sai."
+
+msgid "This value should be true."
+msgstr "Giá trị này phải là đúng."
+
+msgid "This value should be of type {{ type }}."
+msgstr "Giá trị này phải là kiểu  {{ type }}."
+
+msgid "This value should be blank."
+msgstr "Giá trị này phải rỗng."
+
+msgid "The value you selected is not a valid choice."
+msgstr "Giá trị bạn vừa chọn không hợp lệ."
+
+msgid "You must select at least {{ limit }} choice."
+msgid_plural "You must select at least {{ limit }} choices."
+msgstr[0] "Bạn phải chọn ít nhất {{ limit }} lựa chọn."
+msgstr[1] "Bạn phải chọn ít nhất {{ limit }} lựa chọn."
+
+msgid "You must select at most {{ limit }} choice."
+msgid_plural "You must select at most {{ limit }} choices."
+msgstr[0] "Bạn phải chọn nhiều nhất {{ limit }} lựa chọn."
+msgstr[1] "Bạn phải chọn nhiều  nhất {{ limit }} lựa chọn."
+
+msgid "One or more of the given values is invalid."
+msgstr "Một hoặc nhiều giá trị được chọn không hợp lệ."
+
+msgid "This field was not expected."
+msgstr "Lĩnh vực này không được dự kiến."
+
+msgid "This field is missing."
+msgstr "Lĩnh vực này bị thiếu."
+
+msgid "This value is not a valid date."
+msgstr "Giá trị không phải là ngày hợp lệ."
+
+msgid "This value is not a valid datetime."
+msgstr "Giá trị không phải là ngày tháng hợp lệ."
+
+msgid "This value is not a valid email address."
+msgstr "Giá trị này không phải là email hợp lệ."
+
+msgid "The file could not be found."
+msgstr "Tập tin không tìm thấy."
+
+msgid "The file is not readable."
+msgstr "Tập tin không thể đọc được."
+
+msgid "The file is too large ({{ size }} {{ suffix }}). Allowed maximum size is {{ limit }} {{ suffix }}."
+msgstr "Tập tin quá lớn ({{ size }} {{ suffix }}). Kích thước tối đa cho phép {{ limit }} {{ suffix }}."
+
+msgid "The mime type of the file is invalid ({{ type }}). Allowed mime types are {{ types }}."
+msgstr "Kiểu mime của tập tin không hợp lệ ({{ type }}). Kiểu hợp lệ là {{ types }}."
+
+msgid "This value should be {{ limit }} or less."
+msgstr "Giá trị phải bằng hoặc nhỏ hơn {{ limit }}."
+
+msgid "This value is too long. It should have {{ limit }} character or less."
+msgid_plural "This value is too long. It should have {{ limit }} characters or less."
+msgstr[0] "Giá trị quá dài. Phải bằng hoặc ít hơn {{ limit }} kí tự."
+msgstr[1] "Giá trị quá dài. Phải bằng hoặc ít hơn {{ limit }} kí tự."
+
+msgid "This value should be {{ limit }} or more."
+msgstr "Giá trị phải lớn hơn hoặc bằng {{ limit }}."
+
+msgid "This value is too short. It should have {{ limit }} character or more."
+msgid_plural "This value is too short. It should have {{ limit }} characters or more."
+msgstr[0] "Giá trị quá ngắn. Phải hơn hoặc bằng {{ limit }} kí tự."
+msgstr[1] "Giá trị quá ngắn. Phải hơn hoặc bằng {{ limit }} kí tự."
+
+msgid "This value should not be blank."
+msgstr "Giá trị không được phép để trống."
+
+msgid "This value should not be null."
+msgstr "Giá trị không được phép rỗng."
+
+msgid "This value should be null."
+msgstr "Giá trị phải rỗng."
+
+msgid "This value is not valid."
+msgstr "Giá trị không hợp lệ."
+
+msgid "This value is not a valid time."
+msgstr "Giá trị không phải là thời gian hợp lệ."
+
+msgid "This value is not a valid URL."
+msgstr "Giá trị không phải là địa chỉ URL hợp lệ."
+
+msgid "The two values should be equal."
+msgstr "Hai giá trị phải bằng nhau."
+
+msgid "The file is too large. Allowed maximum size is {{ limit }} {{ suffix }}."
+msgstr "Tập tin quá lớn. Kích thước tối đa cho phép là {{ limit }} {{ suffix }}."
+
+msgid "The file is too large."
+msgstr "Tập tin quá lớn."
+
+msgid "The file could not be uploaded."
+msgstr "Tập tin không thể tải lên."
+
+msgid "This value should be a valid number."
+msgstr "Giá trị phải là con số."
+
+msgid "This file is not a valid image."
+msgstr "Tập tin không phải là hình ảnh hợp lệ."
+
+msgid "This is not a valid IP address."
+msgstr "Giá trị này không phải là địa chỉ IP hợp lệ."
+
+msgid "This value is not a valid language."
+msgstr "Giá trị không phải là ngôn ngữ hợp lệ."
+
+msgid "This value is not a valid locale."
+msgstr "Giá trị không phải là một bản địa địa phương hợp lệ."
+
+msgid "This value is not a valid country."
+msgstr "Giá trị không phải là quốc gia hợp lệ."
+
+msgid "This value is already used."
+msgstr "Giá trị đã được sử dụng."
+
+msgid "The size of the image could not be detected."
+msgstr "Kích thước của hình ảnh không thể xác định."
+
+msgid "The image width is too big ({{ width }}px). Allowed maximum width is {{ max_width }}px."
+msgstr "Chiều rộng của hình quá lớn ({{ width }}px). Chiều rộng tối đa phải là {{ max_width }}px."
+
+msgid "The image width is too small ({{ width }}px). Minimum width expected is {{ min_width }}px."
+msgstr "Chiều rộng của hình quá thấp ({{ width }}px). Chiều rộng tối thiểu phải là {{ min_width }}px."
+
+msgid "The image height is too big ({{ height }}px). Allowed maximum height is {{ max_height }}px."
+msgstr "Chiều cao của hình quá cao ({{ height }}px). Chiều cao tối đa phải là {{ max_height }}px."
+
+msgid "The image height is too small ({{ height }}px). Minimum height expected is {{ min_height }}px."
+msgstr "Chiều cao của hình quá thấp ({{ height }}px). Chiều cao tối thiểu phải là {{ min_height }}px."
+
+msgid "This value should be the user's current password."
+msgstr "Giá trị này phải là mật khẩu hiện tại của người dùng."
+
+msgid "This value should have exactly {{ limit }} character."
+msgid_plural "This value should have exactly {{ limit }} characters."
+msgstr[0] "Giá trị này phải có chính xác {{ limit }} kí tự."
+msgstr[1] "Giá trị này phải có chính xác {{ limit }} kí tự."
+
+msgid "The file was only partially uploaded."
+msgstr "Tập tin chỉ được tải lên một phần."
+
+msgid "No file was uploaded."
+msgstr "Tập tin không được tải lên."
+
+msgid "No temporary folder was configured in php.ini."
+msgstr "Không có thư mục tạm được cấu hình trong php.ini, hoặc thư mục đã cấu hình không tồn tại."
+
+msgid "Cannot write temporary file to disk."
+msgstr "Không thể ghi tập tin tạm ra đĩa."
+
+msgid "A PHP extension caused the upload to fail."
+msgstr "Một PHP extension đã phá hỏng quá trình tải lên của tập tin."
+
+msgid "This collection should contain {{ limit }} element or more."
+msgid_plural "This collection should contain {{ limit }} elements or more."
+msgstr[0] "Danh sách phải chứa {{ limit }} thành phần hoặc nhiều hơn."
+msgstr[1] "Danh sách phải chứa {{ limit }} thành phần hoặc nhiều hơn."
+
+msgid "This collection should contain {{ limit }} element or less."
+msgid_plural "This collection should contain {{ limit }} elements or less."
+msgstr[0] "Danh sách phải chứa {{ limit }} thành phần hoặc ít hơn."
+msgstr[1] "Danh sách phải chứa {{ limit }} thành phần hoặc ít hơn."
+
+msgid "This collection should contain exactly {{ limit }} element."
+msgid_plural "This collection should contain exactly {{ limit }} elements."
+msgstr[0] "Danh sách phải chứa chính xác {{ limit }} thành phần."
+msgstr[1] "Danh sách phải chứa chính xác {{ limit }} thành phần."
+
+msgid "Invalid card number."
+msgstr "Số thẻ không hợp lệ."
+
+msgid "Unsupported card type or invalid card number."
+msgstr "Thẻ không được hỗ trợ hoặc số thẻ không hợp lệ."
+
+msgid "This is not a valid International Bank Account Number (IBAN)."
+msgstr "Giá trị này không phải là Số Tài Khoản Ngân Hàng Quốc Tế (IBAN) hợp lệ."
+
+msgid "This value is not a valid ISBN-10."
+msgstr "Giá trị không phải là ISBN-10 hợp lệ."
+
+msgid "This value is not a valid ISBN-13."
+msgstr "Giá trị không phải là ISBN-13 hợp lệ."
+
+msgid "This value is neither a valid ISBN-10 nor a valid ISBN-13."
+msgstr "Giá trị không phải là ISBN-10 hoặc ISBN-13 hợp lệ."
+
+msgid "This value is not a valid ISSN."
+msgstr "Giá trị không phải là ISSN hợp lệ."
+
+msgid "This value is not a valid currency."
+msgstr "Giá trị không phải là đơn vị tiền tệ hợp lệ."
+
+msgid "This value should be equal to {{ compared_value }}."
+msgstr "Giá trị phải bằng {{ compared_value }}."
+
+msgid "This value should be greater than {{ compared_value }}."
+msgstr "Giá trị phải lớn hơn {{ compared_value }}."
+
+msgid "This value should be greater than or equal to {{ compared_value }}."
+msgstr "Giá trị phải lớn hơn hoặc bằng {{ compared_value }}."
+
+msgid "This value should be identical to {{ compared_value_type }} {{ compared_value }}."
+msgstr "Giá trị phải giống  {{ compared_value_type }} {{ compared_value }}."
+
+msgid "This value should be less than {{ compared_value }}."
+msgstr "Giá trị phải bé hơn {{ compared_value }}."
+
+msgid "This value should be less than or equal to {{ compared_value }}."
+msgstr "Giá trị phải nhỏ hơn hoặc bằng {{ compared_value }}."
+
+msgid "This value should not be equal to {{ compared_value }}."
+msgstr "Giá trị không được phép bằng {{ compared_value }}."
+
+msgid "This value should not be identical to {{ compared_value_type }} {{ compared_value }}."
+msgstr "Giá trị không được phép giống như {{ compared_value_type }} {{ compared_value }}."
+
+msgid "The image ratio is too big ({{ ratio }}). Allowed maximum ratio is {{ max_ratio }}."
+msgstr "Tỷ lệ bức ảnh quá lớn ({{ ratio }}). Tỷ lệ tối đa cho phép là {{ max_ratio }}."
+
+msgid "The image ratio is too small ({{ ratio }}). Minimum ratio expected is {{ min_ratio }}."
+msgstr "Tỷ lệ bức ảnh quá nhỏ ({{ ratio }}). Tỷ lệ tối thiểu mong muốn là {{ min_ratio }}."
+
+msgid "The image is square ({{ width }}x{{ height }}px). Square images are not allowed."
+msgstr "Bức ảnh là hình vuông ({{ width }}x{{ height }}px). Ảnh hình vuông không được phép."
+
+msgid "The image is landscape oriented ({{ width }}x{{ height }}px). Landscape oriented images are not allowed."
+msgstr "Bức ảnh theo chiều ngang ({{ width }}x{{ height }}px). Ảnh chiều ngang không được phép."
+
+msgid "The image is portrait oriented ({{ width }}x{{ height }}px). Portrait oriented images are not allowed."
+msgstr "Bức ảnh theo chiều dọc ({{ width }}x{{ height }}px). Ảnh chiều dọc không được phép."
+
+msgid "An empty file is not allowed."
+msgstr "Một file rỗng không được phép."
+
+msgid "The host could not be resolved."
+msgstr "Máy chủ không thể được tìm thấy."
+
+msgid "This value does not match the expected {{ charset }} charset."
+msgstr "Giá trị này không đúng định dạng bộ ký tự mong muốn {{ charset }}."
+
+msgid "This is not a valid Business Identifier Code (BIC)."
+msgstr "Giá trị này không phải là Mã Định Danh Doanh Nghiệp (BIC) hợp lệ."
+
+msgid "Error"
+msgstr "Lỗi"
+
+msgid "This is not a valid UUID."
+msgstr "Giá trị này không phải là UUID hợp lệ."
+
+msgid "This value should be a multiple of {{ compared_value }}."
+msgstr "Giá trị này nên là bội số của {{ compared_value }}."
+
+msgid "This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}."
+msgstr "Mã định danh doanh nghiệp (BIC) này không liên kết với IBAN {{ iban }}."
+
+msgid "This value should be valid JSON."
+msgstr "Giá trị này nên đúng định dạng JSON."
+
+msgid "This collection should contain only unique elements."
+msgstr "Danh sách này chỉ nên chứa các phần tử khác nhau."
+
+msgid "This value should be positive."
+msgstr "Giá trị này có thể thực hiện được."
+
+msgid "This value should be either positive or zero."
+msgstr "Giá trị này có thể thực hiện được hoặc bằng không."
+
+msgid "This value should be negative."
+msgstr "Giá trị này nên bị từ chối."
+
+msgid "This value should be either negative or zero."
+msgstr "Giá trị này nên bị từ chối hoặc bằng không."
+
+msgid "This value is not a valid timezone."
+msgstr "Giá trị này không phải là múi giờ hợp lệ."
+
+msgid "This password has been leaked in a data breach, it must not be used. Please use another password."
+msgstr "Mật khẩu này đã bị rò rỉ dữ liệu, không được sử dụng nữa. Xin vui lòng sử dụng mật khẩu khác."
+
+msgid "This value should be between {{ min }} and {{ max }}."
+msgstr "Giá trị này nên thuộc giữa {{ min }} và {{ max }}."
+
+msgid "This value is not a valid hostname."
+msgstr "Giá trị này không phải là tên máy chủ hợp lệ."
+
+msgid "The number of elements in this collection should be a multiple of {{ compared_value }}."
+msgstr "Số lượng các phần tử trong bộ sưu tập này nên là bội số của {{ compared_value }}."
+
+msgid "This value should satisfy at least one of the following constraints:"
+msgstr "Giá trị này nên thỏa mãn ít nhất một trong những ràng buộc sau:"
+
+msgid "Each element of this collection should satisfy its own set of constraints."
+msgstr "Mỗi phần tử trong bộ sưu tập này nên thỏa mãn những ràng buộc của nó."
+
+msgid "This value is not a valid International Securities Identification Number (ISIN)."
+msgstr "Giá trị này không phải là mã số chứng khoán quốc tế (ISIN) hợp lệ."
+
+msgid "This value should be a valid expression."
+msgstr "Giá trị này phải là một biểu thức hợp lệ."
+
+msgid "This value is not a valid CSS color."
+msgstr "Giá trị này không phải là màu CSS hợp lệ."
+
+msgid "This value is not a valid CIDR notation."
+msgstr "Giá trị này không phải là ký hiệu CIDR hợp lệ."
+
+msgid "The value of the netmask should be between {{ min }} and {{ max }}."
+msgstr "Giá trị của mặt nạ mạng phải nằm trong khoảng từ {{ min }} đến {{ max }}."
+
+msgid "The filename is too long. It should have {{ filename_max_length }} character or less."
+msgid_plural "The filename is too long. It should have {{ filename_max_length }} characters or less."
+msgstr[0] "Tên tệp quá dài. Phải bằng {{ filename_max_length }} ký tự hoặc ít hơn."
+msgstr[1] "Tên tệp quá dài. Phải bằng {{ filename_max_length }} ký tự hoặc ít hơn."
+
+msgid "The password strength is too low. Please use a stronger password."
+msgstr "Sức mạnh mật khẩu quá thấp. Vui lòng sử dụng mật khẩu mạnh hơn."
+
+msgid "This value contains characters that are not allowed by the current restriction-level."
+msgstr "Giá trị này chứa các ký tự không được phép bởi mức độ hạn chế hiện tại."
+
+msgid "Using invisible characters is not allowed."
+msgstr "Sử dụng ký tự vô hình không được phép."
+
+msgid "Mixing numbers from different scripts is not allowed."
+msgstr "Không được phép trộn các số từ các tập lệnh khác nhau."
+
+msgid "Using hidden overlay characters is not allowed."
+msgstr "Sử dụng các ký tự lớp phủ ẩn không được phép."
+
+msgid "The extension of the file is invalid ({{ extension }}). Allowed extensions are {{ extensions }}."
+msgstr "Phần mở rộng của tệp không hợp lệ ({{ extension }}). Phần mở rộng cho phép là {{ extensions }}."
+
+msgid "The detected character encoding is invalid ({{ detected }}). Allowed encodings are {{ encodings }}."
+msgstr "Mã hóa ký tự được phát hiện là không hợp lệ ({{ detected }}). Các mã hóa được phép là {{ encodings }}."
+
+msgid "This value is not a valid MAC address."
+msgstr "Giá trị này không phải là địa chỉ MAC hợp lệ."
+
+msgid "This URL is missing a top-level domain."
+msgstr "URL này thiếu miền cấp cao."
+
+msgid "This form should not contain extra fields."
+msgstr "Mẫu này không nên chứa trường mở rộng."
+
+msgid "The uploaded file was too large. Please try to upload a smaller file."
+msgstr "Tập tin tải lên quá lớn. Vui lòng thử lại với tập tin nhỏ hơn."
+
+msgid "The CSRF token is invalid. Please try to resubmit the form."
+msgstr "CSRF token không hợp lệ. Vui lòng thử lại."
+
+msgid "This value is not a valid HTML5 color."
+msgstr "Giá trị này không phải là màu HTML5 hợp lệ."
+
+msgid "Please enter a valid birthdate."
+msgstr "Vui lòng nhập ngày sinh hợp lệ."
+
+msgid "The selected choice is invalid."
+msgstr "Lựa chọn không hợp lệ."
+
+msgid "The collection is invalid."
+msgstr "Danh sách không hợp lệ."
+
+msgid "Please select a valid color."
+msgstr "Vui lòng chọn một màu hợp lệ."
+
+msgid "Please select a valid country."
+msgstr "Vui lòng chọn đất nước hợp lệ."
+
+msgid "Please select a valid currency."
+msgstr "Vui lòng chọn tiền tệ hợp lệ."
+
+msgid "Please choose a valid date interval."
+msgstr "Vui lòng chọn một khoảng thời gian hợp lệ."
+
+msgid "Please enter a valid date and time."
+msgstr "Vui lòng nhập ngày và thời gian hợp lệ."
+
+msgid "Please enter a valid date."
+msgstr "Vui lòng nhập ngày hợp lệ."
+
+msgid "Please select a valid file."
+msgstr "Vui lòng chọn tệp hợp lệ."
+
+msgid "The hidden field is invalid."
+msgstr "Phạm vi ẩn không hợp lệ."
+
+msgid "Please enter an integer."
+msgstr "Vui lòng nhập một số nguyên."
+
+msgid "Please select a valid language."
+msgstr "Vui lòng chọn ngôn ngữ hợp lệ."
+
+msgid "Please select a valid locale."
+msgstr "Vui lòng chọn miền hợp lệ."
+
+msgid "Please enter a valid money amount."
+msgstr "Vui lòng nhập một khoảng tiền hợp lệ."
+
+msgid "Please enter a number."
+msgstr "Vui lòng nhập một con số."
+
+msgid "The password is invalid."
+msgstr "Mật khẩu không hợp lệ."
+
+msgid "Please enter a percentage value."
+msgstr "Vui lòng nhập một giá trị phần trăm."
+
+msgid "The values do not match."
+msgstr "Các giá trị không phù hợp."
+
+msgid "Please enter a valid time."
+msgstr "Vui lòng nhập thời gian hợp lệ."
+
+msgid "Please select a valid timezone."
+msgstr "Vui lòng chọn múi giờ hợp lệ."
+
+msgid "Please enter a valid URL."
+msgstr "Vui lòng nhập một URL hợp lệ."
+
+msgid "Please enter a valid search term."
+msgstr "Vui lòng nhập chuỗi tìm kiếm hợp lệ."
+
+msgid "Please provide a valid phone number."
+msgstr "Vui lòng cung cấp số điện thoại hợp lệ."
+
+msgid "The checkbox has an invalid value."
+msgstr "Hộp kiểm có một giá trị không hợp lệ."
+
+msgid "Please enter a valid email address."
+msgstr "Vui lòng nhập địa chỉ email hợp lệ."
+
+msgid "Please select a valid option."
+msgstr "Vui lòng chọn một phương án hợp lệ."
+
+msgid "Please select a valid range."
+msgstr "Vui lòng nhập một phạm vi hợp lệ."
+
+msgid "Please enter a valid week."
+msgstr "Vui lòng nhập một tuần hợp lệ."

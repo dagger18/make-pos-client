@@ -1,0 +1,8 @@
+App\Module\Quote\Entity\CustomChargeType:
+
+    list:
+        - id
+        - name
+        - description
+        - createdBy
+        - createdDate

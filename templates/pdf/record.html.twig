@@ -1,0 +1,154 @@
+{% if ebitNote.type == enum('EbitNoteType').RecordReceipt
+%}
+  {% set target = ebitNote.collectFrom %}
+{% endif %}
+{% if ebitNote.type == enum('EbitNoteType').RecordPayment
+%}
+  {% set target = ebitNote.payTo %}
+{% endif %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+{% if renderMode == 'preview' %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/dejavu.css">
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style type="text/css">
+.border-left {
+  border-left: 1px solid #000;
+  padding-left: 1rem;
+}
+</style>
+</head>
+<body>
+<table class="table is-fullwidth no-border-td">
+<tr>
+  <td class="pb-4">
+    <div class="logo pb-4">
+      <img width="130" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+    </div>
+  </td>
+  <td width="20px"></td>
+  <td style="vertical-align: middle;">
+    <h2 class="is-uppercase is-size-1 mb-2 has-text-right" >
+      {% if ebitNote.type == enum('EbitNoteType').RecordReceipt %}
+        {% trans %}Receipt{% endtrans %}
+      {% elseif ebitNote.type == enum('EbitNoteType').RecordPayment %}
+        {% trans %}Payment{% endtrans %}
+      {% endif %}
+    </h2>
+  </td>
+</tr>
+<tr>
+  <td width="400px">
+    <div>
+      <div class="is-size-4 has-text-weight-bold is-uppercase">{{ company.name }}</div>
+      <div><b>{% trans %}Address{% endtrans %}:</b> {{ company.address }} {{ company.province }}, {{ company.city }}, {{ company.country }}</div>
+      <div><b>{% trans %}Phone{% endtrans %}:</b> {{ company.phone }}</div>
+      <div><b>{% trans %}Tax Number{% endtrans %}:</b> {{ company.taxNumber }}</div>
+    </div>
+  </td>
+  <td width="20px"></td>
+  <td class="has-text-right" width="260px">
+    <table class="table is-fullwidth">
+      <tr><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% if ebitNote.type == enum('EbitNoteType').RecordReceipt %}
+            {% trans %}Receipt{% endtrans %}
+          {% endif %}
+          {% if ebitNote.type == enum('EbitNoteType').RecordPayment %}
+            {% trans %}Payment{% endtrans %}
+          {% endif %}
+          {% trans %}Date{% endtrans %}
+        </td>
+        <td class="has-text-right">
+          {{ (ebitNote.noteDate ?? ebitNote.createdDate) | date("M, d Y") }}
+        </td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% if ebitNote.type == enum('EbitNoteType').RecordReceipt %}
+            {% trans %}Receipt{% endtrans %}
+          {% endif %}
+          {% if ebitNote.type == enum('EbitNoteType').RecordPayment %}
+            {% trans %}Payment{% endtrans %}
+          {% endif %} {% trans %}No.{% endtrans %}
+        </td>
+        <td class="has-text-right">{{ ebitNote.code }}</td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">
+          {% trans %}Payment Method{% endtrans %}
+        </td>
+        <td class="has-text-right" width="100px">{{ ebitNote.paymentMethod.name ?? '' }}</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr><td colspan=3 style="border-bottom: 1px solid #ddd; border-top: none" class="pb-4"></td></tr>
+<tr><td colspan=3 style="border-top: 1px solid #ddd; border-bottom: none" class="pb-4"></td></tr>
+<tr>
+  <td>
+    <div>
+      <b>{% if ebitNote.type == enum('EbitNoteType').RecordReceipt %}
+        {% trans %}Received from{% endtrans %}
+      {% endif %}
+      {% if ebitNote.type == enum('EbitNoteType').RecordPayment %}
+        {% trans %}Payment to{% endtrans %}
+      {% endif %}:</b> {{ target.name ?? target.company ?? ('Undefined Provider' | trans) }}
+    </div>
+    {% if target %}
+    <div>
+      <div><b>{% trans %}Address{% endtrans %}:</b> {{ target.address }} {{ target.province }}, {{ target.city }}, {{ target.country }}</div>
+      <div><b>{% trans %}Tax Number{% endtrans %}:</b> {{ target.defaultInvoiceInfo.taxNumber }}</div>
+    </div>
+    {% endif %}
+  </td>
+</tr>
+</table><br>
+<table class="table is-fullwidth mb-0">
+<tbody>
+
+</tbody>
+</table>
+<table class="table is-fullwidth" style="page-break-inside: avoid;    table-layout: fixed;">
+  <tr>
+    <td style="border-bottom: none;">
+      <div class="pb-2"><b>{% trans %}PIC{% endtrans %}</b></div>
+    </td>
+    <td style="border-bottom: none;">
+      <div class="pb-2"><b>{% trans %}Amount{% endtrans %}</b></div>
+      {{ ebitNote.amount.amount | format_number({fraction_digit: ebitNote.moneyScale}) }}
+    </td>
+    <td style="border-bottom: none;">
+      <div class="pb-2"><b>{% trans %}Description{% endtrans %}</b></div>
+      {{ ebitNote.description }}
+    </td>
+  </tr>
+  <tr>
+    <td colspan=3 style="border-top: none;border-bottom: none; padding-top: 30px; padding-bottom: 40px;">
+      <b>{% trans %}In words{% endtrans %}</b>: {{ ebitNote.amountInWords }}
+    </td>
+  </tr>
+  <tr>
+    <td class="has-text-centered">
+      <div class="is-uppercase"><b>{% trans %}Accountant{% endtrans %}</b></div>
+    </td>
+    <td class="has-text-centered">
+      <div class="is-uppercase"><b>{% trans %}Manager{% endtrans %}</b></div>
+    </td>
+    <td class="has-text-centered">
+      <div class="is-uppercase"><b>{% trans %}Received from{% endtrans %}</b></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

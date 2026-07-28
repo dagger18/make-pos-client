@@ -1,0 +1,10 @@
+doctrine_migrations:
+    migrations_paths:
+        # namespace is arbitrary but should be different from App\Migrations
+        # as migrations classes should NOT be autoloaded
+        'CommonMigrations': '%kernel.project_dir%/migrations/common'
+        'SqlEngineMigrations': '%kernel.project_dir%/migrations/%env(getDatabaseEngine:string:resolve:DATABASE_URL)%'
+    enable_profiler: false
+    services:
+        'Doctrine\Migrations\Version\MigrationFactory': 'App\Misc\Doctrine\MigrationFactoryDecorator'
+        'Doctrine\Migrations\Version\Comparator': App\Misc\Doctrine\AlphabeticalComparator

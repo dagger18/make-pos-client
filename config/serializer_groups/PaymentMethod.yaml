@@ -1,0 +1,9 @@
+App\Module\Finance\Entity\PaymentMethod:
+
+    list:
+        - id
+        - name
+        - type
+        - createdBy
+        - createdDate
+        - description

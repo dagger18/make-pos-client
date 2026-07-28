@@ -1,0 +1,15 @@
+when@prod:
+    sentry:
+        dsn: '%env(SENTRY_DSN)%'
+        options:
+            environment: '%kernel.environment%'
+            send_default_pii: true
+            ignore_exceptions:
+                - App\Misc\Exception\BadRequestException
+                - App\Misc\Exception\AccessDeniedException
+                - App\Misc\Exception\CapacityExceededException
+                #- Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                - Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
+                - Symfony\Component\Security\Core\Exception\AuthenticationException
+        tracing:
+            enabled: false

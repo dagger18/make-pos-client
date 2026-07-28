@@ -1,0 +1,10 @@
+App\Module\Crm\Entity\AgentProfile:
+    list:
+        - network
+        - agentCode
+        - coverageCountries
+        - modesHandled
+        - commissionRate
+        - settlementCurrency
+        - settlementTerms
+        - performanceScore

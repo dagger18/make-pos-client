@@ -1,0 +1,20 @@
+App\Module\Carrier\Entity\Provider:
+
+    list:
+        - id
+        - name
+        - code
+        - country
+        - city
+        - defaultContact
+        - phone
+        - trackingUrl
+        - creditPeriod
+        - creditStatus
+        - creditHoldReason
+        - createdDate
+        - createdBy
+        - transportTypes
+        - carrierProfile
+        - agentProfile
+

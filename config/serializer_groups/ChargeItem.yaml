@@ -1,0 +1,16 @@
+App\Module\Finance\Entity\ChargeItem:
+
+    list:
+        - id
+        - ebitNote
+        - chargeName
+        - calculationType
+        - description
+        - quantity
+        - chargePrice
+        - amount
+        - tax
+        - taxGroup
+        - department
+        - payableAt
+        - visibleTo

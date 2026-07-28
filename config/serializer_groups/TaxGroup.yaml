@@ -1,0 +1,9 @@
+App\Module\Finance\Entity\TaxGroup:
+
+    list:
+        - id
+        - name
+        - amount
+        - createdBy
+        - createdDate
+        - description

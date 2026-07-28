@@ -1,0 +1,18 @@
+App\Module\Operations\Entity\Booking:
+
+    list:
+        - id
+        - portLoading
+        - portDischarge
+        - code
+        - commodities
+        - etd
+        - eta
+        - sailingRef
+        - flightRef
+        - codeReference
+        - freightTerms
+        - billLadingType
+        - cargoVolume
+        - bookingDate
+        - bookingTo

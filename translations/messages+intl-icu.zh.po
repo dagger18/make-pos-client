@@ -1,0 +1,665 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+
+msgid "Feature %feature% is not enabled on this plan."
+msgstr "此套餐未启用 %feature% 功能。"
+
+msgid "Provider not found"
+msgstr "未找到服务商"
+
+msgid "Shipment not found"
+msgstr "未找到货物"
+
+msgid "Not found"
+msgstr "未找到"
+
+msgid "trackingType and trackingRef are required."
+msgstr "trackingType 和 trackingRef 为必填项。"
+
+msgid "Not found."
+msgstr "未找到。"
+
+msgid "Invalid secret."
+msgstr "密钥无效。"
+
+msgid "email is required"
+msgstr "电子邮件为必填项"
+
+msgid "Wrong credentials"
+msgstr "凭据错误"
+
+msgid "invalid token"
+msgstr "令牌无效"
+
+msgid "Invalid service token."
+msgstr "服务令牌无效。"
+
+msgid "maximumUsers must be a non-negative integer."
+msgstr "maximumUsers 必须为非负整数。"
+
+msgid "Could not generate upgrade link."
+msgstr "无法生成升级链接。"
+
+msgid "id is required."
+msgstr "ID 为必填项。"
+
+msgid "transportMode is required"
+msgstr "运输方式为必填项"
+
+msgid "Already closed"
+msgstr "已关闭"
+
+msgid "Already locked."
+msgstr "已锁定。"
+
+msgid "Pending"
+msgstr "待处理"
+
+msgid "Active"
+msgstr "活跃"
+
+msgid "Sent"
+msgstr "已发送"
+
+msgid "Done"
+msgstr "完成"
+
+msgid "Policy not found"
+msgstr "未找到策略"
+
+msgid "connectorType, partnerName and protocol are required."
+msgstr "connectorType、partnerName 和 protocol 为必填项。"
+
+msgid "Email and password are required."
+msgstr "电子邮件和密码为必填项。"
+
+msgid "Invalid credentials."
+msgstr "凭据无效。"
+
+msgid "Invalid or expired link."
+msgstr "链接无效或已过期。"
+
+msgid "LC not found"
+msgstr "未找到信用证"
+
+msgid "transportMode, serviceType and branchId are required."
+msgstr "运输方式、服务类型和分支机构 ID 为必填项。"
+
+msgid "Branch not found."
+msgstr "未找到分支机构。"
+
+msgid "Cannot edit a cancelled consolidation."
+msgstr "无法编辑已取消的拼货。"
+
+msgid "Only a closed consolidation can be departed."
+msgstr "只有已关闭的拼货才能发运。"
+
+msgid "Only a departed consolidation can be marked as arrived."
+msgstr "只有已发运的拼货才能标记为已到达。"
+
+msgid "Remove all child shipments before cancelling."
+msgstr "取消前请移除所有子货物。"
+
+msgid "Cannot add shipments to a closed consolidation."
+msgstr "无法向已关闭的拼货添加货物。"
+
+msgid "Shipment not found."
+msgstr "未找到货物。"
+
+msgid "Shipment already belongs to another consolidation."
+msgstr "该货物已属于其他拼货。"
+
+msgid "Hold reason is required."
+msgstr "暂扣原因为必填项。"
+
+msgid "Invalid doc type."
+msgstr "文件类型无效。"
+
+msgid "Required documents cannot be deleted."
+msgstr "必要文件不可删除。"
+
+msgid "Invalid milestoneCode."
+msgstr "里程碑代码无效。"
+
+msgid "Milestone blocked by incomplete mandatory tasks."
+msgstr "里程碑因未完成的必要任务而被阻止。"
+
+msgid "System milestones cannot be deleted."
+msgstr "系统里程碑不可删除。"
+
+msgid "Note body cannot be empty."
+msgstr "备注内容不能为空。"
+
+msgid "System notes cannot be deleted."
+msgstr "系统备注不可删除。"
+
+msgid "Invalid role."
+msgstr "角色无效。"
+
+msgid "Role already assigned."
+msgstr "角色已分配。"
+
+msgid "Title is required."
+msgstr "标题为必填项。"
+
+msgid "Mandatory tasks cannot be deleted."
+msgstr "必要任务不可删除。"
+
+msgid "Draft"
+msgstr "草稿"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Cancelled"
+msgstr "已取消"
+
+msgid "Client credit status does not allow new quotes"
+msgstr "客户信用状态不允许创建新报价"
+
+msgid "pol and pod are required"
+msgstr "装货港和卸货港为必填项"
+
+msgid "No file uploaded"
+msgstr "未上传文件"
+
+msgid "transportType, effectiveDate and expiryDate are required"
+msgstr "运输类型、生效日期和到期日期为必填项"
+
+msgid "entryType is required."
+msgstr "条目类型为必填项。"
+
+msgid "Only DRAFT entries can be deleted."
+msgstr "只能删除草稿状态的条目。"
+
+msgid "Only DRAFT or REJECTED entries can be submitted."
+msgstr "只能提交草稿或被拒绝状态的条目。"
+
+msgid "No declaration number yet."
+msgstr "暂无申报编号。"
+
+msgid "hsCodeId is required."
+msgstr "HS 编码 ID 为必填项。"
+
+msgid "HS code not found."
+msgstr "未找到 HS 编码。"
+
+msgid "%s not found"
+msgstr "未找到 %s"
+
+msgid "Unsupported format."
+msgstr "不支持的格式。"
+
+msgid "Unsupported format, expects \"%s\", but \"%s\" given."
+msgstr "不支持的格式，期望 \"%s\"，但提供了 \"%s\"。"
+
+msgid "No %entityName% found for id %id%"
+msgstr "未找到 ID 为 %id% 的 %entityName%"
+
+msgid "Missing credentials."
+msgstr "凭据缺失。"
+
+msgid "Invalid or expired token."
+msgstr "令牌无效或已过期。"
+
+msgid "Portal account is inactive."
+msgstr "门户账户未激活。"
+
+msgid "Unauthorized."
+msgstr "未授权。"
+
+msgid "Portal user \"%s\" not found."
+msgstr "未找到门户用户 \"%s\"。"
+
+msgid "Login to office"
+msgstr "登录办公室"
+
+msgid "All rights reserved"
+msgstr "保留所有权利"
+
+msgid "Contact us"
+msgstr "联系我们"
+
+msgid "About us"
+msgstr "关于我们"
+
+msgid "Unsubscribe"
+msgstr "取消订阅"
+
+msgid "ARRIVAL NOTICE"
+msgstr "到货通知"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Shipment"
+msgstr "货物"
+
+msgid "TO"
+msgstr "致"
+
+msgid "Port of Loading"
+msgstr "装货港"
+
+msgid "Port of Discharge"
+msgstr "卸货港"
+
+msgid "Vessel / Voyage"
+msgstr "船名 / 航次"
+
+msgid "ETD"
+msgstr "预计离港日期"
+
+msgid "House B/L No."
+msgstr "分提单号"
+
+msgid "Master B/L No."
+msgstr "主提单号"
+
+msgid "Destination Charges"
+msgstr "目的地费用"
+
+msgid "Required Documents"
+msgstr "所需文件"
+
+msgid "Note"
+msgstr "备注"
+
+msgid "This is an automatically generated document."
+msgstr "此文件为自动生成。"
+
+msgid "Tel"
+msgstr "电话"
+
+msgid "Email"
+msgstr "电子邮件"
+
+msgid "Booking Confirmation"
+msgstr "订舱确认书"
+
+msgid "Booking No"
+msgstr "订舱号"
+
+msgid "To"
+msgstr "致"
+
+msgid "We are pleased to inform you that your shipment has been confirmed as below"
+msgstr "我们很高兴通知您，您的货物已按以下内容确认"
+
+msgid "Air Waybill No."
+msgstr "航空运单号"
+
+msgid "Airport of Loading"
+msgstr "起运机场"
+
+msgid "Airport of Destination"
+msgstr "目的机场"
+
+msgid "No. of Package(s)"
+msgstr "件数"
+
+msgid "Container"
+msgstr "集装箱"
+
+msgid "Commodity"
+msgstr "货物名称"
+
+msgid "Gross Weight"
+msgstr "毛重"
+
+msgid "Measurement"
+msgstr "尺寸"
+
+msgid "PIC"
+msgstr "负责人"
+
+msgid "Flight Schedule"
+msgstr "航班时刻表"
+
+msgid "No."
+msgstr "序号"
+
+msgid "Flight"
+msgstr "航班"
+
+msgid "Route"
+msgstr "航线"
+
+msgid "ETA"
+msgstr "预计到港时间"
+
+msgid "Contact Information"
+msgstr "联系信息"
+
+msgid "Cut off time"
+msgstr "截关时间"
+
+msgid "Warehouse"
+msgstr "仓库"
+
+msgid "Contact No."
+msgstr "联系电话"
+
+msgid "Terms and Conditions"
+msgstr "条款与条件"
+
+msgid "DANGEROUS GOODS DECLARATION"
+msgstr "危险品申报"
+
+msgid "WARNING: This shipment contains dangerous goods"
+msgstr "警告：此货物包含危险品"
+
+msgid "HBL"
+msgstr "分提单"
+
+msgid "MBL"
+msgstr "主提单"
+
+msgid "IMO Class"
+msgstr "IMO 类别"
+
+msgid "UN No."
+msgstr "UN 编号"
+
+msgid "Packing Group"
+msgstr "包装类别"
+
+msgid "Proper Shipping Name"
+msgstr "正式运输名称"
+
+msgid "Technical Name"
+msgstr "技术名称"
+
+msgid "Net Qty"
+msgstr "净数量"
+
+msgid "Gross Qty"
+msgstr "毛数量"
+
+msgid "UOM"
+msgstr "计量单位"
+
+msgid "Flash Point"
+msgstr "闪点"
+
+msgid "Flags"
+msgstr "标志"
+
+msgid "Subsidiary Risk"
+msgstr "次要危险"
+
+msgid "Emergency"
+msgstr "紧急情况"
+
+msgid "I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations."
+msgstr "本人特此声明，本批货物的内容已按正式运输名称在上方完整准确地描述，并已按照适用的国际和国内政府法规进行分类、包装、标记和加贴标签/标牌，且在各方面均处于适合运输的状态。"
+
+msgid "Shipper's Signature"
+msgstr "发货人签名"
+
+msgid "DELIVERY ORDER"
+msgstr "提货单"
+
+msgid "Issue Date"
+msgstr "签发日期"
+
+msgid "Release Date"
+msgstr "放货日期"
+
+msgid "Authorized Signature"
+msgstr "授权签名"
+
+msgid "Consignee Signature"
+msgstr "收货人签名"
+
+msgid "Debit Note"
+msgstr "借记单"
+
+msgid "Credit Note"
+msgstr "贷记单"
+
+msgid "Invoice"
+msgstr "发票"
+
+msgid "Payment On Behalf Of"
+msgstr "代为付款"
+
+msgid "Collect On Behalf Of"
+msgstr "代为收款"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Tax Number"
+msgstr "税号"
+
+msgid "Bank Account"
+msgstr "银行账户"
+
+msgid "Created"
+msgstr "已创建"
+
+msgid "Due Date"
+msgstr "到期日"
+
+msgid "Payment Method"
+msgstr "付款方式"
+
+msgid "Bill To"
+msgstr "账单收件人"
+
+msgid "Pay For"
+msgstr "付款对象"
+
+msgid "Undefined Provider"
+msgstr "未定义服务商"
+
+msgid "Vessel No."
+msgstr "船舶编号"
+
+msgid "B/L"
+msgstr "提单"
+
+msgid "Shipment ID"
+msgstr "货物 ID"
+
+msgid "Reference ID"
+msgstr "参考 ID"
+
+msgid "Booking No."
+msgstr "订舱号"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Calculate"
+msgstr "计算"
+
+msgid "Curr."
+msgstr "币种"
+
+msgid "Price"
+msgstr "价格"
+
+msgid "Qty"
+msgstr "数量"
+
+msgid "Total"
+msgstr "合计"
+
+msgid "Tax"
+msgstr "税"
+
+msgid "Include Tax"
+msgstr "含税"
+
+msgid "Exchange rate"
+msgstr "汇率"
+
+msgid "PACKING LIST"
+msgstr "装箱单"
+
+msgid "Ref No."
+msgstr "参考编号"
+
+msgid "Shipper"
+msgstr "发货人"
+
+msgid "Consignee"
+msgstr "收货人"
+
+msgid "Container No."
+msgstr "集装箱号"
+
+msgid "Seal No."
+msgstr "铅封号"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Packages"
+msgstr "件数"
+
+msgid "Volume (CBM)"
+msgstr "体积（CBM）"
+
+msgid "Package Type"
+msgstr "包装类型"
+
+msgid "Description of Goods"
+msgstr "货物描述"
+
+msgid "Shipping Marks"
+msgstr "唛头"
+
+msgid "From"
+msgstr "发件人"
+
+msgid "Address"
+msgstr "地址"
+
+msgid "Prepared By"
+msgstr "制单人"
+
+msgid "Mobile"
+msgstr "手机"
+
+msgid "Contact Person"
+msgstr "联系人"
+
+msgid "Quotation"
+msgstr "报价单"
+
+msgid "Created at"
+msgstr "创建时间"
+
+msgid "Valid until"
+msgstr "有效期至"
+
+msgid "Quote ID"
+msgstr "报价 ID"
+
+msgid "Origin"
+msgstr "起运地"
+
+msgid "Transit Port"
+msgstr "中转港"
+
+msgid "Incoterms"
+msgstr "国际贸易术语"
+
+msgid "Commodities"
+msgstr "商品"
+
+msgid "Remark"
+msgstr "备注"
+
+msgid "Destination"
+msgstr "目的地"
+
+msgid "Place of Delivery"
+msgstr "交货地点"
+
+msgid "Volume"
+msgstr "体积"
+
+msgid "Air-port of Loading"
+msgstr "起运机场"
+
+msgid "Mode"
+msgstr "方式"
+
+msgid "Chargeable Weight"
+msgstr "计费重量"
+
+msgid "Air-port of Discharge"
+msgstr "目的机场"
+
+msgid "Transit Time"
+msgstr "运输时间"
+
+msgid "days"
+msgstr "天"
+
+msgid "Schedule"
+msgstr "时刻表"
+
+msgid "Cargo ready date"
+msgstr "货物备妥日期"
+
+msgid "Quote Detail"
+msgstr "报价明细"
+
+msgid "Charge"
+msgstr "费用"
+
+msgid "Item Name"
+msgstr "项目名称"
+
+msgid "Curr"
+msgstr "币种"
+
+msgid "Amount"
+msgstr "金额"
+
+msgid "Sub-Total"
+msgstr "小计"
+
+msgid "Receipt"
+msgstr "收据"
+
+msgid "Payment"
+msgstr "付款"
+
+msgid "Received from"
+msgstr "收款自"
+
+msgid "Payment to"
+msgstr "付款至"
+
+msgid "In words"
+msgstr "大写金额"
+
+msgid "Accountant"
+msgstr "会计"
+
+msgid "Manager"
+msgstr "经理"
+
+msgid "Statement of account"
+msgstr "对账单"
+
+msgid "Statement Date"
+msgstr "对账单日期"
+
+msgid "Invoice No."
+msgstr "发票号"
+
+msgid "Bill No."
+msgstr "账单号"
+
+msgid "Ex."
+msgstr "前"

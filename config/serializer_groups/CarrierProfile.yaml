@@ -1,0 +1,11 @@
+App\Module\Carrier\Entity\CarrierProfile:
+    list:
+        - scacCode
+        - iataCode
+        - carrierType
+        - alliance
+        - bookingPlatform
+        - bookingEmail
+        - siEmail
+        - amsFiler
+        - preferredPayment

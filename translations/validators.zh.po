@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+
+msgid "This value should be false."
+msgstr "该变量的值应为 false 。"
+
+msgid "This value should be true."
+msgstr "该变量的值应为 true 。"
+
+msgid "This value should be of type {{ type }}."
+msgstr "该变量的类型应为 {{ type }} 。"
+
+msgid "This value should be blank."
+msgstr "该变量值应为空。"
+
+msgid "The value you selected is not a valid choice."
+msgstr "选定变量的值不是有效的选项。"
+
+msgid "You must select at least {{ limit }} choice."
+msgid_plural "You must select at least {{ limit }} choices."
+msgstr[0] "您至少要选择 {{ limit }} 个选项。"
+
+msgid "You must select at most {{ limit }} choice."
+msgid_plural "You must select at most {{ limit }} choices."
+msgstr[0] "您最多能选择 {{ limit }} 个选项。"
+
+msgid "One or more of the given values is invalid."
+msgstr "一个或者多个给定的值无效。"
+
+msgid "This field was not expected."
+msgstr "此字段是多余的。"
+
+msgid "This field is missing."
+msgstr "此字段缺失。"
+
+msgid "This value is not a valid date."
+msgstr "该值不是一个有效的日期（date）。"
+
+msgid "This value is not a valid datetime."
+msgstr "该值不是一个有效的日期时间（datetime）。"
+
+msgid "This value is not a valid email address."
+msgstr "该值不是一个有效的邮件地址。"
+
+msgid "The file could not be found."
+msgstr "文件未找到。"
+
+msgid "The file is not readable."
+msgstr "文件不可读。"
+
+msgid "The file is too large ({{ size }} {{ suffix }}). Allowed maximum size is {{ limit }} {{ suffix }}."
+msgstr "文件太大 ({{ size }} {{ suffix }})。文件大小不可以超过 {{ limit }} {{ suffix }} 。"
+
+msgid "The mime type of the file is invalid ({{ type }}). Allowed mime types are {{ types }}."
+msgstr "无效的文件类型 ({{ type }}) 。允许的文件类型有 {{ types }} 。"
+
+msgid "This value should be {{ limit }} or less."
+msgstr "这个变量的值应该小于或等于 {{ limit }}。"
+
+msgid "This value is too long. It should have {{ limit }} character or less."
+msgid_plural "This value is too long. It should have {{ limit }} characters or less."
+msgstr[0] "字符串太长，长度不可超过 {{ limit }} 个字符。"
+
+msgid "This value should be {{ limit }} or more."
+msgstr "该变量的值应该大于或等于 {{ limit }}。"
+
+msgid "This value is too short. It should have {{ limit }} character or more."
+msgid_plural "This value is too short. It should have {{ limit }} characters or more."
+msgstr[0] "字符串太短，长度不可少于 {{ limit }} 个字符。"
+
+msgid "This value should not be blank."
+msgstr "该变量不应为空。"
+
+msgid "This value should not be null."
+msgstr "该变量不应为 null 。"
+
+msgid "This value should be null."
+msgstr "该变量应为空 null 。"
+
+msgid "This value is not valid."
+msgstr "该变量值无效 。"
+
+msgid "This value is not a valid time."
+msgstr "该值不是一个有效的时间。"
+
+msgid "This value is not a valid URL."
+msgstr "该值不是一个有效的 URL 。"
+
+msgid "The two values should be equal."
+msgstr "这两个变量的值应该相等。"
+
+msgid "The file is too large. Allowed maximum size is {{ limit }} {{ suffix }}."
+msgstr "文件太大，文件大小不可以超过 {{ limit }} {{ suffix }}。 "
+
+msgid "The file is too large."
+msgstr "文件太大。"
+
+msgid "The file could not be uploaded."
+msgstr "无法上传此文件。"
+
+msgid "This value should be a valid number."
+msgstr "该值应该为有效的数字。"
+
+msgid "This file is not a valid image."
+msgstr "该文件不是有效的图片。"
+
+msgid "This is not a valid IP address."
+msgstr "该值不是有效的IP地址。"
+
+msgid "This value is not a valid language."
+msgstr "该值不是有效的语言名。"
+
+msgid "This value is not a valid locale."
+msgstr "该值不是有效的区域值（locale）。"
+
+msgid "This value is not a valid country."
+msgstr "该值不是有效的国家名。"
+
+msgid "This value is already used."
+msgstr "该值已经被使用。"
+
+msgid "The size of the image could not be detected."
+msgstr "不能解析图片大小。"
+
+msgid "The image width is too big ({{ width }}px). Allowed maximum width is {{ max_width }}px."
+msgstr "图片太宽 ({{ width }}px)，最大宽度为 {{ max_width }}px 。"
+
+msgid "The image width is too small ({{ width }}px). Minimum width expected is {{ min_width }}px."
+msgstr "图片宽度不够 ({{ width }}px)，最小宽度为 {{ min_width }}px 。"
+
+msgid "The image height is too big ({{ height }}px). Allowed maximum height is {{ max_height }}px."
+msgstr "图片太高 ({{ height }}px)，最大高度为 {{ max_height }}px 。"
+
+msgid "The image height is too small ({{ height }}px). Minimum height expected is {{ min_height }}px."
+msgstr "图片高度不够 ({{ height }}px)，最小高度为 {{ min_height }}px 。"
+
+msgid "This value should be the user's current password."
+msgstr "该变量的值应为用户当前的密码。"
+
+msgid "This value should have exactly {{ limit }} character."
+msgid_plural "This value should have exactly {{ limit }} characters."
+msgstr[0] "该变量应为 {{ limit }} 个字符。"
+
+msgid "The file was only partially uploaded."
+msgstr "该文件的上传不完整。"
+
+msgid "No file was uploaded."
+msgstr "没有上传任何文件。"
+
+msgid "No temporary folder was configured in php.ini."
+msgstr "php.ini 中没有配置临时文件夹，或配置的文件夹不存在。"
+
+msgid "Cannot write temporary file to disk."
+msgstr "临时文件写入磁盘失败。"
+
+msgid "A PHP extension caused the upload to fail."
+msgstr "某个 PHP 扩展造成上传失败。"
+
+msgid "This collection should contain {{ limit }} element or more."
+msgid_plural "This collection should contain {{ limit }} elements or more."
+msgstr[0] "该集合最少应包含 {{ limit }} 个元素。"
+
+msgid "This collection should contain {{ limit }} element or less."
+msgid_plural "This collection should contain {{ limit }} elements or less."
+msgstr[0] "该集合最多包含 {{ limit }} 个元素。"
+
+msgid "This collection should contain exactly {{ limit }} element."
+msgid_plural "This collection should contain exactly {{ limit }} elements."
+msgstr[0] "该集合应包含 {{ limit }} 个元素 element 。"
+
+msgid "Invalid card number."
+msgstr "无效的信用卡号。"
+
+msgid "Unsupported card type or invalid card number."
+msgstr "不支持的信用卡类型或无效的信用卡号。"
+
+msgid "This is not a valid International Bank Account Number (IBAN)."
+msgstr "该值不是有效的国际银行账号（IBAN）。"
+
+msgid "This value is not a valid ISBN-10."
+msgstr "该值不是有效的10位国际标准书号（ISBN-10）。"
+
+msgid "This value is not a valid ISBN-13."
+msgstr "该值不是有效的13位国际标准书号（ISBN-13）。"
+
+msgid "This value is neither a valid ISBN-10 nor a valid ISBN-13."
+msgstr "该值不是有效的国际标准书号（ISBN-10 或 ISBN-13）。"
+
+msgid "This value is not a valid ISSN."
+msgstr "该值不是有效的国际标准期刊号（ISSN）。"
+
+msgid "This value is not a valid currency."
+msgstr "该值不是有效的货币名（currency）。"
+
+msgid "This value should be equal to {{ compared_value }}."
+msgstr "该值应等于 {{ compared_value }} 。"
+
+msgid "This value should be greater than {{ compared_value }}."
+msgstr "该值应大于 {{ compared_value }} 。"
+
+msgid "This value should be greater than or equal to {{ compared_value }}."
+msgstr "该值应大于或等于 {{ compared_value }} 。"
+
+msgid "This value should be identical to {{ compared_value_type }} {{ compared_value }}."
+msgstr "该值应与 {{ compared_value_type }} {{ compared_value }} 相同。"
+
+msgid "This value should be less than {{ compared_value }}."
+msgstr "该值应小于 {{ compared_value }} 。"
+
+msgid "This value should be less than or equal to {{ compared_value }}."
+msgstr "该值应小于或等于 {{ compared_value }} 。"
+
+msgid "This value should not be equal to {{ compared_value }}."
+msgstr "该值不应先等于 {{ compared_value }} 。"
+
+msgid "This value should not be identical to {{ compared_value_type }} {{ compared_value }}."
+msgstr "该值不应与 {{ compared_value_type }} {{ compared_value }} 相同。"
+
+msgid "The image ratio is too big ({{ ratio }}). Allowed maximum ratio is {{ max_ratio }}."
+msgstr "图片宽高比太大 ({{ ratio }})。允许的最大宽高比为 {{ max_ratio }}。"
+
+msgid "The image ratio is too small ({{ ratio }}). Minimum ratio expected is {{ min_ratio }}."
+msgstr "图片宽高比太小 ({{ ratio }})。允许的最大宽高比为 {{ min_ratio }}。"
+
+msgid "The image is square ({{ width }}x{{ height }}px). Square images are not allowed."
+msgstr "图片是方形的 ({{ width }}x{{ height }}px)。不允许使用方形的图片。"
+
+msgid "The image is landscape oriented ({{ width }}x{{ height }}px). Landscape oriented images are not allowed."
+msgstr "图片是横向的 ({{ width }}x{{ height }}px)。不允许使用横向的图片。"
+
+msgid "The image is portrait oriented ({{ width }}x{{ height }}px). Portrait oriented images are not allowed."
+msgstr "图片是纵向的 ({{ width }}x{{ height }}px)。不允许使用纵向的图片。"
+
+msgid "An empty file is not allowed."
+msgstr "不允许使用空文件。"
+
+msgid "The host could not be resolved."
+msgstr "主机名无法解析。"
+
+msgid "This value does not match the expected {{ charset }} charset."
+msgstr "该值不符合 {{ charset }} 编码。"
+
+msgid "This is not a valid Business Identifier Code (BIC)."
+msgstr "该值不是有效的业务标识符代码（BIC）。"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "This is not a valid UUID."
+msgstr "该值不是有效的UUID。"
+
+msgid "This value should be a multiple of {{ compared_value }}."
+msgstr "此值应为 {{ compared_value }} 的倍数。"
+
+msgid "This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}."
+msgstr "此业务标识符代码（BIC）与IBAN {{ iban }} 无关。"
+
+msgid "This value should be valid JSON."
+msgstr "该值应该是有效的JSON。"
+
+msgid "This collection should contain only unique elements."
+msgstr "该集合应仅包含独一无二的元素。"
+
+msgid "This value should be positive."
+msgstr "数值应为正数。"
+
+msgid "This value should be either positive or zero."
+msgstr "数值应是正数，或为零。"
+
+msgid "This value should be negative."
+msgstr "数值应为负数。"
+
+msgid "This value should be either negative or zero."
+msgstr "数值应是负数，或为零。"
+
+msgid "This value is not a valid timezone."
+msgstr "无效时区。"
+
+msgid "This password has been leaked in a data breach, it must not be used. Please use another password."
+msgstr "此密码已被泄露，切勿使用。请更换密码。"
+
+msgid "This value should be between {{ min }} and {{ max }}."
+msgstr "该数值应在 {{ min }} 和 {{ max }} 之间。"
+
+msgid "This value is not a valid hostname."
+msgstr "该值不是有效的主机名称。"
+
+msgid "The number of elements in this collection should be a multiple of {{ compared_value }}."
+msgstr "该集合内的元素数量得是 {{ compared_value }} 的倍数。"
+
+msgid "This value should satisfy at least one of the following constraints:"
+msgstr "该值需符合以下其中一个约束："
+
+msgid "Each element of this collection should satisfy its own set of constraints."
+msgstr "该集合内的每个元素需符合元素本身规定的约束。"
+
+msgid "This value is not a valid International Securities Identification Number (ISIN)."
+msgstr "该值不是有效的国际证券识别码 （ISIN）。"
+
+msgid "This value should be a valid expression."
+msgstr "该值需为一个有效的表达式。"
+
+msgid "This value is not a valid CSS color."
+msgstr "该值不是有效的CSS颜色。"
+
+msgid "This value is not a valid CIDR notation."
+msgstr "该值不是一个有效的CIDR表示。"
+
+msgid "The value of the netmask should be between {{ min }} and {{ max }}."
+msgstr "网络掩码的值应当在 {{ min }} 和 {{ max }} 之间。"
+
+msgid "The filename is too long. It should have {{ filename_max_length }} character or less."
+msgid_plural "The filename is too long. It should have {{ filename_max_length }} characters or less."
+msgstr[0] "该文件名过长，最长不应超过{{ filename_max_length }} 个字符。"
+
+msgid "The password strength is too low. Please use a stronger password."
+msgstr "该密码强度太低。请使用更复杂的密码。"
+
+msgid "This value contains characters that are not allowed by the current restriction-level."
+msgstr "该值包含了当前限制级别不允许的字符。"
+
+msgid "Using invisible characters is not allowed."
+msgstr "不允许使用隐藏字符。"
+
+msgid "Mixing numbers from different scripts is not allowed."
+msgstr "不可混合使用不同语系的数字。"
+
+msgid "Using hidden overlay characters is not allowed."
+msgstr "不允许使用隐藏的覆盖字符。"
+
+msgid "The extension of the file is invalid ({{ extension }}). Allowed extensions are {{ extensions }}."
+msgstr "文件的扩展名无效 ({{ extension }})。允许的扩展名为 {{ extensions }}。"
+
+msgid "The detected character encoding is invalid ({{ detected }}). Allowed encodings are {{ encodings }}."
+msgstr "检测到的字符编码无效 ({{ detected }})。允许的编码为 {{ encodings }}。"
+
+msgid "This value is not a valid MAC address."
+msgstr "该值不是有效的MAC地址。"
+
+msgid "This URL is missing a top-level domain."
+msgstr "此URL缺少顶级域名。"
+
+msgid "This form should not contain extra fields."
+msgstr "该表单中不可有额外字段."
+
+msgid "The uploaded file was too large. Please try to upload a smaller file."
+msgstr "上传文件太大， 请重新尝试上传一个较小的文件."
+
+msgid "The CSRF token is invalid. Please try to resubmit the form."
+msgstr "CSRF 验证符无效， 请重新提交."
+
+msgid "This value is not a valid HTML5 color."
+msgstr "该数值不是个有效的 HTML5 颜色。"
+
+msgid "Please enter a valid birthdate."
+msgstr "请输入有效的生日日期。"
+
+msgid "The selected choice is invalid."
+msgstr "所选的选项无效。"
+
+msgid "The collection is invalid."
+msgstr "集合无效。"
+
+msgid "Please select a valid color."
+msgstr "请选择有效的颜色。"
+
+msgid "Please select a valid country."
+msgstr "请选择有效的国家。"
+
+msgid "Please select a valid currency."
+msgstr "请选择有效的货币。"
+
+msgid "Please choose a valid date interval."
+msgstr "请选择有效的日期间隔。"
+
+msgid "Please enter a valid date and time."
+msgstr "请输入有效的日期与时间。"
+
+msgid "Please enter a valid date."
+msgstr "请输入有效的日期。"
+
+msgid "Please select a valid file."
+msgstr "请选择有效的文件。"
+
+msgid "The hidden field is invalid."
+msgstr "隐藏字段无效。"
+
+msgid "Please enter an integer."
+msgstr "请输入整数。"
+
+msgid "Please select a valid language."
+msgstr "请选择有效的语言。"
+
+msgid "Please select a valid locale."
+msgstr "请选择有效的语言环境。"
+
+msgid "Please enter a valid money amount."
+msgstr "请输入正确的金额。"
+
+msgid "Please enter a number."
+msgstr "请输入数字。"
+
+msgid "The password is invalid."
+msgstr "密码无效。"
+
+msgid "Please enter a percentage value."
+msgstr "请输入百分比值。"
+
+msgid "The values do not match."
+msgstr "数值不匹配。"
+
+msgid "Please enter a valid time."
+msgstr "请输入有效的时间。"
+
+msgid "Please select a valid timezone."
+msgstr "请选择有效的时区。"
+
+msgid "Please enter a valid URL."
+msgstr "请输入有效的网址。"
+
+msgid "Please enter a valid search term."
+msgstr "请输入有效的搜索词。"
+
+msgid "Please provide a valid phone number."
+msgstr "请提供有效的手机号码。"
+
+msgid "The checkbox has an invalid value."
+msgstr "无效的选框值。"
+
+msgid "Please enter a valid email address."
+msgstr "请输入有效的电子邮件地址。"
+
+msgid "Please select a valid option."
+msgstr "请选择有效的选项。"
+
+msgid "Please select a valid range."
+msgstr "请选择有效的范围。"
+
+msgid "Please enter a valid week."
+msgstr "请输入有效的星期。"

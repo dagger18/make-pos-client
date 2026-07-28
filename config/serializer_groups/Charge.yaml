@@ -1,0 +1,15 @@
+App\Module\Finance\Entity\Charge:
+
+    list:
+        - id
+        - name
+        - calculationType
+        - chargeType
+        - transportType
+        - customCalcType
+        - customCode
+        - customChargeType
+        - description
+        - debitTax
+        - createdBy
+        - createdDate

@@ -1,0 +1,15 @@
+App\Module\Finance\Entity\ExchangeRate:
+
+    list:
+        - id
+        - fromCurrency
+        - toCurrency
+        - fromRate
+        - toRate
+        - rate
+    currentExchangeRates:
+        - fromCurrency
+        - toCurrency
+        - fromRate
+        - toRate
+        - rate

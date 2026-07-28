@@ -1,0 +1,8 @@
+App\Module\Operations\Entity\ShipmentMode:
+
+    list:
+        - id
+        - name
+        - createdBy
+        - createdDate
+        - description

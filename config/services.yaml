@@ -1,0 +1,123 @@
+parameters:
+  aws.s3.key: '%env(resolve:AWS_S3_KEY)%'
+  aws.s3.secret: '%env(resolve:AWS_S3_SECRET)%'
+  aws.s3.region: '%env(resolve:AWS_S3_REGION)%'
+  aws.s3.bucket: '%env(resolve:AWS_S3_BUCKET)%'
+  backup_media_url: '%env(resolve:BACKUP_MEDIA_URL)%'
+  backup_media_api_key: '%env(resolve:BACKUP_MEDIA_API_KEY)%'
+  doctrine.dbal.connection_factory.class: App\Misc\Doctrine\ConnectionFactory
+  database_url_client: '%env(resolve:DATABASE_URL)%'
+  env(DATABASE_URL_RESOLVED): '%env(default:database_url_client:resolve:REDIRECT_DATABASE_URL)%'
+  database_engine: '%env(getDatabaseEngine:string:DATABASE_URL_RESOLVED)%'
+  master_api_url: '%env(resolve:MASTER_API_URL)%'
+  master_api_key: '%env(resolve:MASTER_API_KEY)%'
+  app_base_url: '%env(default::APP_BASE_URL)%'
+  database_token: '%env(getDatabaseToken:string:DATABASE_URL_RESOLVED)%'
+  base_domain: '%env(default::BASE_DOMAIN)%'
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            Symfony\Contracts\Cache\CacheInterface $appCache: '@app.cache.client_data'
+            Symfony\Contracts\Cache\TagAwareCacheInterface $appCache: '@app.cache.client_data'
+    _instanceof:
+      App\Misc\Doctrine\Type\ServiceTypeInterface:
+        tags: [ app.doctrine.dbal.service_type ]
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Kernel.php'
+            - '../src/Misc/Attribute'
+            - '../src/Misc/Exception'
+            - '../src/Misc/Traits'
+            - '../src/Module/*/Entity/'
+            - '../src/Module/*/Enum/'
+
+    App\Module\Core\Service\FeatureService:
+        arguments:
+            $featuresEnv: '%env(default::FEATURES)%'
+
+    Symfony\Component\DependencyInjection\ContainerInterface: '@service_container'
+    Doctrine\Migrations\Version\DbalMigrationFactory: ~
+    App\Misc\Doctrine\MigrationFactoryDecorator:
+        decorates: Doctrine\Migrations\Version\DbalMigrationFactory
+        arguments: ['@App\Misc\Doctrine\MigrationFactoryDecorator.inner', '@service_container']
+    Symfonycasts\SassBundle\SassBuilder: '@sass.builder'
+    App\Misc\Cache\ClientCacheFactory:
+        arguments:
+            $cacheDir: '%kernel.cache_dir%'
+            $databaseUrl: '%env(DATABASE_URL_RESOLVED)%'
+
+    app.cache.client_data:
+        class: Symfony\Component\Cache\Adapter\TagAwareAdapter
+        factory: ['@App\Misc\Cache\ClientCacheFactory', 'createPool']
+
+    Symfony\Component\PasswordHasher\Hasher\UserPasswordHasher:
+        public: true
+
+    Symfony\Contracts\Service\ServiceCollectionInterface: '@app.auto_service_locator'
+    app.auto_service_locator:
+        class: Symfony\Component\DependencyInjection\ServiceLocator
+        arguments:
+            -
+                ObjectNormalizer: '@serializer.normalizer.object'
+                App\Module\Tax\Repository\VatReportRepository: '@App\Module\Tax\Repository\VatReportRepository'
+
+    App\Module\Core\Service\MailService:
+        arguments:
+            $defaultFromAddress: no-reply@makecargo.com
+
+    App\Misc\Mailer\BrevoFallbackTransport:
+        arguments:
+            $brevoSmtpUser:       '%env(resolve:BREVO_SMTP_USER)%'
+            $brevoSmtpPassword:   '%env(resolve:BREVO_SMTP_PASSWORD)%'
+            $brevoApiKey:         '%env(resolve:BREVO_API_KEY)%'
+            $privateSmtpHost:     '%env(resolve:PRIVATE_SMTP_HOST)%'
+            $privateSmtpPort:     '%env(int:PRIVATE_SMTP_PORT)%'
+            $privateSmtpUser:     '%env(resolve:PRIVATE_SMTP_USER)%'
+            $privateSmtpPassword: '%env(resolve:PRIVATE_SMTP_PASSWORD)%'
+
+    app.s3_client:
+        class: Aws\S3\S3Client
+        arguments:
+            -   version: 'latest'
+                region: '%aws.s3.region%'
+                credentials:
+                    key: '%aws.s3.key%'
+                    secret: '%aws.s3.secret%'
+
+    App\Misc\Doctrine\Type\DatasetFilterCollectionType: ~
+    App\Misc\Doctrine\Type\DatasetPropCollectionType: ~
+    App\Misc\Doctrine\Type\InstructionContainerCollectionType: ~
+    App\Misc\Doctrine\Type\ComponentSerieCollectionType: ~
+    App\Misc\RemoteStreamLoader:
+        arguments:
+            $s3Client: '@app.s3_client'
+        tags:
+            - { name: "liip_imagine.binary.loader", loader: thumbnailLoader }
+
+    App\Misc\Twig\AppExtension: ~
+
+    App\Serializer\GroupCentricYamlLoader:
+        arguments:
+            $files: []
+        tags:
+            - { name: serializer.loader }
+#when@prod:
+  #services:
+    #app.s3_client:
+      #class: App\S3Client
+      #factory: [Aws\S3\S3Client, 'factory']
+      #arguments:
+        #-
+          #version: latest
+          #region: "%aws.s3.region%"
+          #credentials:
+              #key: "%aws.s3.key%"
+              #secret: "%aws.s3.secret%"

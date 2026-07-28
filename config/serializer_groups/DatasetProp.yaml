@@ -1,0 +1,5 @@
+App\Module\Reporting\Entity\DatasetProp:
+
+    list:
+        - property
+        - mode

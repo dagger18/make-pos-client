@@ -1,0 +1,25 @@
+{
+  "name": "make-cargo-client-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "css-loader": "^6.10.0",
+    "mini-css-extract-plugin": "^2.7.7",
+    "sass": "^1.77.0",
+    "sass-loader": "^14.1.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
+  },
+  "author": "wang",
+  "license": "ISC"
+}

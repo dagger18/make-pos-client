@@ -1,0 +1,665 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+
+msgid "Feature %feature% is not enabled on this plan."
+msgstr "الميزة %feature% غير مفعّلة في هذه الخطة."
+
+msgid "Provider not found"
+msgstr "المزوّد غير موجود"
+
+msgid "Shipment not found"
+msgstr "الشحنة غير موجودة"
+
+msgid "Not found"
+msgstr "غير موجود"
+
+msgid "trackingType and trackingRef are required."
+msgstr "trackingType وtrackingRef مطلوبان."
+
+msgid "Not found."
+msgstr "غير موجود."
+
+msgid "Invalid secret."
+msgstr "الرمز السري غير صالح."
+
+msgid "email is required"
+msgstr "البريد الإلكتروني مطلوب"
+
+msgid "Wrong credentials"
+msgstr "بيانات الاعتماد خاطئة"
+
+msgid "invalid token"
+msgstr "رمز مميز غير صالح"
+
+msgid "Invalid service token."
+msgstr "رمز الخدمة غير صالح."
+
+msgid "maximumUsers must be a non-negative integer."
+msgstr "يجب أن يكون maximumUsers عدداً صحيحاً غير سالب."
+
+msgid "Could not generate upgrade link."
+msgstr "تعذّر إنشاء رابط الترقية."
+
+msgid "id is required."
+msgstr "المعرّف مطلوب."
+
+msgid "transportMode is required"
+msgstr "وضع النقل مطلوب"
+
+msgid "Already closed"
+msgstr "مغلق بالفعل"
+
+msgid "Already locked."
+msgstr "مقفل بالفعل."
+
+msgid "Pending"
+msgstr "معلّق"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Sent"
+msgstr "مُرسَل"
+
+msgid "Done"
+msgstr "تم"
+
+msgid "Policy not found"
+msgstr "السياسة غير موجودة"
+
+msgid "connectorType, partnerName and protocol are required."
+msgstr "connectorType وpartnerName وprotocol مطلوبة."
+
+msgid "Email and password are required."
+msgstr "البريد الإلكتروني وكلمة المرور مطلوبان."
+
+msgid "Invalid credentials."
+msgstr "بيانات الاعتماد غير صالحة."
+
+msgid "Invalid or expired link."
+msgstr "الرابط غير صالح أو منتهي الصلاحية."
+
+msgid "LC not found"
+msgstr "خطاب الاعتماد غير موجود"
+
+msgid "transportMode, serviceType and branchId are required."
+msgstr "وضع النقل ونوع الخدمة ومعرّف الفرع مطلوبة."
+
+msgid "Branch not found."
+msgstr "الفرع غير موجود."
+
+msgid "Cannot edit a cancelled consolidation."
+msgstr "لا يمكن تعديل شحنة موحّدة ملغاة."
+
+msgid "Only a closed consolidation can be departed."
+msgstr "يمكن تسجيل المغادرة فقط لشحنة موحّدة مغلقة."
+
+msgid "Only a departed consolidation can be marked as arrived."
+msgstr "يمكن تحديد الوصول فقط لشحنة موحّدة مغادِرة."
+
+msgid "Remove all child shipments before cancelling."
+msgstr "أزل جميع الشحنات الفرعية قبل الإلغاء."
+
+msgid "Cannot add shipments to a closed consolidation."
+msgstr "لا يمكن إضافة شحنات إلى شحنة موحّدة مغلقة."
+
+msgid "Shipment not found."
+msgstr "الشحنة غير موجودة."
+
+msgid "Shipment already belongs to another consolidation."
+msgstr "الشحنة تنتمي بالفعل إلى شحنة موحّدة أخرى."
+
+msgid "Hold reason is required."
+msgstr "سبب التعليق مطلوب."
+
+msgid "Invalid doc type."
+msgstr "نوع المستند غير صالح."
+
+msgid "Required documents cannot be deleted."
+msgstr "لا يمكن حذف المستندات المطلوبة."
+
+msgid "Invalid milestoneCode."
+msgstr "رمز المرحلة غير صالح."
+
+msgid "Milestone blocked by incomplete mandatory tasks."
+msgstr "المرحلة محظورة بسبب مهام إلزامية غير مكتملة."
+
+msgid "System milestones cannot be deleted."
+msgstr "لا يمكن حذف مراحل النظام."
+
+msgid "Note body cannot be empty."
+msgstr "لا يمكن أن يكون نص الملاحظة فارغاً."
+
+msgid "System notes cannot be deleted."
+msgstr "لا يمكن حذف ملاحظات النظام."
+
+msgid "Invalid role."
+msgstr "الدور غير صالح."
+
+msgid "Role already assigned."
+msgstr "الدور معيّن بالفعل."
+
+msgid "Title is required."
+msgstr "العنوان مطلوب."
+
+msgid "Mandatory tasks cannot be deleted."
+msgstr "لا يمكن حذف المهام الإلزامية."
+
+msgid "Draft"
+msgstr "مسودة"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Cancelled"
+msgstr "ملغى"
+
+msgid "Client credit status does not allow new quotes"
+msgstr "لا يسمح وضع الائتمان للعميل بعروض أسعار جديدة"
+
+msgid "pol and pod are required"
+msgstr "ميناء الشحن وميناء التفريغ مطلوبان"
+
+msgid "No file uploaded"
+msgstr "لم يتم تحميل أي ملف"
+
+msgid "transportType, effectiveDate and expiryDate are required"
+msgstr "نوع النقل وتاريخ السريان وتاريخ الانتهاء مطلوبة"
+
+msgid "entryType is required."
+msgstr "نوع الإدخال مطلوب."
+
+msgid "Only DRAFT entries can be deleted."
+msgstr "يمكن حذف الإدخالات في حالة المسودة فقط."
+
+msgid "Only DRAFT or REJECTED entries can be submitted."
+msgstr "يمكن تقديم الإدخالات في حالة المسودة أو المرفوضة فقط."
+
+msgid "No declaration number yet."
+msgstr "لا يوجد رقم إقرار حتى الآن."
+
+msgid "hsCodeId is required."
+msgstr "معرّف رمز HS مطلوب."
+
+msgid "HS code not found."
+msgstr "رمز HS غير موجود."
+
+msgid "%s not found"
+msgstr "%s غير موجود"
+
+msgid "Unsupported format."
+msgstr "صيغة غير مدعومة."
+
+msgid "Unsupported format, expects \"%s\", but \"%s\" given."
+msgstr "صيغة غير مدعومة، المتوقع \"%s\" لكن تم إعطاء \"%s\"."
+
+msgid "No %entityName% found for id %id%"
+msgstr "لا يوجد %entityName% للمعرّف %id%"
+
+msgid "Missing credentials."
+msgstr "بيانات الاعتماد مفقودة."
+
+msgid "Invalid or expired token."
+msgstr "الرمز غير صالح أو منتهي الصلاحية."
+
+msgid "Portal account is inactive."
+msgstr "حساب البوابة غير نشط."
+
+msgid "Unauthorized."
+msgstr "غير مصرّح."
+
+msgid "Portal user \"%s\" not found."
+msgstr "مستخدم البوابة \"%s\" غير موجود."
+
+msgid "Login to office"
+msgstr "تسجيل الدخول إلى المكتب"
+
+msgid "All rights reserved"
+msgstr "جميع الحقوق محفوظة"
+
+msgid "Contact us"
+msgstr "اتصل بنا"
+
+msgid "About us"
+msgstr "من نحن"
+
+msgid "Unsubscribe"
+msgstr "إلغاء الاشتراك"
+
+msgid "ARRIVAL NOTICE"
+msgstr "إشعار الوصول"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Shipment"
+msgstr "الشحنة"
+
+msgid "TO"
+msgstr "إلى"
+
+msgid "Port of Loading"
+msgstr "ميناء الشحن"
+
+msgid "Port of Discharge"
+msgstr "ميناء التفريغ"
+
+msgid "Vessel / Voyage"
+msgstr "السفينة / الرحلة"
+
+msgid "ETD"
+msgstr "تاريخ المغادرة المتوقع"
+
+msgid "House B/L No."
+msgstr "رقم بوليصة الشحن الداخلية"
+
+msgid "Master B/L No."
+msgstr "رقم بوليصة الشحن الرئيسية"
+
+msgid "Destination Charges"
+msgstr "رسوم الوجهة"
+
+msgid "Required Documents"
+msgstr "المستندات المطلوبة"
+
+msgid "Note"
+msgstr "ملاحظة"
+
+msgid "This is an automatically generated document."
+msgstr "هذا مستند تم إنشاؤه تلقائياً."
+
+msgid "Tel"
+msgstr "هاتف"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Booking Confirmation"
+msgstr "تأكيد الحجز"
+
+msgid "Booking No"
+msgstr "رقم الحجز"
+
+msgid "To"
+msgstr "إلى"
+
+msgid "We are pleased to inform you that your shipment has been confirmed as below"
+msgstr "يسعدنا إعلامكم بتأكيد شحنتكم على النحو التالي"
+
+msgid "Air Waybill No."
+msgstr "رقم بوليصة الشحن الجوي"
+
+msgid "Airport of Loading"
+msgstr "مطار الشحن"
+
+msgid "Airport of Destination"
+msgstr "مطار الوجهة"
+
+msgid "No. of Package(s)"
+msgstr "عدد الطرود"
+
+msgid "Container"
+msgstr "حاوية"
+
+msgid "Commodity"
+msgstr "البضاعة"
+
+msgid "Gross Weight"
+msgstr "الوزن الإجمالي"
+
+msgid "Measurement"
+msgstr "القياسات"
+
+msgid "PIC"
+msgstr "الشخص المسؤول"
+
+msgid "Flight Schedule"
+msgstr "جدول الرحلات"
+
+msgid "No."
+msgstr "رقم"
+
+msgid "Flight"
+msgstr "الرحلة"
+
+msgid "Route"
+msgstr "المسار"
+
+msgid "ETA"
+msgstr "وقت الوصول المتوقع"
+
+msgid "Contact Information"
+msgstr "معلومات الاتصال"
+
+msgid "Cut off time"
+msgstr "وقت الإغلاق"
+
+msgid "Warehouse"
+msgstr "المستودع"
+
+msgid "Contact No."
+msgstr "رقم الاتصال"
+
+msgid "Terms and Conditions"
+msgstr "الشروط والأحكام"
+
+msgid "DANGEROUS GOODS DECLARATION"
+msgstr "إعلان البضائع الخطرة"
+
+msgid "WARNING: This shipment contains dangerous goods"
+msgstr "تحذير: تحتوي هذه الشحنة على بضائع خطرة"
+
+msgid "HBL"
+msgstr "بوليصة الشحن الداخلية"
+
+msgid "MBL"
+msgstr "بوليصة الشحن الرئيسية"
+
+msgid "IMO Class"
+msgstr "فئة IMO"
+
+msgid "UN No."
+msgstr "رقم UN"
+
+msgid "Packing Group"
+msgstr "مجموعة التعبئة"
+
+msgid "Proper Shipping Name"
+msgstr "اسم الشحن الصحيح"
+
+msgid "Technical Name"
+msgstr "الاسم التقني"
+
+msgid "Net Qty"
+msgstr "الكمية الصافية"
+
+msgid "Gross Qty"
+msgstr "الكمية الإجمالية"
+
+msgid "UOM"
+msgstr "وحدة القياس"
+
+msgid "Flash Point"
+msgstr "نقطة الاشتعال"
+
+msgid "Flags"
+msgstr "العلامات"
+
+msgid "Subsidiary Risk"
+msgstr "الخطر الفرعي"
+
+msgid "Emergency"
+msgstr "طوارئ"
+
+msgid "I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations."
+msgstr "أُقرّ بموجب هذا الإعلان بأن محتويات هذه الشحنة موصوفة بالكامل وبدقة أعلاه باستخدام اسم الشحن الصحيح، وقد تم تصنيفها وتعبئتها ووضع علاماتها وبطاقاتها، وهي في جميع النواحي في حالة صالحة للنقل وفقاً للوائح الدولية والوطنية الحكومية المعمول بها."
+
+msgid "Shipper's Signature"
+msgstr "توقيع الشاحن"
+
+msgid "DELIVERY ORDER"
+msgstr "أمر التسليم"
+
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+msgid "Release Date"
+msgstr "تاريخ الإفراج"
+
+msgid "Authorized Signature"
+msgstr "التوقيع المفوّض"
+
+msgid "Consignee Signature"
+msgstr "توقيع المُرسَل إليه"
+
+msgid "Debit Note"
+msgstr "مذكرة دين"
+
+msgid "Credit Note"
+msgstr "مذكرة ائتمان"
+
+msgid "Invoice"
+msgstr "فاتورة"
+
+msgid "Payment On Behalf Of"
+msgstr "الدفع بالنيابة عن"
+
+msgid "Collect On Behalf Of"
+msgstr "التحصيل بالنيابة عن"
+
+msgid "Phone"
+msgstr "هاتف"
+
+msgid "Tax Number"
+msgstr "رقم الضريبة"
+
+msgid "Bank Account"
+msgstr "الحساب البنكي"
+
+msgid "Created"
+msgstr "تم الإنشاء"
+
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+msgid "Bill To"
+msgstr "الفاتورة إلى"
+
+msgid "Pay For"
+msgstr "الدفع مقابل"
+
+msgid "Undefined Provider"
+msgstr "مزوّد غير محدد"
+
+msgid "Vessel No."
+msgstr "رقم السفينة"
+
+msgid "B/L"
+msgstr "بوليصة الشحن"
+
+msgid "Shipment ID"
+msgstr "معرّف الشحنة"
+
+msgid "Reference ID"
+msgstr "معرّف المرجع"
+
+msgid "Booking No."
+msgstr "رقم الحجز"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Calculate"
+msgstr "حساب"
+
+msgid "Curr."
+msgstr "العملة"
+
+msgid "Price"
+msgstr "السعر"
+
+msgid "Qty"
+msgstr "الكمية"
+
+msgid "Total"
+msgstr "المجموع"
+
+msgid "Tax"
+msgstr "الضريبة"
+
+msgid "Include Tax"
+msgstr "شامل الضريبة"
+
+msgid "Exchange rate"
+msgstr "سعر الصرف"
+
+msgid "PACKING LIST"
+msgstr "قائمة التعبئة"
+
+msgid "Ref No."
+msgstr "الرقم المرجعي"
+
+msgid "Shipper"
+msgstr "الشاحن"
+
+msgid "Consignee"
+msgstr "المُرسَل إليه"
+
+msgid "Container No."
+msgstr "رقم الحاوية"
+
+msgid "Seal No."
+msgstr "رقم الختم"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Packages"
+msgstr "الطرود"
+
+msgid "Volume (CBM)"
+msgstr "الحجم (م³)"
+
+msgid "Package Type"
+msgstr "نوع الطرد"
+
+msgid "Description of Goods"
+msgstr "وصف البضاعة"
+
+msgid "Shipping Marks"
+msgstr "علامات الشحن"
+
+msgid "From"
+msgstr "من"
+
+msgid "Address"
+msgstr "العنوان"
+
+msgid "Prepared By"
+msgstr "أُعدّ بواسطة"
+
+msgid "Mobile"
+msgstr "الهاتف المحمول"
+
+msgid "Contact Person"
+msgstr "الشخص المسؤول"
+
+msgid "Quotation"
+msgstr "عرض أسعار"
+
+msgid "Created at"
+msgstr "تم الإنشاء في"
+
+msgid "Valid until"
+msgstr "صالح حتى"
+
+msgid "Quote ID"
+msgstr "معرّف عرض الأسعار"
+
+msgid "Origin"
+msgstr "المنشأ"
+
+msgid "Transit Port"
+msgstr "ميناء العبور"
+
+msgid "Incoterms"
+msgstr "إنكوتيرمز"
+
+msgid "Commodities"
+msgstr "السلع"
+
+msgid "Remark"
+msgstr "ملاحظة"
+
+msgid "Destination"
+msgstr "الوجهة"
+
+msgid "Place of Delivery"
+msgstr "مكان التسليم"
+
+msgid "Volume"
+msgstr "الحجم"
+
+msgid "Air-port of Loading"
+msgstr "مطار الشحن"
+
+msgid "Mode"
+msgstr "الوضع"
+
+msgid "Chargeable Weight"
+msgstr "الوزن القابل للشحن"
+
+msgid "Air-port of Discharge"
+msgstr "مطار التفريغ"
+
+msgid "Transit Time"
+msgstr "وقت العبور"
+
+msgid "days"
+msgstr "أيام"
+
+msgid "Schedule"
+msgstr "الجدول الزمني"
+
+msgid "Cargo ready date"
+msgstr "تاريخ جاهزية البضاعة"
+
+msgid "Quote Detail"
+msgstr "تفاصيل عرض الأسعار"
+
+msgid "Charge"
+msgstr "الرسوم"
+
+msgid "Item Name"
+msgstr "اسم العنصر"
+
+msgid "Curr"
+msgstr "العملة"
+
+msgid "Amount"
+msgstr "المبلغ"
+
+msgid "Sub-Total"
+msgstr "المجموع الجزئي"
+
+msgid "Receipt"
+msgstr "إيصال"
+
+msgid "Payment"
+msgstr "الدفع"
+
+msgid "Received from"
+msgstr "استُلم من"
+
+msgid "Payment to"
+msgstr "الدفع إلى"
+
+msgid "In words"
+msgstr "كتابةً"
+
+msgid "Accountant"
+msgstr "المحاسب"
+
+msgid "Manager"
+msgstr "المدير"
+
+msgid "Statement of account"
+msgstr "كشف الحساب"
+
+msgid "Statement Date"
+msgstr "تاريخ الكشف"
+
+msgid "Invoice No."
+msgstr "رقم الفاتورة"
+
+msgid "Bill No."
+msgstr "رقم الفاتورة"
+
+msgid "Ex."
+msgstr "سابق"

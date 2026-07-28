@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style type="text/css">
+.border-left {
+  border-left: 1px solid #000;
+  padding-left: 1rem;
+}
+</style>
+</head>
+<body>
+<table class="table is-fullwidth">
+<tr>
+  <td width="280px">
+    <div class="has-text-weight-bold is-size-6 has-text-grey is-uppercase">
+      {% trans %}From{% endtrans %}:
+    </div>
+    <div>
+      <div class="is-size-6 has-text-weight-bold is-uppercase">{{ company.defaultInvoiceInfo.company }}</div>
+      <div><b>{% trans %}Address{% endtrans %}:</b> {{ company.defaultInvoiceInfo.address }}</div>
+      <div><b>{% trans %}Phone{% endtrans %}:</b> {{ company.defaultInvoiceInfo.phone }}</div>
+      <div><b>{% trans %}Tax Number{% endtrans %}:</b> {{ company.defaultInvoiceInfo.taxNumber }}</div>
+    </div><br>
+    <div class="has-text-weight-bold is-size-6 has-text-grey is-uppercase">
+      {% trans %}To{% endtrans %}:
+    </div>
+    <div>
+      <div class="is-size-6 has-text-weight-bold is-uppercase">{{ targetInvoiceInfo.company }}</div>
+      <div><b>{% trans %}Address{% endtrans %}:</b> {{ targetInvoiceInfo.address }}</div>
+      <div><b>{% trans %}Phone{% endtrans %}:</b> {{ targetInvoiceInfo.phone }}</div>
+      <div><b>{% trans %}Tax Number{% endtrans %}:</b> {{ targetInvoiceInfo.taxNumber }}</div>
+    </div>
+    
+  </td>
+  <td width="20px"></td>
+  <td class="has-text-right" width="260px">
+    <div class="logo">
+      <img width="150" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+    </div>
+    <h2 class="is-uppercase is-size-3 mb-2">{% trans %}Statement of account{% endtrans %}</h2>
+    <table class="table is-fullwidth">
+      <tr>
+        <td class="has-text-right" colspan="2">{{ minDate | date("M, d Y") }} - {{ maxDate | date("M, d Y") }}</td>
+      </tr>
+      <tr>
+        <td class="pr-2 is-uppercase has-text-right">{% trans %}Statement Date{% endtrans %}</td>
+        <td class="has-text-right" width="100px">{{ statementDate | date("M, d Y") }}</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table><br>
+<table class="table is-fullwidth mb-0">
+<thead >
+  <tr>
+    <th class="has-text-left">
+      {% trans %}Invoice No.{% endtrans %}
+    </th>
+    <th class="has-text-left">
+      {% trans %}Shipment ID{% endtrans %}
+    </th>
+    <th class="has-text-left">
+      {% trans %}Bill No.{% endtrans %}
+    </th>
+    <th class="has-text-left">
+      {% trans %}ETD{% endtrans %}
+    </th>
+    <th class="has-text-centered pr-2">
+      {% trans %}ETA{% endtrans %}
+    </th>
+    <th class="has-text-centered pr-2">
+      {% trans %}Curr.{% endtrans %}
+    </th>
+    {% if currency != 'USD' %}
+    <th class="has-text-right">
+      {% trans %}Ex.{% endtrans %}
+    </th>
+    {% endif %}
+    <th class="has-text-right">
+      {% trans %}Amount{% endtrans %}
+    </th>
+  </tr>
+</thead>
+<tbody>
+{% for ebitNote in ebitNotes %}
+  <tr
+  >
+    <td class="py-2">{{ ebitNote.invoiceNo }}</td>
+    <td class="py-2">{{ ebitNote.shipmentId }}</td>
+    <td class="py-2">{{ ebitNote.billNo | raw }}</td>
+    <td class="py-2">{{ ebitNote.etd }}</td>
+    <td class="py-2">{{ ebitNote.eta }}</td>
+    <td class="py-2 has-text-centered">{{ ebitNote.currency }}</td>
+    {% if currency != 'USD' %}
+    <td class="py-2 has-text-right">{{ ebitNote.exchangeRate }}</td>
+    {% endif %}
+    <td class="py-2 has-text-right">{{ ebitNote.balance }}</td>
+  </tr>
+{% endfor %}
+{% set colspan = currency != 'USD' ? 7 : 6 %}
+  <tr>
+    <td class="py-2" colspan="{{ colspan }}">TOTAL ({{ currency }}) </td>
+    <td class="py-2 has-text-right"><b>{{ sum }}</b></td>
+  </tr>
+<tr><td colspan="{{ colspan + 1 }}" style="border-top: 1px solid #ddd; border-top: none;"></td></tr>
+</tbody>
+</table>
+<br><br>
+<table>
+  <tr>
+    <td style="width: 340px"></td>
+    <td class="has-text-centered">
+      <div><b>{{ company.defaultInvoiceInfo.company }}</b></div><br><br><br>
+      <hr style="background: #dbdbdb"/>
+      Authorized Signature
+    </td>
+  </tr>
+</table>
+<br><br>
+<table class="table is-fullwidth spacious no-border-td  mb-4" style="border: 1px solid #aaa">
+  <tr>
+    <td><b>REMARK</b></td>
+  </tr>
+  <tr>
+    <td>
+PLEASE MAKE ANY PAYMENT DUE, BY ELECTRONIC TRANSFER TO OUR BANK ACCOUNT<br>
+BANK NAME: {{bankAccount.bankName}}<br>
+BANK ADDRESS: {{bankAccount.branch}}<br>
+SWIFT CODE: {{bankAccount.swiftCode}}<br>
+ACCOUNT NO.: {{bankAccount.accountNumber}}<br>
+BENEFICIARY: {{ company.defaultInvoiceInfo.company }}<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

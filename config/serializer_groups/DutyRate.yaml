@@ -1,0 +1,29 @@
+App\Module\Tax\Entity\DutyRate:
+
+    list:
+        - id
+        - hsCode
+        - importCountry
+        - exportCountry
+        - rateType
+        - ftaName
+        - dutyRate
+        - vatRate
+        - exciseRate
+        - effectiveFrom
+        - effectiveTo
+
+    detail:
+        - id
+        - hsCode
+        - importCountry
+        - exportCountry
+        - rateType
+        - ftaName
+        - dutyRate
+        - vatRate
+        - exciseRate
+        - effectiveFrom
+        - effectiveTo
+        - createdAt
+        - updatedAt

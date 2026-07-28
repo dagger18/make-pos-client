@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style>
+body { font-size: 0.9em; }
+.section-title { font-weight: bold; text-transform: uppercase; font-size: 1.1em; margin: 12px 0 6px; border-bottom: 1px solid #ccc; }
+.release-box { border: 2px solid #000; padding: 12px; margin: 16px 0; background: #f9f9f9; }
+</style>
+</head>
+<body>
+<table class="table is-fullwidth no-border-td">
+<tr>
+  <td width="100px" style="vertical-align: middle;">
+    <img width="80" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+  </td>
+  <td style="vertical-align: middle;">
+    <div style="font-size: 1.4em; font-weight: bold;">{% trans %}DELIVERY ORDER{% endtrans %}</div>
+    <div>{{ company.name }}</div>
+    <div style="font-size: 0.85em; color: #555;">{{ company.address }}</div>
+  </td>
+  <td width="220px" style="vertical-align: top; text-align: right; font-size: 0.85em;">
+    <div><b>{% trans %}Issue Date{% endtrans %}:</b> {{ deliveryOrder.issueDate ? deliveryOrder.issueDate | date('d/m/Y') : '—' }}</div>
+    <div><b>{% trans %}Shipment{% endtrans %}:</b> {{ shipment.code }}</div>
+  </td>
+</tr>
+</table>
+
+<table class="table is-fullwidth center-border-td" style="margin-top: 12px;">
+  <tr>
+    <td colspan="2">
+      <b>{% trans %}TO{% endtrans %}:</b><br>
+      <div class="font-courier pl-2 pt-1">
+        <b>{{ deliveryOrder.consigneeName }}</b><br>
+        <div style="white-space: pre-wrap;">{{ deliveryOrder.consigneeAddress }}</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <b>{% trans %}House B/L No.{% endtrans %}</b><br>
+      <span class="font-courier">{{ shipment.houseBill ?? '—' }}</span>
+    </td>
+    <td width="50%">
+      <b>{% trans %}Master B/L No.{% endtrans %}</b><br>
+      <span class="font-courier">{{ shipment.masterBill ?? '—' }}</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>{% trans %}Port of Loading{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.portLoading ? booking.portLoading.name : '—' }}</span>
+    </td>
+    <td>
+      <b>{% trans %}Port of Discharge{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.portDischarge ? booking.portDischarge.name : '—' }}</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>{% trans %}Vessel / Voyage{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.vesselNo ?? '—' }}</span>
+    </td>
+    <td>
+      <b>{% trans %}ETA{% endtrans %}</b><br>
+      <span class="font-courier">{{ booking.eta ? booking.eta | date('d/m/Y') : '—' }}</span>
+    </td>
+  </tr>
+</table>
+
+<div class="release-box">
+  <b>{% trans %}Release Date{% endtrans %}:</b>
+  {{ deliveryOrder.releaseDate ? deliveryOrder.releaseDate | date('d/m/Y') : '—' }}
+  {% if deliveryOrder.releaseNote %}
+  <div style="margin-top: 8px; white-space: pre-wrap;">{{ deliveryOrder.releaseNote }}</div>
+  {% endif %}
+</div>
+
+{% if deliveryOrder.note %}
+<div class="section-title">{% trans %}Note{% endtrans %}</div>
+<div style="white-space: pre-wrap; padding: 6px;">{{ deliveryOrder.note }}</div>
+{% endif %}
+
+<table class="table is-fullwidth no-border-td" style="margin-top: 40px;">
+  <tr>
+    <td>
+      <div style="border-top: 1px solid #000; padding-top: 4px; margin-top: 60px; width: 180px;">
+        {% trans %}Authorized Signature{% endtrans %}
+      </div>
+    </td>
+    <td></td>
+    <td>
+      <div style="border-top: 1px solid #000; padding-top: 4px; margin-top: 60px; width: 180px;">
+        {% trans %}Consignee Signature{% endtrans %}
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

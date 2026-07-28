@@ -1,0 +1,8 @@
+framework:
+    mailer:
+        dsn: '%env(MAILER_DSN)%'
+when@dev:
+    framework:
+        mailer:
+            envelope:
+                recipients: ['quang.bui@silkwires-dev.com']

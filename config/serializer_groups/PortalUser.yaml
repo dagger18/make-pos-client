@@ -1,0 +1,17 @@
+App\Module\Core\Entity\PortalUser:
+
+    list:
+        - id
+        - email
+        - role
+        - isActive
+        - lastLoginAt
+        - createdAt
+
+    detail:
+        - id
+        - email
+        - role
+        - isActive
+        - lastLoginAt
+        - createdAt

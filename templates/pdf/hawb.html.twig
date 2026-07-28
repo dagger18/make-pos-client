@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if basePath is defined %}
+<base href="{{ basePath }}" />
+{% endif %}
+<link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+<style>
+body { font-size: 0.85em; }
+</style>
+</head>
+<body>
+<table class="table is-fullwidth has-text-weight-bold no-border-td">
+<tr>
+  <td width="80px" rowspan="2" style="vertical-align: middle;">
+    <img width="50" src="{{ company.logo.path | imagine_filter('pdf_logo') }}" />
+  </td>
+  <td rowspan="2" style="vertical-align: middle; font-size: 1.3em;">
+    HOUSE AIR WAYBILL
+  </td>
+  <td style="text-align: right; font-size: 0.9em;">
+    NOT NEGOTIABLE
+  </td>
+</tr>
+<tr>
+  <td style="text-align: right;">
+    <b>{{ documentNo }}</b>
+  </td>
+</tr>
+</table>
+
+<table class="table is-fullwidth center-border-td">
+  <tr>
+    <td width="50%" rowspan="2">
+      SHIPPER / EXPORTER<br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.shipperName }}</b><br>
+        <div style="white-space: pre-wrap;">{{ instruction.shipperAddress }}</div>
+      </div>
+    </td>
+    <td>
+      AGENT'S IATA CODE<br>
+      <div class="pl-2 pt-1 font-courier">{{ instruction.agentIataCode }}</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      ACCOUNT NO.<br>
+      <div class="pl-2 pt-1 font-courier">{{ instruction.accountNumber }}</div>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">
+      CONSIGNEE<br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.consigneeName }}</b><br>
+        <div style="white-space: pre-wrap;">{{ instruction.consigneeAddress }}</div>
+      </div>
+    </td>
+    <td>
+      ISSUING CARRIER'S AGENT NAME AND CITY<br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ company.name }}</b><br>
+        {{ instruction.agentCity }}
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      AGENT'S ACCOUNT NUMBER<br>
+      <div class="pl-2 pt-1 font-courier">{{ instruction.agentIataCode }}</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      NOTIFY PARTY<br>
+      <div class="pl-2 pt-1 font-courier">
+        <b>{{ instruction.notifyName }}</b><br>
+        <div style="white-space: pre-wrap;">{{ instruction.notifyAddress }}</div>
+      </div>
+    </td>
+    <td>
+      CARRIER'S NAME<br>
+      <div class="pl-2 pt-1 font-courier"><b>{{ instruction.toCarrier1 }}</b></div>
+    </td>
+  </tr>
+</table>
+
+<table class="table is-fullwidth center-border-td">
+  <tr>
+    <td>AIRPORT OF DEPARTURE<br><b>{{ booking.portLoading ? booking.portLoading.name : '' }}</b></td>
+    <td>TO<br><b>{{ instruction.toCarrier1 }}</b></td>
+    <td>BY FIRST CARRIER<br><b>{{ instruction.flight1 }}</b></td>
+    <td>TO<br><b>{{ instruction.toCarrier2 }}</b></td>
+    <td>FLIGHT/DATE<br><b>{{ instruction.flight1Date ? instruction.flight1Date | date('d/m/Y') : '' }}</b></td>
+    <td>AIRPORT OF DESTINATION<br><b>{{ booking.portDischarge ? booking.portDischarge.name : '' }}</b></td>
+  </tr>
+</table>
+
+<table class="table is-fullwidth center-border-td">
+  <tr>
+    <td>
+      DECLARED VALUE FOR CARRIAGE<br>
+      <div class="font-courier">{{ instruction.declaredValueCarriage ?? 'NVD' }}</div>
+    </td>
+    <td>
+      DECLARED VALUE FOR CUSTOMS<br>
+      <div class="font-courier">{{ instruction.declaredValueCustom ?? 'NCV' }}</div>
+    </td>
+    <td>
+      AMOUNT OF INSURANCE<br>
+      <div class="font-courier">{{ instruction.amountInsurance ?? 'NIL' }}</div>
+    </td>
+    <td colspan="2">
+      HANDLING INFORMATION<br>
+      <div class="font-courier">{{ instruction.additionalInfo }}</div>
+    </td>
+  </tr>
+</table>
+
+<table class="table is-fullwidth center-border-td">
+  <thead>
+    <tr>
+      <th>NO. OF PIECES</th>
+      <th>GROSS WEIGHT</th>
+      <th>KG / LB</th>
+      <th>RATE CLASS</th>
+      <th>CHARGEABLE WEIGHT</th>
+      <th>RATE/CHARGE</th>
+      <th>TOTAL</th>
+      <th>NATURE AND QUANTITY OF GOODS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="font-courier">{{ instruction.packageCount }}</td>
+      <td class="font-courier">{{ instruction.grossWeight }}</td>
+      <td class="font-courier">{{ instruction.grossWeightUnit }}</td>
+      <td class="font-courier">{{ instruction.rateClass }}</td>
+      <td class="font-courier">{{ instruction.chargeableWeight }}</td>
+      <td class="font-courier">{{ instruction.rateChargeAsAgreed ? 'AS AGREED' : instruction.rateCharge }}</td>
+      <td class="font-courier"></td>
+      <td class="font-courier" style="white-space: pre-wrap;">{{ instruction.natureQuantityGoods }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table is-fullwidth no-border-td" style="margin-top: 20px; font-size: 0.85em;">
+  <tr>
+    <td>
+      ISSUED BY {{ company.name }}<br>
+      Date: {{ instruction.billLadingIssueDate ? instruction.billLadingIssueDate | date('d/m/Y') : '' }}<br>
+      Place: {{ instruction.billLadingIssuePlace }}
+    </td>
+    <td style="text-align: right;">
+      <div style="border-top: 1px solid #000; margin-top: 50px; padding-top: 4px; width: 180px; display: inline-block;">
+        Signature of Shipper or Agent
+      </div>
+    </td>
+    <td style="text-align: right;">
+      <div style="border-top: 1px solid #000; margin-top: 50px; padding-top: 4px; width: 180px; display: inline-block;">
+        Signature of Issuing Carrier
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

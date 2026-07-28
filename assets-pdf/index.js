@@ -1,0 +1,1 @@
+require('./styles/pdf.scss');

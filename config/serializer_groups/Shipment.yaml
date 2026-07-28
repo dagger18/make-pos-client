@@ -1,0 +1,46 @@
+App\Module\Operations\Entity\Shipment:
+
+    list:
+        - id
+        - code
+        - booking
+        - status
+        - subStatus
+        - isOnHold
+        - revenue
+        - cost
+        - profit
+        - masterBill
+        - houseBill
+        - referenceId
+        - completedDate
+        - createdDate
+        - commissionProvider
+        - commissionClient
+
+    detail:
+        - id
+        - code
+        - status
+        - subStatus
+        - isOnHold
+        - holdReason
+        - masterBill
+        - houseBill
+        - referenceId
+        - completedDate
+        - note
+        - createdDate
+        - revenue
+        - cost
+        - profit
+        - pobo
+        - cobo
+        - commissionProvider
+        - commissionClient
+        - quote
+        - booking
+        - accountManager
+        - salesRep
+        - instruction
+        - createdBy

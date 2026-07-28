@@ -1,0 +1,15 @@
+App\Module\Reporting\Entity\Dataset:
+
+    list:
+        - id
+        - filters
+        - name
+        - entityType
+        - rowType
+        - columns
+        - stats
+        - createdDate
+        - createdBy
+        - groupColumn
+        - dateSegment
+        - currency

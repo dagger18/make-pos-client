@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+
+msgid "An authentication exception occurred."
+msgstr "حدث خطأ اثناء الدخول."
+
+msgid "Authentication credentials could not be found."
+msgstr "لم استطع العثور على معلومات الدخول."
+
+msgid "Authentication request could not be processed due to a system problem."
+msgstr "لم يكتمل طلب الدخول نتيجه عطل فى النظام."
+
+msgid "Invalid credentials."
+msgstr "معلومات الدخول خاطئة."
+
+msgid "Cookie has already been used by someone else."
+msgstr "ملفات تعريف الارتباط(cookies) تم استخدامها من قبل شخص اخر."
+
+msgid "Not privileged to request the resource."
+msgstr "ليست لديك الصلاحيات الكافية لهذا الطلب."
+
+msgid "Invalid CSRF token."
+msgstr "رمز الموقع غير صحيح."
+
+msgid "No authentication provider found to support the authentication token."
+msgstr "لا يوجد معرف للدخول يدعم الرمز المستخدم للدخول."
+
+msgid "No session available, it either timed out or cookies are not enabled."
+msgstr "لا يوجد صلة بينك و بين الموقع اما انها انتهت او ان متصفحك لا يدعم خاصية ملفات تعريف الارتباط (cookies)."
+
+msgid "No token could be found."
+msgstr "لم استطع العثور على الرمز."
+
+msgid "Username could not be found."
+msgstr "لم استطع العثور على اسم الدخول."
+
+msgid "Account has expired."
+msgstr "انتهت صلاحية الحساب."
+
+msgid "Credentials have expired."
+msgstr "انتهت صلاحية معلومات الدخول."
+
+msgid "Account is disabled."
+msgstr "الحساب موقوف."
+
+msgid "Account is locked."
+msgstr "الحساب مغلق."
+
+msgid "Too many failed login attempts, please try again later."
+msgstr "العديد من محاولات الدخول الفاشلة، يرجى المحاولة مرة أخرى في وقت لاحق."
+
+msgid "Invalid or expired login link."
+msgstr "رابط تسجيل الدخول غير صالح أو منتهي الصلاحية."
+
+msgid "Too many failed login attempts, please try again in %minutes% minute."
+msgstr "العديد من محاولات الدخول الفاشلة، يرجى اعادة المحاولة بعد %minutes% دقيقة."
+
+msgid "Too many failed login attempts, please try again in %minutes% minutes."
+msgstr "العديد من محاولات الدخول الفاشلة ، يرجى اعادة المحاولة بعد %minutes% دقائق."

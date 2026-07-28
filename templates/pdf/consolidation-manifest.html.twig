@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  {% if basePath is defined %}<base href="{{ basePath }}" />{% endif %}
+  <link rel="stylesheet" href="{{ api_path_prefix }}/build/css/pdf.css">
+  <title>Cargo Manifest – {{ consol.code }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 10px; color: #222; }
+    .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .logo img { max-height: 48px; }
+    .doc-title { text-align: right; }
+    .doc-title h2 { font-size: 16px; margin: 0 0 4px; }
+    .doc-title .code { font-size: 13px; font-weight: bold; color: #444; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; margin-bottom: 16px; border: 1px solid #ddd; padding: 10px; border-radius: 4px; }
+    .info-row { display: flex; gap: 4px; }
+    .info-label { color: #666; min-width: 100px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th { background: #f0f0f0; text-align: left; padding: 6px 8px; border: 1px solid #ccc; font-size: 9px; text-transform: uppercase; }
+    td { padding: 6px 8px; border: 1px solid #ddd; vertical-align: top; }
+    tr:nth-child(even) td { background: #fafafa; }
+    .footer { margin-top: 24px; font-size: 9px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      {% if company.logo is defined and company.logo %}
+        <img src="{{ company.logo.path | imagine_filter('pdf_logo') }}" alt="Logo" />
+      {% else %}
+        <strong>{{ company.name }}</strong>
+      {% endif %}
+    </div>
+    <div class="doc-title">
+      <h2>CARGO MANIFEST</h2>
+      <div class="code">{{ consol.code }}</div>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-row"><span class="info-label">Transport Mode:</span><span>{{ consol.transportMode }}</span></div>
+    <div class="info-row"><span class="info-label">Service Type:</span><span>{{ consol.serviceType }}</span></div>
+    <div class="info-row"><span class="info-label">Status:</span><span>{{ consol.status.label() }}</span></div>
+    <div class="info-row"><span class="info-label">Carrier:</span><span>{{ consol.carrier ? consol.carrier.name : '—' }}</span></div>
+    <div class="info-row"><span class="info-label">POL:</span><span>{{ consol.pol ? consol.pol.name ~ ' (' ~ consol.pol.code ~ ')' : '—' }}</span></div>
+    <div class="info-row"><span class="info-label">POD:</span><span>{{ consol.pod ? consol.pod.name ~ ' (' ~ consol.pod.code ~ ')' : '—' }}</span></div>
+    <div class="info-row"><span class="info-label">ETD:</span><span>{{ consol.etd ? consol.etd|date('d/m/Y') : '—' }}</span></div>
+    <div class="info-row"><span class="info-label">ETA:</span><span>{{ consol.eta ? consol.eta|date('d/m/Y') : '—' }}</span></div>
+
+    {% if consol.transportMode == 'SEA' %}
+    <div class="info-row"><span class="info-label">Vessel:</span><span>{{ consol.vessel ?? '—' }}</span></div>
+    <div class="info-row"><span class="info-label">Voyage:</span><span>{{ consol.voyage ?? '—' }}</span></div>
+    <div class="info-row"><span class="info-label">MBL Number:</span><span>{{ consol.mblNumber ?? '—' }}</span></div>
+    <div class="info-row"><span class="info-label">Container No:</span><span>{{ consol.containerNumber ?? '—' }}</span></div>
+    {% endif %}
+
+    {% if consol.transportMode == 'AIR' %}
+    <div class="info-row"><span class="info-label">Flight:</span><span>{{ consol.flightNumber ?? '—' }}</span></div>
+    <div class="info-row"><span class="info-label">MAWB:</span><span>{{ consol.mawbNumber ?? '—' }}</span></div>
+    <div class="info-row"><span class="info-label">ULD:</span><span>{{ consol.uldNumber ?? '—' }}</span></div>
+    {% endif %}
+
+    {% if consol.cfsCutoff %}
+    <div class="info-row"><span class="info-label">CFS Cutoff:</span><span>{{ consol.cfsCutoff|date('d/m/Y H:i') }}</span></div>
+    {% endif %}
+    {% if consol.docCutoff %}
+    <div class="info-row"><span class="info-label">Doc Cutoff:</span><span>{{ consol.docCutoff|date('d/m/Y H:i') }}</span></div>
+    {% endif %}
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Job Code</th>
+        <th>Client</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for child in children %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td><strong>{{ child.code }}</strong></td>
+        <td>{{ child.quote and child.quote.client ? child.quote.client.name : '—' }}</td>
+        <td>{{ child.status.value }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4" style="text-align:center;color:#999;">No child shipments.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="footer">
+    Generated on {{ "now"|date("d/m/Y H:i") }} · Total shipments: {{ children|length }}
+  </div>
+
+</body>
+</html>

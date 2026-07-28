@@ -1,0 +1,665 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+
+msgid "Feature %feature% is not enabled on this plan."
+msgstr "Tính năng %feature% không được bật trong gói này."
+
+msgid "Provider not found"
+msgstr "Không tìm thấy nhà cung cấp"
+
+msgid "Shipment not found"
+msgstr "Không tìm thấy lô hàng"
+
+msgid "Not found"
+msgstr "Không tìm thấy"
+
+msgid "trackingType and trackingRef are required."
+msgstr "trackingType và trackingRef là bắt buộc."
+
+msgid "Not found."
+msgstr "Không tìm thấy."
+
+msgid "Invalid secret."
+msgstr "Mã bí mật không hợp lệ."
+
+msgid "email is required"
+msgstr "Email là bắt buộc"
+
+msgid "Wrong credentials"
+msgstr "Thông tin đăng nhập không đúng"
+
+msgid "invalid token"
+msgstr "Token không hợp lệ"
+
+msgid "Invalid service token."
+msgstr "Token dịch vụ không hợp lệ."
+
+msgid "maximumUsers must be a non-negative integer."
+msgstr "maximumUsers phải là số nguyên không âm."
+
+msgid "Could not generate upgrade link."
+msgstr "Không thể tạo liên kết nâng cấp."
+
+msgid "id is required."
+msgstr "ID là bắt buộc."
+
+msgid "transportMode is required"
+msgstr "Phương thức vận chuyển là bắt buộc"
+
+msgid "Already closed"
+msgstr "Đã đóng"
+
+msgid "Already locked."
+msgstr "Đã khóa."
+
+msgid "Pending"
+msgstr "Đang chờ"
+
+msgid "Active"
+msgstr "Đang hoạt động"
+
+msgid "Sent"
+msgstr "Đã gửi"
+
+msgid "Done"
+msgstr "Hoàn thành"
+
+msgid "Policy not found"
+msgstr "Không tìm thấy chính sách"
+
+msgid "connectorType, partnerName and protocol are required."
+msgstr "connectorType, partnerName và protocol là bắt buộc."
+
+msgid "Email and password are required."
+msgstr "Email và mật khẩu là bắt buộc."
+
+msgid "Invalid credentials."
+msgstr "Thông tin đăng nhập không hợp lệ."
+
+msgid "Invalid or expired link."
+msgstr "Liên kết không hợp lệ hoặc đã hết hạn."
+
+msgid "LC not found"
+msgstr "Không tìm thấy thư tín dụng"
+
+msgid "transportMode, serviceType and branchId are required."
+msgstr "Phương thức vận chuyển, loại dịch vụ và mã chi nhánh là bắt buộc."
+
+msgid "Branch not found."
+msgstr "Không tìm thấy chi nhánh."
+
+msgid "Cannot edit a cancelled consolidation."
+msgstr "Không thể chỉnh sửa lô hàng ghép đã bị hủy."
+
+msgid "Only a closed consolidation can be departed."
+msgstr "Chỉ lô hàng ghép đã đóng mới có thể xuất phát."
+
+msgid "Only a departed consolidation can be marked as arrived."
+msgstr "Chỉ lô hàng ghép đã xuất phát mới có thể được đánh dấu là đã đến."
+
+msgid "Remove all child shipments before cancelling."
+msgstr "Xóa tất cả lô hàng con trước khi hủy."
+
+msgid "Cannot add shipments to a closed consolidation."
+msgstr "Không thể thêm lô hàng vào lô hàng ghép đã đóng."
+
+msgid "Shipment not found."
+msgstr "Không tìm thấy lô hàng."
+
+msgid "Shipment already belongs to another consolidation."
+msgstr "Lô hàng đã thuộc về một lô hàng ghép khác."
+
+msgid "Hold reason is required."
+msgstr "Lý do giữ hàng là bắt buộc."
+
+msgid "Invalid doc type."
+msgstr "Loại tài liệu không hợp lệ."
+
+msgid "Required documents cannot be deleted."
+msgstr "Không thể xóa tài liệu bắt buộc."
+
+msgid "Invalid milestoneCode."
+msgstr "Mã mốc không hợp lệ."
+
+msgid "Milestone blocked by incomplete mandatory tasks."
+msgstr "Mốc bị chặn do các nhiệm vụ bắt buộc chưa hoàn thành."
+
+msgid "System milestones cannot be deleted."
+msgstr "Không thể xóa các mốc hệ thống."
+
+msgid "Note body cannot be empty."
+msgstr "Nội dung ghi chú không được để trống."
+
+msgid "System notes cannot be deleted."
+msgstr "Không thể xóa ghi chú hệ thống."
+
+msgid "Invalid role."
+msgstr "Vai trò không hợp lệ."
+
+msgid "Role already assigned."
+msgstr "Vai trò đã được gán."
+
+msgid "Title is required."
+msgstr "Tiêu đề là bắt buộc."
+
+msgid "Mandatory tasks cannot be deleted."
+msgstr "Không thể xóa các nhiệm vụ bắt buộc."
+
+msgid "Draft"
+msgstr "Bản nháp"
+
+msgid "Completed"
+msgstr "Đã hoàn thành"
+
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+msgid "Client credit status does not allow new quotes"
+msgstr "Trạng thái tín dụng của khách hàng không cho phép tạo báo giá mới"
+
+msgid "pol and pod are required"
+msgstr "Cảng xếp hàng và cảng dỡ hàng là bắt buộc"
+
+msgid "No file uploaded"
+msgstr "Không có tệp nào được tải lên"
+
+msgid "transportType, effectiveDate and expiryDate are required"
+msgstr "Loại vận chuyển, ngày hiệu lực và ngày hết hạn là bắt buộc"
+
+msgid "entryType is required."
+msgstr "Loại mục nhập là bắt buộc."
+
+msgid "Only DRAFT entries can be deleted."
+msgstr "Chỉ có thể xóa các mục nhập ở trạng thái bản nháp."
+
+msgid "Only DRAFT or REJECTED entries can be submitted."
+msgstr "Chỉ có thể nộp các mục nhập ở trạng thái bản nháp hoặc bị từ chối."
+
+msgid "No declaration number yet."
+msgstr "Chưa có số tờ khai."
+
+msgid "hsCodeId is required."
+msgstr "Mã HS là bắt buộc."
+
+msgid "HS code not found."
+msgstr "Không tìm thấy mã HS."
+
+msgid "%s not found"
+msgstr "Không tìm thấy %s"
+
+msgid "Unsupported format."
+msgstr "Định dạng không được hỗ trợ."
+
+msgid "Unsupported format, expects \"%s\", but \"%s\" given."
+msgstr "Định dạng không được hỗ trợ, mong đợi \"%s\" nhưng nhận được \"%s\"."
+
+msgid "No %entityName% found for id %id%"
+msgstr "Không tìm thấy %entityName% với ID %id%"
+
+msgid "Missing credentials."
+msgstr "Thiếu thông tin đăng nhập."
+
+msgid "Invalid or expired token."
+msgstr "Token không hợp lệ hoặc đã hết hạn."
+
+msgid "Portal account is inactive."
+msgstr "Tài khoản cổng thông tin không hoạt động."
+
+msgid "Unauthorized."
+msgstr "Không được phép."
+
+msgid "Portal user \"%s\" not found."
+msgstr "Không tìm thấy người dùng cổng thông tin \"%s\"."
+
+msgid "Login to office"
+msgstr "Đăng nhập vào văn phòng"
+
+msgid "All rights reserved"
+msgstr "Bảo lưu mọi quyền"
+
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
+
+msgid "About us"
+msgstr "Về chúng tôi"
+
+msgid "Unsubscribe"
+msgstr "Hủy đăng ký"
+
+msgid "ARRIVAL NOTICE"
+msgstr "THÔNG BÁO HÀNG ĐẾN"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Shipment"
+msgstr "Lô hàng"
+
+msgid "TO"
+msgstr "KÍNH GỬI"
+
+msgid "Port of Loading"
+msgstr "Cảng xếp hàng"
+
+msgid "Port of Discharge"
+msgstr "Cảng dỡ hàng"
+
+msgid "Vessel / Voyage"
+msgstr "Tàu / Chuyến"
+
+msgid "ETD"
+msgstr "Ngày dự kiến khởi hành"
+
+msgid "House B/L No."
+msgstr "Số vận đơn nhà"
+
+msgid "Master B/L No."
+msgstr "Số vận đơn chủ"
+
+msgid "Destination Charges"
+msgstr "Phí tại cảng đến"
+
+msgid "Required Documents"
+msgstr "Tài liệu yêu cầu"
+
+msgid "Note"
+msgstr "Ghi chú"
+
+msgid "This is an automatically generated document."
+msgstr "Đây là tài liệu được tạo tự động."
+
+msgid "Tel"
+msgstr "Điện thoại"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Booking Confirmation"
+msgstr "Xác nhận đặt chỗ"
+
+msgid "Booking No"
+msgstr "Số đặt chỗ"
+
+msgid "To"
+msgstr "Kính gửi"
+
+msgid "We are pleased to inform you that your shipment has been confirmed as below"
+msgstr "Chúng tôi vui mừng thông báo rằng lô hàng của quý khách đã được xác nhận như sau"
+
+msgid "Air Waybill No."
+msgstr "Số vận đơn hàng không"
+
+msgid "Airport of Loading"
+msgstr "Sân bay xuất phát"
+
+msgid "Airport of Destination"
+msgstr "Sân bay đến"
+
+msgid "No. of Package(s)"
+msgstr "Số kiện hàng"
+
+msgid "Container"
+msgstr "Container"
+
+msgid "Commodity"
+msgstr "Hàng hóa"
+
+msgid "Gross Weight"
+msgstr "Trọng lượng tổng"
+
+msgid "Measurement"
+msgstr "Kích thước"
+
+msgid "PIC"
+msgstr "Người phụ trách"
+
+msgid "Flight Schedule"
+msgstr "Lịch bay"
+
+msgid "No."
+msgstr "STT"
+
+msgid "Flight"
+msgstr "Chuyến bay"
+
+msgid "Route"
+msgstr "Tuyến đường"
+
+msgid "ETA"
+msgstr "Ngày dự kiến đến"
+
+msgid "Contact Information"
+msgstr "Thông tin liên hệ"
+
+msgid "Cut off time"
+msgstr "Thời hạn cắt hàng"
+
+msgid "Warehouse"
+msgstr "Kho hàng"
+
+msgid "Contact No."
+msgstr "Số điện thoại"
+
+msgid "Terms and Conditions"
+msgstr "Điều khoản và điều kiện"
+
+msgid "DANGEROUS GOODS DECLARATION"
+msgstr "KHAI BÁO HÀNG NGUY HIỂM"
+
+msgid "WARNING: This shipment contains dangerous goods"
+msgstr "CẢNH BÁO: Lô hàng này chứa hàng hóa nguy hiểm"
+
+msgid "HBL"
+msgstr "Vận đơn nhà"
+
+msgid "MBL"
+msgstr "Vận đơn chủ"
+
+msgid "IMO Class"
+msgstr "Cấp độ IMO"
+
+msgid "UN No."
+msgstr "Số UN"
+
+msgid "Packing Group"
+msgstr "Nhóm đóng gói"
+
+msgid "Proper Shipping Name"
+msgstr "Tên vận chuyển chính thức"
+
+msgid "Technical Name"
+msgstr "Tên kỹ thuật"
+
+msgid "Net Qty"
+msgstr "Số lượng thực"
+
+msgid "Gross Qty"
+msgstr "Số lượng tổng"
+
+msgid "UOM"
+msgstr "Đơn vị đo"
+
+msgid "Flash Point"
+msgstr "Điểm bùng cháy"
+
+msgid "Flags"
+msgstr "Cờ hiệu"
+
+msgid "Subsidiary Risk"
+msgstr "Rủi ro phụ"
+
+msgid "Emergency"
+msgstr "Khẩn cấp"
+
+msgid "I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations."
+msgstr "Tôi xin khai báo rằng nội dung của lô hàng này được mô tả đầy đủ và chính xác ở trên theo tên vận chuyển chính thức, đã được phân loại, đóng gói, ghi nhãn và dán nhãn/bảng hiệu, và trong mọi khía cạnh đều ở trạng thái phù hợp để vận chuyển theo các quy định quốc tế và quốc gia hiện hành."
+
+msgid "Shipper's Signature"
+msgstr "Chữ ký người gửi hàng"
+
+msgid "DELIVERY ORDER"
+msgstr "LỆNH GIAO HÀNG"
+
+msgid "Issue Date"
+msgstr "Ngày phát hành"
+
+msgid "Release Date"
+msgstr "Ngày giải phóng"
+
+msgid "Authorized Signature"
+msgstr "Chữ ký được ủy quyền"
+
+msgid "Consignee Signature"
+msgstr "Chữ ký người nhận hàng"
+
+msgid "Debit Note"
+msgstr "Giấy báo nợ"
+
+msgid "Credit Note"
+msgstr "Giấy báo có"
+
+msgid "Invoice"
+msgstr "Hóa đơn"
+
+msgid "Payment On Behalf Of"
+msgstr "Thanh toán thay cho"
+
+msgid "Collect On Behalf Of"
+msgstr "Thu hộ cho"
+
+msgid "Phone"
+msgstr "Điện thoại"
+
+msgid "Tax Number"
+msgstr "Mã số thuế"
+
+msgid "Bank Account"
+msgstr "Tài khoản ngân hàng"
+
+msgid "Created"
+msgstr "Đã tạo"
+
+msgid "Due Date"
+msgstr "Ngày đáo hạn"
+
+msgid "Payment Method"
+msgstr "Phương thức thanh toán"
+
+msgid "Bill To"
+msgstr "Xuất hóa đơn cho"
+
+msgid "Pay For"
+msgstr "Thanh toán cho"
+
+msgid "Undefined Provider"
+msgstr "Nhà cung cấp chưa xác định"
+
+msgid "Vessel No."
+msgstr "Số tàu"
+
+msgid "B/L"
+msgstr "Vận đơn"
+
+msgid "Shipment ID"
+msgstr "Mã lô hàng"
+
+msgid "Reference ID"
+msgstr "Mã tham chiếu"
+
+msgid "Booking No."
+msgstr "Số đặt chỗ"
+
+msgid "Description"
+msgstr "Mô tả"
+
+msgid "Calculate"
+msgstr "Tính toán"
+
+msgid "Curr."
+msgstr "Tiền tệ"
+
+msgid "Price"
+msgstr "Giá"
+
+msgid "Qty"
+msgstr "SL"
+
+msgid "Total"
+msgstr "Tổng cộng"
+
+msgid "Tax"
+msgstr "Thuế"
+
+msgid "Include Tax"
+msgstr "Bao gồm thuế"
+
+msgid "Exchange rate"
+msgstr "Tỷ giá hối đoái"
+
+msgid "PACKING LIST"
+msgstr "DANH SÁCH ĐÓNG GÓI"
+
+msgid "Ref No."
+msgstr "Số tham chiếu"
+
+msgid "Shipper"
+msgstr "Người gửi hàng"
+
+msgid "Consignee"
+msgstr "Người nhận hàng"
+
+msgid "Container No."
+msgstr "Số container"
+
+msgid "Seal No."
+msgstr "Số seal"
+
+msgid "Type"
+msgstr "Loại"
+
+msgid "Packages"
+msgstr "Kiện hàng"
+
+msgid "Volume (CBM)"
+msgstr "Thể tích (CBM)"
+
+msgid "Package Type"
+msgstr "Loại kiện hàng"
+
+msgid "Description of Goods"
+msgstr "Mô tả hàng hóa"
+
+msgid "Shipping Marks"
+msgstr "Ký hiệu hàng hóa"
+
+msgid "From"
+msgstr "Từ"
+
+msgid "Address"
+msgstr "Địa chỉ"
+
+msgid "Prepared By"
+msgstr "Người lập"
+
+msgid "Mobile"
+msgstr "Di động"
+
+msgid "Contact Person"
+msgstr "Người liên hệ"
+
+msgid "Quotation"
+msgstr "Báo giá"
+
+msgid "Created at"
+msgstr "Ngày tạo"
+
+msgid "Valid until"
+msgstr "Có hiệu lực đến"
+
+msgid "Quote ID"
+msgstr "Mã báo giá"
+
+msgid "Origin"
+msgstr "Nơi đi"
+
+msgid "Transit Port"
+msgstr "Cảng trung chuyển"
+
+msgid "Incoterms"
+msgstr "Incoterms"
+
+msgid "Commodities"
+msgstr "Hàng hóa"
+
+msgid "Remark"
+msgstr "Ghi chú"
+
+msgid "Destination"
+msgstr "Nơi đến"
+
+msgid "Place of Delivery"
+msgstr "Nơi giao hàng"
+
+msgid "Volume"
+msgstr "Thể tích"
+
+msgid "Air-port of Loading"
+msgstr "Sân bay xuất phát"
+
+msgid "Mode"
+msgstr "Phương thức"
+
+msgid "Chargeable Weight"
+msgstr "Trọng lượng tính cước"
+
+msgid "Air-port of Discharge"
+msgstr "Sân bay đến"
+
+msgid "Transit Time"
+msgstr "Thời gian vận chuyển"
+
+msgid "days"
+msgstr "ngày"
+
+msgid "Schedule"
+msgstr "Lịch trình"
+
+msgid "Cargo ready date"
+msgstr "Ngày hàng sẵn sàng"
+
+msgid "Quote Detail"
+msgstr "Chi tiết báo giá"
+
+msgid "Charge"
+msgstr "Phí"
+
+msgid "Item Name"
+msgstr "Tên mục"
+
+msgid "Curr"
+msgstr "Tiền tệ"
+
+msgid "Amount"
+msgstr "Số tiền"
+
+msgid "Sub-Total"
+msgstr "Tạm tính"
+
+msgid "Receipt"
+msgstr "Biên lai"
+
+msgid "Payment"
+msgstr "Thanh toán"
+
+msgid "Received from"
+msgstr "Nhận từ"
+
+msgid "Payment to"
+msgstr "Thanh toán cho"
+
+msgid "In words"
+msgstr "Bằng chữ"
+
+msgid "Accountant"
+msgstr "Kế toán"
+
+msgid "Manager"
+msgstr "Giám đốc"
+
+msgid "Statement of account"
+msgstr "Sao kê tài khoản"
+
+msgid "Statement Date"
+msgstr "Ngày sao kê"
+
+msgid "Invoice No."
+msgstr "Số hóa đơn"
+
+msgid "Bill No."
+msgstr "Số phiếu"
+
+msgid "Ex."
+msgstr "Tr."

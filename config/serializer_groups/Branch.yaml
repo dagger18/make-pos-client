@@ -1,0 +1,14 @@
+App\Module\Core\Entity\Branch:
+
+    list:
+        - id
+        - name
+        - code
+        - address
+        - phone
+        - isActive
+
+    subList:
+        - id
+        - name
+        - code

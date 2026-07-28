@@ -1,0 +1,9 @@
+App\Module\Core\Entity\Port:
+
+    list:
+        - id
+        - name
+        - codeFull
+        - code
+        - subdiv
+        - displayName

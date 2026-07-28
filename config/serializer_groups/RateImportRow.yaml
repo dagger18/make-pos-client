@@ -1,0 +1,19 @@
+App\Module\Quote\Entity\RateImportRow:
+
+    list:
+        - id
+        - rowNumber
+        - polCode
+        - podCode
+        - containerType
+        - chargeCode
+        - newBuyingAmount
+        - newSellingAmount
+        - currency
+        - currentBuyingAmount
+        - changePct
+        - isSanityFlagged
+        - action
+        - errorMessage
+        - existingRateId
+        - previousValidUntil
