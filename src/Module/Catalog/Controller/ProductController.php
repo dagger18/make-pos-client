@@ -14,6 +14,7 @@ use App\Module\Catalog\Service\CatalogService;
 use App\Module\Core\Controller\CrudController;
 use App\Module\Core\Service\BaseService;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,7 +40,28 @@ class ProductController extends CrudController
     #[Route('', methods: ['GET'])]
     public function LIST(Request $request): JsonResponse
     {
-        return $this->json($this->repo->getList($request->query->all(), 'list'));
+        $query = $request->query;
+
+        return $this->json($this->repo->getList($query->all(), 'list', function (QueryBuilder $qb) use ($query): void {
+            if ($q = $query->get('q')) {
+                $qb->andWhere($qb->expr()->orX(
+                    $qb->expr()->like('Product.name', ':q'),
+                    $qb->expr()->like('Product.sku', ':q'),
+                ))->setParameter('q', '%' . $q . '%');
+            }
+            if ($categoryId = $query->get('category_id')) {
+                $qb->andWhere('Product.category = :category_id')
+                   ->setParameter('category_id', (int) $categoryId);
+            }
+            if ($type = $query->get('type')) {
+                $qb->andWhere('Product.type = :type')
+                   ->setParameter('type', $type);
+            }
+            if ($query->has('active') && $query->get('active') !== '') {
+                $qb->andWhere('Product.active = :active')
+                   ->setParameter('active', (bool) $query->get('active'));
+            }
+        }));
     }
 
     #[Route('/{id}', methods: ['GET'])]
