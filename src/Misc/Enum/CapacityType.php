@@ -10,6 +10,6 @@ enum CapacityType: string
     case FileStorage        = 'file_storage';
     case DocumentOperations = 'document_operations';
     case MaxUsers           = 'max_users';
-    case MaxQuotes          = 'max_quotes';
-    case MaxShipments       = 'max_shipments';
+    case MaxOrders          = 'max_orders';
+    case MaxProducts        = 'max_products';
 }
