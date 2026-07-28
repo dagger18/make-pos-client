@@ -29,7 +29,7 @@ class PnlRepository
             WHERE en.type IN ('ID', 'IC', 'RPT', 'PMT')
               AND s.status = 'CO'
               AND DATE(s.completed_date) BETWEEN :from AND :to
-            GROUP BY s.branch_id, b.name
+            GROUP BY s.location_id, b.name
             ORDER BY net_profit DESC
         ";
         return $this->connection->fetchAllAssociative($sql, ['from' => $dateFrom, 'to' => $dateTo]);
