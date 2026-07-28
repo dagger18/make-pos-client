@@ -64,7 +64,7 @@ class SalesTarget
     {
         return [
             'id'          => $this->id,
-            'salesRep'    => ['id' => $this->salesRep->getId(), 'name' => $this->salesRep->getName()],
+            'salesRep'    => ['id' => $this->salesRep->getId(), 'name' => $this->salesRep->getFullName()],
             'periodYear'  => $this->periodYear,
             'periodMonth' => $this->periodMonth,
             'targetType'  => $this->targetType,
