@@ -11,7 +11,7 @@ class PnlRepository
     {
         $sql = "
             SELECT
-                COALESCE(b.name, 'No Branch')                                                           AS branch,
+                COALESCE(b.name, 'No Location')                                                         AS branch,
                 COUNT(DISTINCT s.id)                                                                     AS jobs_count,
                 SUM(CASE WHEN en.type='ID' THEN en.amount_amount / en.amount_rate ELSE 0 END)           AS revenue_base,
                 SUM(CASE WHEN en.type='IC' THEN en.amount_amount / en.amount_rate ELSE 0 END)           AS cost_base,
@@ -25,7 +25,7 @@ class PnlRepository
                 + COALESCE(SUM(CASE WHEN en.type='PMT' THEN en.fx_gain_loss ELSE 0 END), 0)            AS net_profit
             FROM ebit_note en
             JOIN shipment s  ON s.id = en.shipment_id
-            LEFT JOIN branch b ON b.id = s.branch_id
+            LEFT JOIN location b ON b.id = s.location_id
             WHERE en.type IN ('ID', 'IC', 'RPT', 'PMT')
               AND s.status = 'CO'
               AND DATE(s.completed_date) BETWEEN :from AND :to
@@ -41,7 +41,7 @@ class PnlRepository
             SELECT
                 d.id                                                                              AS department_id,
                 d.name                                                                            AS department_name,
-                COALESCE(b.name, 'No Branch')                                                    AS branch_name,
+                COALESCE(b.name, 'No Location')                                                  AS branch_name,
                 COALESCE(d.direction, '')                                                         AS direction,
                 COUNT(DISTINCT en.shipment_id)                                                    AS jobs_count,
                 SUM(CASE WHEN en.type='ID' THEN ci.amount_amount / ci.amount_rate ELSE 0 END)    AS revenue_base,
@@ -58,7 +58,7 @@ class PnlRepository
             JOIN ebit_note en  ON ci.ebit_note_id = en.id
             JOIN shipment s    ON en.shipment_id = s.id
             JOIN department d  ON ci.department_id = d.id
-            LEFT JOIN branch b ON d.branch_id = b.id
+            LEFT JOIN location b ON d.location_id = b.id
             WHERE en.type IN ('ID', 'IC')
               AND s.status = 'CO'
               AND DATE(s.completed_date) BETWEEN :from AND :to

@@ -21,8 +21,8 @@ class Department
     private ?string $name = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: true)]
-    private ?Branch $branch = null;
+    #[ORM\JoinColumn(name: 'location_id', nullable: true)]
+    private ?Location $location = null;
 
     #[ORM\Column(length: 5, nullable: true)]
     private ?string $direction = null;
@@ -46,14 +46,14 @@ class Department
         return $this;
     }
 
-    public function getBranch(): ?Branch
+    public function getLocation(): ?Location
     {
-        return $this->branch;
+        return $this->location;
     }
 
-    public function setBranch(?Branch $branch): static
+    public function setLocation(?Location $location): static
     {
-        $this->branch = $branch;
+        $this->location = $location;
         return $this;
     }
 

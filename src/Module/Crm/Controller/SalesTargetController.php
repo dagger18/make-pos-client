@@ -2,7 +2,7 @@
 namespace App\Module\Crm\Controller;
 
 use App\Misc\Attribute\AppModule;
-use App\Module\Core\Entity\Branch;
+use App\Module\Core\Entity\Location;
 use App\Module\Core\Entity\User;
 use App\Module\Crm\Entity\SalesTarget;
 use App\Module\Crm\Repository\SalesTargetRepository;
@@ -72,8 +72,8 @@ class SalesTargetController extends AbstractController
         $target->setTargetValue((float) $data['targetValue']);
         $target->setCurrency($data['currency'] ?? null);
 
-        $branchId = $data['branchId'] ?? null;
-        $target->setBranch($branchId ? $this->em->getReference(Branch::class, (int) $branchId) : null);
+        $locationId = $data['locationId'] ?? $data['branchId'] ?? null;
+        $target->setLocation($locationId ? $this->em->getReference(Location::class, (int) $locationId) : null);
 
         return $target;
     }

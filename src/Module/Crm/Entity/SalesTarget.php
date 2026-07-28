@@ -1,7 +1,7 @@
 <?php
 namespace App\Module\Crm\Entity;
 
-use App\Module\Core\Entity\Branch;
+use App\Module\Core\Entity\Location;
 use App\Module\Core\Entity\User;
 use App\Module\Crm\Repository\SalesTargetRepository;
 use Doctrine\DBAL\Types\Types;
@@ -36,8 +36,8 @@ class SalesTarget
     private ?string $currency = null;
 
     #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
-    private ?Branch $branch = null;
+    #[ORM\JoinColumn(name: 'location_id', nullable: true, onDelete: 'SET NULL')]
+    private ?Location $location = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private \DateTimeInterface $createdAt;
@@ -55,8 +55,8 @@ class SalesTarget
     public function setTargetValue(float $v): static { $this->targetValue = (string) $v; return $this; }
     public function getCurrency(): ?string { return $this->currency; }
     public function setCurrency(?string $v): static { $this->currency = $v; return $this; }
-    public function getBranch(): ?Branch { return $this->branch; }
-    public function setBranch(?Branch $v): static { $this->branch = $v; return $this; }
+    public function getLocation(): ?Location { return $this->location; }
+    public function setLocation(?Location $v): static { $this->location = $v; return $this; }
     public function getCreatedAt(): \DateTimeInterface { return $this->createdAt; }
     public function setCreatedAt(\DateTimeInterface $v): static { $this->createdAt = $v; return $this; }
 
@@ -70,7 +70,7 @@ class SalesTarget
             'targetType'  => $this->targetType,
             'targetValue' => $this->getTargetValue(),
             'currency'    => $this->currency,
-            'branch'      => $this->branch ? ['id' => $this->branch->getId(), 'name' => $this->branch->getName()] : null,
+            'location'    => $this->location ? ['id' => $this->location->getId(), 'name' => $this->location->getName()] : null,
             'createdAt'   => $this->createdAt->format('Y-m-d H:i:s'),
         ];
     }

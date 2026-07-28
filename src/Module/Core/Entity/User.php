@@ -12,6 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use App\Misc\Attribute\MediaProperty;
 use App\Module\Core\Enum\UserStatus;
+use App\Module\Core\Entity\Location;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -69,15 +70,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 10, options: ['default' => 'en'])]
     private string $language = 'en';
 
-    #[ORM\ManyToMany(targetEntity: Branch::class)]
-    private Collection $branches;
+    #[ORM\ManyToMany(targetEntity: Location::class)]
+    #[ORM\JoinTable(name: 'user_location')]
+    private Collection $locations;
 
     #[ORM\ManyToMany(targetEntity: Department::class)]
     private Collection $departments;
 
     public function __construct()
     {
-        $this->branches = new ArrayCollection();
+        $this->locations = new ArrayCollection();
         $this->departments = new ArrayCollection();
     }
 
@@ -269,45 +271,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Branch>
+     * @return Collection<int, Location>
      */
-    public function getBranches(): Collection
+    public function getLocations(): Collection
     {
-        return $this->branches;
+        return $this->locations;
     }
 
-    public function addBranch(Branch $branch): static
+    public function addLocation(Location $location): static
     {
-        if (!$this->branches->contains($branch)) {
-            $this->branches->add($branch);
+        if (!$this->locations->contains($location)) {
+            $this->locations->add($location);
         }
 
         return $this;
     }
 
-    public function removeBranch(Branch $branch): static
+    public function removeLocation(Location $location): static
     {
-        $this->branches->removeElement($branch);
+        $this->locations->removeElement($location);
 
         return $this;
     }
 
-    /**
-     * Backward-compatible accessor that returns the first branch if any.
-     */
-    public function getBranch(): ?Branch
+    public function getLocation(): ?Location
     {
-        return $this->branches->first() ?: null;
+        return $this->locations->first() ?: null;
     }
 
-    /**
-     * Backward-compatible mutator that replaces the branch collection with one item.
-     */
-    public function setBranch(?Branch $branch): static
+    public function setLocation(?Location $location): static
     {
-        $this->branches = new ArrayCollection();
-        if ($branch) {
-            $this->branches->add($branch);
+        $this->locations = new ArrayCollection();
+        if ($location) {
+            $this->locations->add($location);
         }
 
         return $this;
