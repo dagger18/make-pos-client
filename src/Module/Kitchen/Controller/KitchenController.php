@@ -3,7 +3,6 @@ namespace App\Module\Kitchen\Controller;
 
 use App\Misc\Attribute\AppModule;
 use App\Module\Kitchen\Entity\KitchenTicket;
-use App\Module\Kitchen\Enum\KitchenStatus;
 use App\Module\Kitchen\Repository\KitchenTicketRepository;
 use App\Module\Kitchen\Service\KitchenService;
 use App\Module\Sales\Repository\OrderRepository;
